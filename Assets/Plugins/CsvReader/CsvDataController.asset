@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f90c27c51c90fd408fe1d9d539c91be, type: 3}
+  m_Name: CsvDataController
+  m_EditorClassIdentifier: 
+  data:
+  - {fileID: 11400000, guid: 1a4c46e3db8c5a3459a788a461cf7e70, type: 2}
+  - {fileID: 11400000, guid: a40cc33930804264e8b38c67d20cf82a, type: 2}
+  - {fileID: 11400000, guid: 5d89898b23c3d6344a32ee4bba12ec79, type: 2}
+  csvDataName: Reward
