@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d10e9bb7dee481fbd7c3c3269717866, type: 3}
+  m_Name: Csv.AbilityDataConfig
+  m_EditorClassIdentifier: 
+  dashAbilityData:
+  - dataId: 1
+    id: 1
+  fireballAbilityData:
+  - dataId: 1
+    id: 0
+    damageFactor: 1
+    modifierIdentifies:
+    - modifierType: 2
+      modifierDataId: 1
+  explodeAbilityData:
+  - dataId: 1
+    id: 2
+    castRange: 1.5
+  reviveAbilityData:
+  - dataId: 1
+    id: 3

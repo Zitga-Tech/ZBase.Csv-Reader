@@ -1,0 +1,16 @@
+{
+    "name": "CsvReaderSamples",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a07922285f7207542969b6d63f52e2d9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

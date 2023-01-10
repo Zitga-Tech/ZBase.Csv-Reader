@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48964f8dfc931343af9c4058de12db4, type: 3}
+  m_Name: Reward
+  m_EditorClassIdentifier: 
+  classInfomations:
+  - className: Csv.RewardInfoList
+    csvInformations:
+    - className: Csv.RewardInfoList
+      csvFile: {fileID: 4900000, guid: cf11b5f66f8fb044bb3c0d88d4f6a3c0, type: 3}
+      csvPath: Assets/Samples/Csv/reward/reward_info.csv
+      fieldSetValue: dataGroups
+      isConvert: 0
+      convertMethod: 
+  - className: Csv.StageReward
+    csvInformations:
+    - className: Csv.StageReward
+      csvFile: {fileID: 4900000, guid: 156e296b9424b0840a6e64e742374285, type: 3}
+      csvPath: Assets/Samples/Csv/reward/stage_reward.csv
+      fieldSetValue: rewards
+      isConvert: 0
+      convertMethod: 

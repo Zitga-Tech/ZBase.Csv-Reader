@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48964f8dfc931343af9c4058de12db4, type: 3}
+  m_Name: Stage
+  m_EditorClassIdentifier: 
+  classInfomations:
+  - className: Csv.StageInfoConfig
+    csvInformations:
+    - className: Csv.StageInfoConfig
+      csvFile: {fileID: 4900000, guid: a63968056b2fe804d8452a7bf8e0a2c2, type: 3}
+      csvPath: Assets/Samples/Csv/stage/stage_cost.csv
+      fieldSetValue: _costItems
+      isConvert: 1
+      convertMethod: ConvertCost
+    - className: Csv.StageInfoConfig
+      csvFile: {fileID: 4900000, guid: b91868636f5acc647a04a9bcfda2a6b1, type: 3}
+      csvPath: Assets/Samples/Csv/stage/stage_reward.csv
+      fieldSetValue: _rewardConfigItems
+      isConvert: 1
+      convertMethod: ConvertRewards
+    - className: Csv.StageInfoConfig
+      csvFile: {fileID: 4900000, guid: 11fcfa5c362dbf644b0f7a7e44288f40, type: 3}
+      csvPath: Assets/Samples/Csv/stage/revive_cost.csv
+      fieldSetValue: _reviveCostItems
+      isConvert: 1
+      convertMethod: ConvertReviveCost
+    - className: Csv.StageInfoConfig
+      csvFile: {fileID: 4900000, guid: 8fd9a711c43e72841b905a54f8f19855, type: 3}
+      csvPath: Assets/Samples/Csv/stage/stage_droppable_reward.csv
+      fieldSetValue: _droppableRewardItems
+      isConvert: 1
+      convertMethod: ConvertDroppableRewards
+    - className: Csv.StageInfoConfig
+      csvFile: {fileID: 4900000, guid: deb7eb59cb7dcc1439ad2b1df1db6fc2, type: 3}
+      csvPath: Assets/Samples/Csv/stage/stage_quest.csv
+      fieldSetValue: _questConfigItems
+      isConvert: 1
+      convertMethod: ConvertQuests

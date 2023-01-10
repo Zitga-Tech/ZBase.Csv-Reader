@@ -1,0 +1,490 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a12de359674b58a373db5456932b05, type: 3}
+  m_Name: Csv.StageReward
+  m_EditorClassIdentifier: 
+  rewards:
+  - stId: 0
+    stageId: 101001
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    - resourceType: 0
+      resourceId: 0
+      resourceNumber: 10000
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 800
+  - stId: 0
+    stageId: 101002
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    - resourceType: 0
+      resourceId: 0
+      resourceNumber: 10000
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 39200
+  - stId: 0
+    stageId: 101003
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 77600
+    - resourceType: 0
+      resourceId: 0
+      resourceNumber: 96800
+  - stId: 0
+    stageId: 101004
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    - resourceType: 0
+      resourceId: 0
+      resourceNumber: 10000
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 116000
+    - resourceType: 0
+      resourceId: 0
+      resourceNumber: 135200
+  - stId: 0
+    stageId: 101005
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 154400
+  - stId: 0
+    stageId: 101006
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 173600
+  - stId: 0
+    stageId: 101007
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 192800
+  - stId: 0
+    stageId: 101008
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 212000
+  - stId: 0
+    stageId: 101009
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 231200
+  - stId: 0
+    stageId: 101010
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 250400
+  - stId: 0
+    stageId: 102001
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 269600
+  - stId: 0
+    stageId: 102002
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 288800
+  - stId: 0
+    stageId: 102003
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 308000
+  - stId: 0
+    stageId: 102004
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 327200
+  - stId: 0
+    stageId: 102005
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 346400
+  - stId: 0
+    stageId: 102006
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 365600
+  - stId: 0
+    stageId: 102007
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 384800
+  - stId: 0
+    stageId: 102008
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 404000
+  - stId: 0
+    stageId: 102009
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 423200
+  - stId: 0
+    stageId: 102010
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 442400
+  - stId: 0
+    stageId: 103001
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 461600
+  - stId: 0
+    stageId: 103002
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 480800
+  - stId: 0
+    stageId: 103003
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 500000
+  - stId: 0
+    stageId: 103004
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 519200
+  - stId: 0
+    stageId: 103005
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 538400
+  - stId: 0
+    stageId: 103006
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 557600
+  - stId: 0
+    stageId: 103007
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 576800
+  - stId: 0
+    stageId: 103008
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 596000
+  - stId: 0
+    stageId: 103009
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 615200
+  - stId: 0
+    stageId: 103010
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 634400
+  - stId: 0
+    stageId: 104001
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 653600
+  - stId: 0
+    stageId: 104002
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 672800
+  - stId: 0
+    stageId: 104003
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 692000
+  - stId: 0
+    stageId: 104004
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 711200
+  - stId: 0
+    stageId: 104005
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 730400
+  - stId: 0
+    stageId: 104006
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 749600
+  - stId: 0
+    stageId: 104007
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 768800
+  - stId: 0
+    stageId: 104008
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 788000
+  - stId: 0
+    stageId: 104009
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 807200
+  - stId: 0
+    stageId: 104010
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 826400
+  - stId: 0
+    stageId: 104011
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 845600
+  - stId: 0
+    stageId: 104012
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 864800
+  - stId: 0
+    stageId: 104013
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 884000
+  - stId: 0
+    stageId: 104014
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 903200
+  - stId: 0
+    stageId: 104015
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 922400
+  - stId: 0
+    stageId: 104016
+    rewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 400
+    firstClearRewards:
+    - resourceType: 4
+      resourceId: 0
+      resourceNumber: 941600

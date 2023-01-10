@@ -1,0 +1,5 @@
+stage,is_first,resource_type,resource_id,resource_number
+101001,TRUE,,1,
+,FALSE,,2,
+101002,TRUE,,1,
+,FALSE,,2,

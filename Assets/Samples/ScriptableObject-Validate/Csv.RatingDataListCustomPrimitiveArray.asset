@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3989e2cff6140c7badc37456d9cb688, type: 3}
+  m_Name: Csv.RatingDataListCustomPrimitiveArray
+  m_EditorClassIdentifier: 
+  dataGroups:
+  - mapId: 4
+    difficulty: 00000000
+    description:
+    - data_1
+    - data_3
+  - mapId: 6
+    difficulty: 010000000200000003000000
+    description:
+    - data_1
+  - mapId: 12
+    difficulty: 00000000
+    description:
+    - data_2
+  - mapId: 15
+    difficulty: 01000000
+    description:
+    - data_3
