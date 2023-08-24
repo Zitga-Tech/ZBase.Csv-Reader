@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
+using CsvReader;
 using Sirenix.OdinInspector;
-using UnityEngine;
 
 namespace Csv
 {
@@ -12,6 +12,7 @@ namespace Csv
 
         public Dictionary<int, Resource[]> dataDict;
 
+        [CsvClassCustomSeparator(';')]
         [Serializable]
         public class HeroLevelRewardItem
         {

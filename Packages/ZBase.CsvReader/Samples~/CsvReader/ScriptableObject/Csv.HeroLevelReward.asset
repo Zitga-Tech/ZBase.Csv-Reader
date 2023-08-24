@@ -24,7 +24,7 @@ MonoBehaviour:
     - Name: dataDict
       Entry: 7
       Data: 0|System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[Csv.Resource[],
-        Assembly-CSharp]], mscorlib
+        CsvReaderSamples]], mscorlib
     - Name: comparer
       Entry: 7
       Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
@@ -43,13 +43,13 @@ MonoBehaviour:
       Data: 1
     - Name: $v
       Entry: 7
-      Data: 2|Csv.Resource[], Assembly-CSharp
+      Data: 2|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 3|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -64,7 +64,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -94,13 +94,13 @@ MonoBehaviour:
       Data: 2
     - Name: $v
       Entry: 7
-      Data: 5|Csv.Resource[], Assembly-CSharp
+      Data: 3|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 6|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -130,13 +130,13 @@ MonoBehaviour:
       Data: 3
     - Name: $v
       Entry: 7
-      Data: 7|Csv.Resource[], Assembly-CSharp
+      Data: 4|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -166,13 +166,13 @@ MonoBehaviour:
       Data: 4
     - Name: $v
       Entry: 7
-      Data: 9|Csv.Resource[], Assembly-CSharp
+      Data: 5|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 10|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -202,13 +202,13 @@ MonoBehaviour:
       Data: 5
     - Name: $v
       Entry: 7
-      Data: 11|Csv.Resource[], Assembly-CSharp
+      Data: 6|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -238,13 +238,13 @@ MonoBehaviour:
       Data: 6
     - Name: $v
       Entry: 7
-      Data: 13|Csv.Resource[], Assembly-CSharp
+      Data: 7|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 14|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -274,13 +274,13 @@ MonoBehaviour:
       Data: 7
     - Name: $v
       Entry: 7
-      Data: 15|Csv.Resource[], Assembly-CSharp
+      Data: 8|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 16|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -310,13 +310,13 @@ MonoBehaviour:
       Data: 8
     - Name: $v
       Entry: 7
-      Data: 17|Csv.Resource[], Assembly-CSharp
+      Data: 9|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -346,13 +346,13 @@ MonoBehaviour:
       Data: 9
     - Name: $v
       Entry: 7
-      Data: 19|Csv.Resource[], Assembly-CSharp
+      Data: 10|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 20|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -382,13 +382,13 @@ MonoBehaviour:
       Data: 10
     - Name: $v
       Entry: 7
-      Data: 21|Csv.Resource[], Assembly-CSharp
+      Data: 11|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 22|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -418,13 +418,13 @@ MonoBehaviour:
       Data: 11
     - Name: $v
       Entry: 7
-      Data: 23|Csv.Resource[], Assembly-CSharp
+      Data: 12|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 24|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -454,13 +454,13 @@ MonoBehaviour:
       Data: 12
     - Name: $v
       Entry: 7
-      Data: 25|Csv.Resource[], Assembly-CSharp
+      Data: 13|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 26|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -490,13 +490,13 @@ MonoBehaviour:
       Data: 13
     - Name: $v
       Entry: 7
-      Data: 27|Csv.Resource[], Assembly-CSharp
+      Data: 14|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 28|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -526,13 +526,13 @@ MonoBehaviour:
       Data: 14
     - Name: $v
       Entry: 7
-      Data: 29|Csv.Resource[], Assembly-CSharp
+      Data: 15|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 30|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -562,13 +562,13 @@ MonoBehaviour:
       Data: 15
     - Name: $v
       Entry: 7
-      Data: 31|Csv.Resource[], Assembly-CSharp
+      Data: 16|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 32|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -598,13 +598,13 @@ MonoBehaviour:
       Data: 16
     - Name: $v
       Entry: 7
-      Data: 33|Csv.Resource[], Assembly-CSharp
+      Data: 17|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 34|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -634,13 +634,13 @@ MonoBehaviour:
       Data: 17
     - Name: $v
       Entry: 7
-      Data: 35|Csv.Resource[], Assembly-CSharp
+      Data: 18|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 36|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -670,13 +670,13 @@ MonoBehaviour:
       Data: 18
     - Name: $v
       Entry: 7
-      Data: 37|Csv.Resource[], Assembly-CSharp
+      Data: 19|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 38|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -706,13 +706,13 @@ MonoBehaviour:
       Data: 19
     - Name: $v
       Entry: 7
-      Data: 39|Csv.Resource[], Assembly-CSharp
+      Data: 20|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 40|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -742,13 +742,13 @@ MonoBehaviour:
       Data: 20
     - Name: $v
       Entry: 7
-      Data: 41|Csv.Resource[], Assembly-CSharp
+      Data: 21|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 42|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -778,13 +778,13 @@ MonoBehaviour:
       Data: 21
     - Name: $v
       Entry: 7
-      Data: 43|Csv.Resource[], Assembly-CSharp
+      Data: 22|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 44|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -814,13 +814,13 @@ MonoBehaviour:
       Data: 22
     - Name: $v
       Entry: 7
-      Data: 45|Csv.Resource[], Assembly-CSharp
+      Data: 23|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 46|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -850,13 +850,13 @@ MonoBehaviour:
       Data: 23
     - Name: $v
       Entry: 7
-      Data: 47|Csv.Resource[], Assembly-CSharp
+      Data: 24|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 48|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -886,13 +886,13 @@ MonoBehaviour:
       Data: 24
     - Name: $v
       Entry: 7
-      Data: 49|Csv.Resource[], Assembly-CSharp
+      Data: 25|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 50|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -922,13 +922,13 @@ MonoBehaviour:
       Data: 25
     - Name: $v
       Entry: 7
-      Data: 51|Csv.Resource[], Assembly-CSharp
+      Data: 26|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 52|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -958,13 +958,13 @@ MonoBehaviour:
       Data: 26
     - Name: $v
       Entry: 7
-      Data: 53|Csv.Resource[], Assembly-CSharp
+      Data: 27|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 54|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -994,13 +994,13 @@ MonoBehaviour:
       Data: 27
     - Name: $v
       Entry: 7
-      Data: 55|Csv.Resource[], Assembly-CSharp
+      Data: 28|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 56|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1030,13 +1030,13 @@ MonoBehaviour:
       Data: 28
     - Name: $v
       Entry: 7
-      Data: 57|Csv.Resource[], Assembly-CSharp
+      Data: 29|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 58|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1066,13 +1066,13 @@ MonoBehaviour:
       Data: 29
     - Name: $v
       Entry: 7
-      Data: 59|Csv.Resource[], Assembly-CSharp
+      Data: 30|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 60|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1102,13 +1102,13 @@ MonoBehaviour:
       Data: 30
     - Name: $v
       Entry: 7
-      Data: 61|Csv.Resource[], Assembly-CSharp
+      Data: 31|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 62|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1138,13 +1138,13 @@ MonoBehaviour:
       Data: 31
     - Name: $v
       Entry: 7
-      Data: 63|Csv.Resource[], Assembly-CSharp
+      Data: 32|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 64|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1174,13 +1174,13 @@ MonoBehaviour:
       Data: 32
     - Name: $v
       Entry: 7
-      Data: 65|Csv.Resource[], Assembly-CSharp
+      Data: 33|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 66|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1210,13 +1210,13 @@ MonoBehaviour:
       Data: 33
     - Name: $v
       Entry: 7
-      Data: 67|Csv.Resource[], Assembly-CSharp
+      Data: 34|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 68|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1246,13 +1246,13 @@ MonoBehaviour:
       Data: 34
     - Name: $v
       Entry: 7
-      Data: 69|Csv.Resource[], Assembly-CSharp
+      Data: 35|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 70|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1282,13 +1282,13 @@ MonoBehaviour:
       Data: 35
     - Name: $v
       Entry: 7
-      Data: 71|Csv.Resource[], Assembly-CSharp
+      Data: 36|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 72|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1318,13 +1318,13 @@ MonoBehaviour:
       Data: 36
     - Name: $v
       Entry: 7
-      Data: 73|Csv.Resource[], Assembly-CSharp
+      Data: 37|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 74|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1354,13 +1354,13 @@ MonoBehaviour:
       Data: 37
     - Name: $v
       Entry: 7
-      Data: 75|Csv.Resource[], Assembly-CSharp
+      Data: 38|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 76|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1390,13 +1390,13 @@ MonoBehaviour:
       Data: 38
     - Name: $v
       Entry: 7
-      Data: 77|Csv.Resource[], Assembly-CSharp
+      Data: 39|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 78|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1426,13 +1426,13 @@ MonoBehaviour:
       Data: 39
     - Name: $v
       Entry: 7
-      Data: 79|Csv.Resource[], Assembly-CSharp
+      Data: 40|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 80|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1462,13 +1462,13 @@ MonoBehaviour:
       Data: 40
     - Name: $v
       Entry: 7
-      Data: 81|Csv.Resource[], Assembly-CSharp
+      Data: 41|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 82|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1498,13 +1498,13 @@ MonoBehaviour:
       Data: 41
     - Name: $v
       Entry: 7
-      Data: 83|Csv.Resource[], Assembly-CSharp
+      Data: 42|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 84|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1534,13 +1534,13 @@ MonoBehaviour:
       Data: 42
     - Name: $v
       Entry: 7
-      Data: 85|Csv.Resource[], Assembly-CSharp
+      Data: 43|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 86|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1570,13 +1570,13 @@ MonoBehaviour:
       Data: 43
     - Name: $v
       Entry: 7
-      Data: 87|Csv.Resource[], Assembly-CSharp
+      Data: 44|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 88|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1606,13 +1606,13 @@ MonoBehaviour:
       Data: 44
     - Name: $v
       Entry: 7
-      Data: 89|Csv.Resource[], Assembly-CSharp
+      Data: 45|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 90|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1642,13 +1642,13 @@ MonoBehaviour:
       Data: 45
     - Name: $v
       Entry: 7
-      Data: 91|Csv.Resource[], Assembly-CSharp
+      Data: 46|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 92|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1678,13 +1678,13 @@ MonoBehaviour:
       Data: 46
     - Name: $v
       Entry: 7
-      Data: 93|Csv.Resource[], Assembly-CSharp
+      Data: 47|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 94|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1714,13 +1714,13 @@ MonoBehaviour:
       Data: 47
     - Name: $v
       Entry: 7
-      Data: 95|Csv.Resource[], Assembly-CSharp
+      Data: 48|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 96|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1750,13 +1750,13 @@ MonoBehaviour:
       Data: 48
     - Name: $v
       Entry: 7
-      Data: 97|Csv.Resource[], Assembly-CSharp
+      Data: 49|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 98|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1786,13 +1786,13 @@ MonoBehaviour:
       Data: 49
     - Name: $v
       Entry: 7
-      Data: 99|Csv.Resource[], Assembly-CSharp
+      Data: 50|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 100|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1822,13 +1822,13 @@ MonoBehaviour:
       Data: 50
     - Name: $v
       Entry: 7
-      Data: 101|Csv.Resource[], Assembly-CSharp
+      Data: 51|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 102|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1858,13 +1858,13 @@ MonoBehaviour:
       Data: 51
     - Name: $v
       Entry: 7
-      Data: 103|Csv.Resource[], Assembly-CSharp
+      Data: 52|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 104|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1894,13 +1894,13 @@ MonoBehaviour:
       Data: 52
     - Name: $v
       Entry: 7
-      Data: 105|Csv.Resource[], Assembly-CSharp
+      Data: 53|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 106|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1930,13 +1930,13 @@ MonoBehaviour:
       Data: 53
     - Name: $v
       Entry: 7
-      Data: 107|Csv.Resource[], Assembly-CSharp
+      Data: 54|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 108|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -1966,13 +1966,13 @@ MonoBehaviour:
       Data: 54
     - Name: $v
       Entry: 7
-      Data: 109|Csv.Resource[], Assembly-CSharp
+      Data: 55|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 110|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2002,13 +2002,13 @@ MonoBehaviour:
       Data: 55
     - Name: $v
       Entry: 7
-      Data: 111|Csv.Resource[], Assembly-CSharp
+      Data: 56|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 112|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2038,13 +2038,13 @@ MonoBehaviour:
       Data: 56
     - Name: $v
       Entry: 7
-      Data: 113|Csv.Resource[], Assembly-CSharp
+      Data: 57|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 114|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2074,13 +2074,13 @@ MonoBehaviour:
       Data: 57
     - Name: $v
       Entry: 7
-      Data: 115|Csv.Resource[], Assembly-CSharp
+      Data: 58|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 116|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2110,13 +2110,13 @@ MonoBehaviour:
       Data: 58
     - Name: $v
       Entry: 7
-      Data: 117|Csv.Resource[], Assembly-CSharp
+      Data: 59|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 118|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2146,13 +2146,13 @@ MonoBehaviour:
       Data: 59
     - Name: $v
       Entry: 7
-      Data: 119|Csv.Resource[], Assembly-CSharp
+      Data: 60|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 120|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2182,13 +2182,13 @@ MonoBehaviour:
       Data: 60
     - Name: $v
       Entry: 7
-      Data: 121|Csv.Resource[], Assembly-CSharp
+      Data: 61|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 122|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2218,13 +2218,13 @@ MonoBehaviour:
       Data: 61
     - Name: $v
       Entry: 7
-      Data: 123|Csv.Resource[], Assembly-CSharp
+      Data: 62|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 124|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2254,13 +2254,13 @@ MonoBehaviour:
       Data: 62
     - Name: $v
       Entry: 7
-      Data: 125|Csv.Resource[], Assembly-CSharp
+      Data: 63|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 126|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2290,13 +2290,13 @@ MonoBehaviour:
       Data: 63
     - Name: $v
       Entry: 7
-      Data: 127|Csv.Resource[], Assembly-CSharp
+      Data: 64|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 128|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2326,13 +2326,13 @@ MonoBehaviour:
       Data: 64
     - Name: $v
       Entry: 7
-      Data: 129|Csv.Resource[], Assembly-CSharp
+      Data: 65|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 130|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2362,13 +2362,13 @@ MonoBehaviour:
       Data: 65
     - Name: $v
       Entry: 7
-      Data: 131|Csv.Resource[], Assembly-CSharp
+      Data: 66|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 132|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2398,13 +2398,13 @@ MonoBehaviour:
       Data: 66
     - Name: $v
       Entry: 7
-      Data: 133|Csv.Resource[], Assembly-CSharp
+      Data: 67|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 134|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2434,13 +2434,13 @@ MonoBehaviour:
       Data: 67
     - Name: $v
       Entry: 7
-      Data: 135|Csv.Resource[], Assembly-CSharp
+      Data: 68|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 136|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2470,13 +2470,13 @@ MonoBehaviour:
       Data: 68
     - Name: $v
       Entry: 7
-      Data: 137|Csv.Resource[], Assembly-CSharp
+      Data: 69|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 138|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2506,13 +2506,13 @@ MonoBehaviour:
       Data: 69
     - Name: $v
       Entry: 7
-      Data: 139|Csv.Resource[], Assembly-CSharp
+      Data: 70|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 140|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2542,13 +2542,13 @@ MonoBehaviour:
       Data: 70
     - Name: $v
       Entry: 7
-      Data: 141|Csv.Resource[], Assembly-CSharp
+      Data: 71|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 142|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2578,13 +2578,13 @@ MonoBehaviour:
       Data: 71
     - Name: $v
       Entry: 7
-      Data: 143|Csv.Resource[], Assembly-CSharp
+      Data: 72|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 144|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2614,13 +2614,13 @@ MonoBehaviour:
       Data: 72
     - Name: $v
       Entry: 7
-      Data: 145|Csv.Resource[], Assembly-CSharp
+      Data: 73|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 146|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2650,13 +2650,13 @@ MonoBehaviour:
       Data: 73
     - Name: $v
       Entry: 7
-      Data: 147|Csv.Resource[], Assembly-CSharp
+      Data: 74|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 148|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2686,13 +2686,13 @@ MonoBehaviour:
       Data: 74
     - Name: $v
       Entry: 7
-      Data: 149|Csv.Resource[], Assembly-CSharp
+      Data: 75|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 150|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2722,13 +2722,13 @@ MonoBehaviour:
       Data: 75
     - Name: $v
       Entry: 7
-      Data: 151|Csv.Resource[], Assembly-CSharp
+      Data: 76|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 152|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2758,13 +2758,13 @@ MonoBehaviour:
       Data: 76
     - Name: $v
       Entry: 7
-      Data: 153|Csv.Resource[], Assembly-CSharp
+      Data: 77|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 154|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2794,13 +2794,13 @@ MonoBehaviour:
       Data: 77
     - Name: $v
       Entry: 7
-      Data: 155|Csv.Resource[], Assembly-CSharp
+      Data: 78|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 156|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2830,13 +2830,13 @@ MonoBehaviour:
       Data: 78
     - Name: $v
       Entry: 7
-      Data: 157|Csv.Resource[], Assembly-CSharp
+      Data: 79|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 158|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2866,13 +2866,13 @@ MonoBehaviour:
       Data: 79
     - Name: $v
       Entry: 7
-      Data: 159|Csv.Resource[], Assembly-CSharp
+      Data: 80|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 160|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2902,13 +2902,13 @@ MonoBehaviour:
       Data: 80
     - Name: $v
       Entry: 7
-      Data: 161|Csv.Resource[], Assembly-CSharp
+      Data: 81|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 162|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2938,13 +2938,13 @@ MonoBehaviour:
       Data: 81
     - Name: $v
       Entry: 7
-      Data: 163|Csv.Resource[], Assembly-CSharp
+      Data: 82|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 164|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -2974,13 +2974,13 @@ MonoBehaviour:
       Data: 82
     - Name: $v
       Entry: 7
-      Data: 165|Csv.Resource[], Assembly-CSharp
+      Data: 83|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 166|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3010,13 +3010,13 @@ MonoBehaviour:
       Data: 83
     - Name: $v
       Entry: 7
-      Data: 167|Csv.Resource[], Assembly-CSharp
+      Data: 84|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 168|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3046,13 +3046,13 @@ MonoBehaviour:
       Data: 84
     - Name: $v
       Entry: 7
-      Data: 169|Csv.Resource[], Assembly-CSharp
+      Data: 85|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 170|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3082,13 +3082,13 @@ MonoBehaviour:
       Data: 85
     - Name: $v
       Entry: 7
-      Data: 171|Csv.Resource[], Assembly-CSharp
+      Data: 86|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 172|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3118,13 +3118,13 @@ MonoBehaviour:
       Data: 86
     - Name: $v
       Entry: 7
-      Data: 173|Csv.Resource[], Assembly-CSharp
+      Data: 87|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 174|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3154,13 +3154,13 @@ MonoBehaviour:
       Data: 87
     - Name: $v
       Entry: 7
-      Data: 175|Csv.Resource[], Assembly-CSharp
+      Data: 88|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 176|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3190,13 +3190,13 @@ MonoBehaviour:
       Data: 88
     - Name: $v
       Entry: 7
-      Data: 177|Csv.Resource[], Assembly-CSharp
+      Data: 89|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 178|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3226,13 +3226,13 @@ MonoBehaviour:
       Data: 89
     - Name: $v
       Entry: 7
-      Data: 179|Csv.Resource[], Assembly-CSharp
+      Data: 90|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 180|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3262,13 +3262,13 @@ MonoBehaviour:
       Data: 90
     - Name: $v
       Entry: 7
-      Data: 181|Csv.Resource[], Assembly-CSharp
+      Data: 91|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 182|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3298,13 +3298,13 @@ MonoBehaviour:
       Data: 91
     - Name: $v
       Entry: 7
-      Data: 183|Csv.Resource[], Assembly-CSharp
+      Data: 92|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 184|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3334,13 +3334,13 @@ MonoBehaviour:
       Data: 92
     - Name: $v
       Entry: 7
-      Data: 185|Csv.Resource[], Assembly-CSharp
+      Data: 93|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 186|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3370,13 +3370,13 @@ MonoBehaviour:
       Data: 93
     - Name: $v
       Entry: 7
-      Data: 187|Csv.Resource[], Assembly-CSharp
+      Data: 94|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 188|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3406,13 +3406,13 @@ MonoBehaviour:
       Data: 94
     - Name: $v
       Entry: 7
-      Data: 189|Csv.Resource[], Assembly-CSharp
+      Data: 95|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 190|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3442,13 +3442,13 @@ MonoBehaviour:
       Data: 95
     - Name: $v
       Entry: 7
-      Data: 191|Csv.Resource[], Assembly-CSharp
+      Data: 96|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 192|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3478,13 +3478,13 @@ MonoBehaviour:
       Data: 96
     - Name: $v
       Entry: 7
-      Data: 193|Csv.Resource[], Assembly-CSharp
+      Data: 97|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 194|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3514,13 +3514,13 @@ MonoBehaviour:
       Data: 97
     - Name: $v
       Entry: 7
-      Data: 195|Csv.Resource[], Assembly-CSharp
+      Data: 98|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 196|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3550,13 +3550,13 @@ MonoBehaviour:
       Data: 98
     - Name: $v
       Entry: 7
-      Data: 197|Csv.Resource[], Assembly-CSharp
+      Data: 99|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 198|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3586,13 +3586,13 @@ MonoBehaviour:
       Data: 99
     - Name: $v
       Entry: 7
-      Data: 199|Csv.Resource[], Assembly-CSharp
+      Data: 100|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 200|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3622,13 +3622,13 @@ MonoBehaviour:
       Data: 100
     - Name: $v
       Entry: 7
-      Data: 201|Csv.Resource[], Assembly-CSharp
+      Data: 101|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 202|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3658,13 +3658,13 @@ MonoBehaviour:
       Data: 101
     - Name: $v
       Entry: 7
-      Data: 203|Csv.Resource[], Assembly-CSharp
+      Data: 102|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 204|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3694,13 +3694,13 @@ MonoBehaviour:
       Data: 102
     - Name: $v
       Entry: 7
-      Data: 205|Csv.Resource[], Assembly-CSharp
+      Data: 103|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 206|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3730,13 +3730,13 @@ MonoBehaviour:
       Data: 103
     - Name: $v
       Entry: 7
-      Data: 207|Csv.Resource[], Assembly-CSharp
+      Data: 104|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 208|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3766,13 +3766,13 @@ MonoBehaviour:
       Data: 104
     - Name: $v
       Entry: 7
-      Data: 209|Csv.Resource[], Assembly-CSharp
+      Data: 105|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 210|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3802,13 +3802,13 @@ MonoBehaviour:
       Data: 105
     - Name: $v
       Entry: 7
-      Data: 211|Csv.Resource[], Assembly-CSharp
+      Data: 106|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 212|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3838,13 +3838,13 @@ MonoBehaviour:
       Data: 106
     - Name: $v
       Entry: 7
-      Data: 213|Csv.Resource[], Assembly-CSharp
+      Data: 107|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 214|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3874,13 +3874,13 @@ MonoBehaviour:
       Data: 107
     - Name: $v
       Entry: 7
-      Data: 215|Csv.Resource[], Assembly-CSharp
+      Data: 108|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 216|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3910,13 +3910,13 @@ MonoBehaviour:
       Data: 108
     - Name: $v
       Entry: 7
-      Data: 217|Csv.Resource[], Assembly-CSharp
+      Data: 109|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 218|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3946,13 +3946,13 @@ MonoBehaviour:
       Data: 109
     - Name: $v
       Entry: 7
-      Data: 219|Csv.Resource[], Assembly-CSharp
+      Data: 110|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 220|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -3982,13 +3982,13 @@ MonoBehaviour:
       Data: 110
     - Name: $v
       Entry: 7
-      Data: 221|Csv.Resource[], Assembly-CSharp
+      Data: 111|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 222|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4018,13 +4018,13 @@ MonoBehaviour:
       Data: 111
     - Name: $v
       Entry: 7
-      Data: 223|Csv.Resource[], Assembly-CSharp
+      Data: 112|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 224|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4054,13 +4054,13 @@ MonoBehaviour:
       Data: 112
     - Name: $v
       Entry: 7
-      Data: 225|Csv.Resource[], Assembly-CSharp
+      Data: 113|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 226|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4090,13 +4090,13 @@ MonoBehaviour:
       Data: 113
     - Name: $v
       Entry: 7
-      Data: 227|Csv.Resource[], Assembly-CSharp
+      Data: 114|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 228|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4126,13 +4126,13 @@ MonoBehaviour:
       Data: 114
     - Name: $v
       Entry: 7
-      Data: 229|Csv.Resource[], Assembly-CSharp
+      Data: 115|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 230|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4162,13 +4162,13 @@ MonoBehaviour:
       Data: 115
     - Name: $v
       Entry: 7
-      Data: 231|Csv.Resource[], Assembly-CSharp
+      Data: 116|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 232|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4198,13 +4198,13 @@ MonoBehaviour:
       Data: 116
     - Name: $v
       Entry: 7
-      Data: 233|Csv.Resource[], Assembly-CSharp
+      Data: 117|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 234|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4234,13 +4234,13 @@ MonoBehaviour:
       Data: 117
     - Name: $v
       Entry: 7
-      Data: 235|Csv.Resource[], Assembly-CSharp
+      Data: 118|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 236|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4270,13 +4270,13 @@ MonoBehaviour:
       Data: 118
     - Name: $v
       Entry: 7
-      Data: 237|Csv.Resource[], Assembly-CSharp
+      Data: 119|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 238|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4306,13 +4306,13 @@ MonoBehaviour:
       Data: 119
     - Name: $v
       Entry: 7
-      Data: 239|Csv.Resource[], Assembly-CSharp
+      Data: 120|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 240|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4342,13 +4342,13 @@ MonoBehaviour:
       Data: 120
     - Name: $v
       Entry: 7
-      Data: 241|Csv.Resource[], Assembly-CSharp
+      Data: 121|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 242|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4378,13 +4378,13 @@ MonoBehaviour:
       Data: 121
     - Name: $v
       Entry: 7
-      Data: 243|Csv.Resource[], Assembly-CSharp
+      Data: 122|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 244|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4414,13 +4414,13 @@ MonoBehaviour:
       Data: 122
     - Name: $v
       Entry: 7
-      Data: 245|Csv.Resource[], Assembly-CSharp
+      Data: 123|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 246|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4450,13 +4450,13 @@ MonoBehaviour:
       Data: 123
     - Name: $v
       Entry: 7
-      Data: 247|Csv.Resource[], Assembly-CSharp
+      Data: 124|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 248|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4486,13 +4486,13 @@ MonoBehaviour:
       Data: 124
     - Name: $v
       Entry: 7
-      Data: 249|Csv.Resource[], Assembly-CSharp
+      Data: 125|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 250|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4522,13 +4522,13 @@ MonoBehaviour:
       Data: 125
     - Name: $v
       Entry: 7
-      Data: 251|Csv.Resource[], Assembly-CSharp
+      Data: 126|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 252|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4558,13 +4558,13 @@ MonoBehaviour:
       Data: 126
     - Name: $v
       Entry: 7
-      Data: 253|Csv.Resource[], Assembly-CSharp
+      Data: 127|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 254|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4594,13 +4594,13 @@ MonoBehaviour:
       Data: 127
     - Name: $v
       Entry: 7
-      Data: 255|Csv.Resource[], Assembly-CSharp
+      Data: 128|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 256|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4630,13 +4630,13 @@ MonoBehaviour:
       Data: 128
     - Name: $v
       Entry: 7
-      Data: 257|Csv.Resource[], Assembly-CSharp
+      Data: 129|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 258|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4666,13 +4666,13 @@ MonoBehaviour:
       Data: 129
     - Name: $v
       Entry: 7
-      Data: 259|Csv.Resource[], Assembly-CSharp
+      Data: 130|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 260|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4702,13 +4702,13 @@ MonoBehaviour:
       Data: 130
     - Name: $v
       Entry: 7
-      Data: 261|Csv.Resource[], Assembly-CSharp
+      Data: 131|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 262|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4738,13 +4738,13 @@ MonoBehaviour:
       Data: 131
     - Name: $v
       Entry: 7
-      Data: 263|Csv.Resource[], Assembly-CSharp
+      Data: 132|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 264|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4774,13 +4774,13 @@ MonoBehaviour:
       Data: 132
     - Name: $v
       Entry: 7
-      Data: 265|Csv.Resource[], Assembly-CSharp
+      Data: 133|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 266|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4810,13 +4810,13 @@ MonoBehaviour:
       Data: 133
     - Name: $v
       Entry: 7
-      Data: 267|Csv.Resource[], Assembly-CSharp
+      Data: 134|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 268|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4846,13 +4846,13 @@ MonoBehaviour:
       Data: 134
     - Name: $v
       Entry: 7
-      Data: 269|Csv.Resource[], Assembly-CSharp
+      Data: 135|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 270|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4882,13 +4882,13 @@ MonoBehaviour:
       Data: 135
     - Name: $v
       Entry: 7
-      Data: 271|Csv.Resource[], Assembly-CSharp
+      Data: 136|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 272|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4918,13 +4918,13 @@ MonoBehaviour:
       Data: 136
     - Name: $v
       Entry: 7
-      Data: 273|Csv.Resource[], Assembly-CSharp
+      Data: 137|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 274|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4954,13 +4954,13 @@ MonoBehaviour:
       Data: 137
     - Name: $v
       Entry: 7
-      Data: 275|Csv.Resource[], Assembly-CSharp
+      Data: 138|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 276|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -4990,13 +4990,13 @@ MonoBehaviour:
       Data: 138
     - Name: $v
       Entry: 7
-      Data: 277|Csv.Resource[], Assembly-CSharp
+      Data: 139|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 278|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5026,13 +5026,13 @@ MonoBehaviour:
       Data: 139
     - Name: $v
       Entry: 7
-      Data: 279|Csv.Resource[], Assembly-CSharp
+      Data: 140|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 280|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5062,13 +5062,13 @@ MonoBehaviour:
       Data: 140
     - Name: $v
       Entry: 7
-      Data: 281|Csv.Resource[], Assembly-CSharp
+      Data: 141|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 282|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5098,13 +5098,13 @@ MonoBehaviour:
       Data: 141
     - Name: $v
       Entry: 7
-      Data: 283|Csv.Resource[], Assembly-CSharp
+      Data: 142|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 284|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5134,13 +5134,13 @@ MonoBehaviour:
       Data: 142
     - Name: $v
       Entry: 7
-      Data: 285|Csv.Resource[], Assembly-CSharp
+      Data: 143|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 286|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5170,13 +5170,13 @@ MonoBehaviour:
       Data: 143
     - Name: $v
       Entry: 7
-      Data: 287|Csv.Resource[], Assembly-CSharp
+      Data: 144|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 288|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5206,13 +5206,13 @@ MonoBehaviour:
       Data: 144
     - Name: $v
       Entry: 7
-      Data: 289|Csv.Resource[], Assembly-CSharp
+      Data: 145|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 290|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5242,13 +5242,13 @@ MonoBehaviour:
       Data: 145
     - Name: $v
       Entry: 7
-      Data: 291|Csv.Resource[], Assembly-CSharp
+      Data: 146|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 292|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5278,13 +5278,13 @@ MonoBehaviour:
       Data: 146
     - Name: $v
       Entry: 7
-      Data: 293|Csv.Resource[], Assembly-CSharp
+      Data: 147|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 294|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5314,13 +5314,13 @@ MonoBehaviour:
       Data: 147
     - Name: $v
       Entry: 7
-      Data: 295|Csv.Resource[], Assembly-CSharp
+      Data: 148|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 296|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5350,13 +5350,13 @@ MonoBehaviour:
       Data: 148
     - Name: $v
       Entry: 7
-      Data: 297|Csv.Resource[], Assembly-CSharp
+      Data: 149|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 298|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5386,13 +5386,13 @@ MonoBehaviour:
       Data: 149
     - Name: $v
       Entry: 7
-      Data: 299|Csv.Resource[], Assembly-CSharp
+      Data: 150|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 300|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5422,13 +5422,13 @@ MonoBehaviour:
       Data: 150
     - Name: $v
       Entry: 7
-      Data: 301|Csv.Resource[], Assembly-CSharp
+      Data: 151|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 302|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5458,13 +5458,13 @@ MonoBehaviour:
       Data: 151
     - Name: $v
       Entry: 7
-      Data: 303|Csv.Resource[], Assembly-CSharp
+      Data: 152|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 304|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5494,13 +5494,13 @@ MonoBehaviour:
       Data: 152
     - Name: $v
       Entry: 7
-      Data: 305|Csv.Resource[], Assembly-CSharp
+      Data: 153|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 306|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5530,13 +5530,13 @@ MonoBehaviour:
       Data: 153
     - Name: $v
       Entry: 7
-      Data: 307|Csv.Resource[], Assembly-CSharp
+      Data: 154|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 308|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5566,13 +5566,13 @@ MonoBehaviour:
       Data: 154
     - Name: $v
       Entry: 7
-      Data: 309|Csv.Resource[], Assembly-CSharp
+      Data: 155|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 310|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5602,13 +5602,13 @@ MonoBehaviour:
       Data: 155
     - Name: $v
       Entry: 7
-      Data: 311|Csv.Resource[], Assembly-CSharp
+      Data: 156|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 312|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5638,13 +5638,13 @@ MonoBehaviour:
       Data: 156
     - Name: $v
       Entry: 7
-      Data: 313|Csv.Resource[], Assembly-CSharp
+      Data: 157|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 314|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5674,13 +5674,13 @@ MonoBehaviour:
       Data: 157
     - Name: $v
       Entry: 7
-      Data: 315|Csv.Resource[], Assembly-CSharp
+      Data: 158|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 316|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5710,13 +5710,13 @@ MonoBehaviour:
       Data: 158
     - Name: $v
       Entry: 7
-      Data: 317|Csv.Resource[], Assembly-CSharp
+      Data: 159|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 318|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5746,13 +5746,13 @@ MonoBehaviour:
       Data: 159
     - Name: $v
       Entry: 7
-      Data: 319|Csv.Resource[], Assembly-CSharp
+      Data: 160|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 320|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5782,13 +5782,13 @@ MonoBehaviour:
       Data: 160
     - Name: $v
       Entry: 7
-      Data: 321|Csv.Resource[], Assembly-CSharp
+      Data: 161|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 322|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5818,13 +5818,13 @@ MonoBehaviour:
       Data: 161
     - Name: $v
       Entry: 7
-      Data: 323|Csv.Resource[], Assembly-CSharp
+      Data: 162|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 324|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5854,13 +5854,13 @@ MonoBehaviour:
       Data: 162
     - Name: $v
       Entry: 7
-      Data: 325|Csv.Resource[], Assembly-CSharp
+      Data: 163|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 326|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5890,13 +5890,13 @@ MonoBehaviour:
       Data: 163
     - Name: $v
       Entry: 7
-      Data: 327|Csv.Resource[], Assembly-CSharp
+      Data: 164|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 328|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5926,13 +5926,13 @@ MonoBehaviour:
       Data: 164
     - Name: $v
       Entry: 7
-      Data: 329|Csv.Resource[], Assembly-CSharp
+      Data: 165|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 330|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5962,13 +5962,13 @@ MonoBehaviour:
       Data: 165
     - Name: $v
       Entry: 7
-      Data: 331|Csv.Resource[], Assembly-CSharp
+      Data: 166|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 332|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -5998,13 +5998,13 @@ MonoBehaviour:
       Data: 166
     - Name: $v
       Entry: 7
-      Data: 333|Csv.Resource[], Assembly-CSharp
+      Data: 167|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 334|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6034,13 +6034,13 @@ MonoBehaviour:
       Data: 167
     - Name: $v
       Entry: 7
-      Data: 335|Csv.Resource[], Assembly-CSharp
+      Data: 168|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 336|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6070,13 +6070,13 @@ MonoBehaviour:
       Data: 168
     - Name: $v
       Entry: 7
-      Data: 337|Csv.Resource[], Assembly-CSharp
+      Data: 169|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 338|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6106,13 +6106,13 @@ MonoBehaviour:
       Data: 169
     - Name: $v
       Entry: 7
-      Data: 339|Csv.Resource[], Assembly-CSharp
+      Data: 170|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 340|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6142,13 +6142,13 @@ MonoBehaviour:
       Data: 170
     - Name: $v
       Entry: 7
-      Data: 341|Csv.Resource[], Assembly-CSharp
+      Data: 171|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 342|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6178,13 +6178,13 @@ MonoBehaviour:
       Data: 171
     - Name: $v
       Entry: 7
-      Data: 343|Csv.Resource[], Assembly-CSharp
+      Data: 172|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 344|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6214,13 +6214,13 @@ MonoBehaviour:
       Data: 172
     - Name: $v
       Entry: 7
-      Data: 345|Csv.Resource[], Assembly-CSharp
+      Data: 173|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 346|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6250,13 +6250,13 @@ MonoBehaviour:
       Data: 173
     - Name: $v
       Entry: 7
-      Data: 347|Csv.Resource[], Assembly-CSharp
+      Data: 174|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 348|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6286,13 +6286,13 @@ MonoBehaviour:
       Data: 174
     - Name: $v
       Entry: 7
-      Data: 349|Csv.Resource[], Assembly-CSharp
+      Data: 175|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 350|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6322,13 +6322,13 @@ MonoBehaviour:
       Data: 175
     - Name: $v
       Entry: 7
-      Data: 351|Csv.Resource[], Assembly-CSharp
+      Data: 176|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 352|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6358,13 +6358,13 @@ MonoBehaviour:
       Data: 176
     - Name: $v
       Entry: 7
-      Data: 353|Csv.Resource[], Assembly-CSharp
+      Data: 177|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 354|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6394,13 +6394,13 @@ MonoBehaviour:
       Data: 177
     - Name: $v
       Entry: 7
-      Data: 355|Csv.Resource[], Assembly-CSharp
+      Data: 178|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 356|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6430,13 +6430,13 @@ MonoBehaviour:
       Data: 178
     - Name: $v
       Entry: 7
-      Data: 357|Csv.Resource[], Assembly-CSharp
+      Data: 179|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 358|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6466,13 +6466,13 @@ MonoBehaviour:
       Data: 179
     - Name: $v
       Entry: 7
-      Data: 359|Csv.Resource[], Assembly-CSharp
+      Data: 180|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 360|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6502,13 +6502,13 @@ MonoBehaviour:
       Data: 180
     - Name: $v
       Entry: 7
-      Data: 361|Csv.Resource[], Assembly-CSharp
+      Data: 181|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 362|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6538,13 +6538,13 @@ MonoBehaviour:
       Data: 181
     - Name: $v
       Entry: 7
-      Data: 363|Csv.Resource[], Assembly-CSharp
+      Data: 182|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 364|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6574,13 +6574,13 @@ MonoBehaviour:
       Data: 182
     - Name: $v
       Entry: 7
-      Data: 365|Csv.Resource[], Assembly-CSharp
+      Data: 183|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 366|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6610,13 +6610,13 @@ MonoBehaviour:
       Data: 183
     - Name: $v
       Entry: 7
-      Data: 367|Csv.Resource[], Assembly-CSharp
+      Data: 184|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 368|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6646,13 +6646,13 @@ MonoBehaviour:
       Data: 184
     - Name: $v
       Entry: 7
-      Data: 369|Csv.Resource[], Assembly-CSharp
+      Data: 185|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 370|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6682,13 +6682,13 @@ MonoBehaviour:
       Data: 185
     - Name: $v
       Entry: 7
-      Data: 371|Csv.Resource[], Assembly-CSharp
+      Data: 186|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 372|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6718,13 +6718,13 @@ MonoBehaviour:
       Data: 186
     - Name: $v
       Entry: 7
-      Data: 373|Csv.Resource[], Assembly-CSharp
+      Data: 187|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 374|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6754,13 +6754,13 @@ MonoBehaviour:
       Data: 187
     - Name: $v
       Entry: 7
-      Data: 375|Csv.Resource[], Assembly-CSharp
+      Data: 188|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 376|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6790,13 +6790,13 @@ MonoBehaviour:
       Data: 188
     - Name: $v
       Entry: 7
-      Data: 377|Csv.Resource[], Assembly-CSharp
+      Data: 189|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 378|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6826,13 +6826,13 @@ MonoBehaviour:
       Data: 189
     - Name: $v
       Entry: 7
-      Data: 379|Csv.Resource[], Assembly-CSharp
+      Data: 190|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 380|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6862,13 +6862,13 @@ MonoBehaviour:
       Data: 190
     - Name: $v
       Entry: 7
-      Data: 381|Csv.Resource[], Assembly-CSharp
+      Data: 191|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 382|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6898,13 +6898,13 @@ MonoBehaviour:
       Data: 191
     - Name: $v
       Entry: 7
-      Data: 383|Csv.Resource[], Assembly-CSharp
+      Data: 192|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 384|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6934,13 +6934,13 @@ MonoBehaviour:
       Data: 192
     - Name: $v
       Entry: 7
-      Data: 385|Csv.Resource[], Assembly-CSharp
+      Data: 193|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 386|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -6970,13 +6970,13 @@ MonoBehaviour:
       Data: 193
     - Name: $v
       Entry: 7
-      Data: 387|Csv.Resource[], Assembly-CSharp
+      Data: 194|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 388|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7006,13 +7006,13 @@ MonoBehaviour:
       Data: 194
     - Name: $v
       Entry: 7
-      Data: 389|Csv.Resource[], Assembly-CSharp
+      Data: 195|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 390|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7042,13 +7042,13 @@ MonoBehaviour:
       Data: 195
     - Name: $v
       Entry: 7
-      Data: 391|Csv.Resource[], Assembly-CSharp
+      Data: 196|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 392|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7078,13 +7078,13 @@ MonoBehaviour:
       Data: 196
     - Name: $v
       Entry: 7
-      Data: 393|Csv.Resource[], Assembly-CSharp
+      Data: 197|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 394|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7114,13 +7114,13 @@ MonoBehaviour:
       Data: 197
     - Name: $v
       Entry: 7
-      Data: 395|Csv.Resource[], Assembly-CSharp
+      Data: 198|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 396|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7150,13 +7150,13 @@ MonoBehaviour:
       Data: 198
     - Name: $v
       Entry: 7
-      Data: 397|Csv.Resource[], Assembly-CSharp
+      Data: 199|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 398|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7186,13 +7186,13 @@ MonoBehaviour:
       Data: 199
     - Name: $v
       Entry: 7
-      Data: 399|Csv.Resource[], Assembly-CSharp
+      Data: 200|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 400|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7222,13 +7222,13 @@ MonoBehaviour:
       Data: 200
     - Name: $v
       Entry: 7
-      Data: 401|Csv.Resource[], Assembly-CSharp
+      Data: 201|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 402|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7258,13 +7258,13 @@ MonoBehaviour:
       Data: 201
     - Name: $v
       Entry: 7
-      Data: 403|Csv.Resource[], Assembly-CSharp
+      Data: 202|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 404|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7294,13 +7294,13 @@ MonoBehaviour:
       Data: 202
     - Name: $v
       Entry: 7
-      Data: 405|Csv.Resource[], Assembly-CSharp
+      Data: 203|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 406|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7330,13 +7330,13 @@ MonoBehaviour:
       Data: 203
     - Name: $v
       Entry: 7
-      Data: 407|Csv.Resource[], Assembly-CSharp
+      Data: 204|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 408|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7366,13 +7366,13 @@ MonoBehaviour:
       Data: 204
     - Name: $v
       Entry: 7
-      Data: 409|Csv.Resource[], Assembly-CSharp
+      Data: 205|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 410|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7402,13 +7402,13 @@ MonoBehaviour:
       Data: 205
     - Name: $v
       Entry: 7
-      Data: 411|Csv.Resource[], Assembly-CSharp
+      Data: 206|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 412|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7438,13 +7438,13 @@ MonoBehaviour:
       Data: 206
     - Name: $v
       Entry: 7
-      Data: 413|Csv.Resource[], Assembly-CSharp
+      Data: 207|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 414|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7474,13 +7474,13 @@ MonoBehaviour:
       Data: 207
     - Name: $v
       Entry: 7
-      Data: 415|Csv.Resource[], Assembly-CSharp
+      Data: 208|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 416|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7510,13 +7510,13 @@ MonoBehaviour:
       Data: 208
     - Name: $v
       Entry: 7
-      Data: 417|Csv.Resource[], Assembly-CSharp
+      Data: 209|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 418|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7546,13 +7546,13 @@ MonoBehaviour:
       Data: 209
     - Name: $v
       Entry: 7
-      Data: 419|Csv.Resource[], Assembly-CSharp
+      Data: 210|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 420|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7582,13 +7582,13 @@ MonoBehaviour:
       Data: 210
     - Name: $v
       Entry: 7
-      Data: 421|Csv.Resource[], Assembly-CSharp
+      Data: 211|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 422|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7618,13 +7618,13 @@ MonoBehaviour:
       Data: 211
     - Name: $v
       Entry: 7
-      Data: 423|Csv.Resource[], Assembly-CSharp
+      Data: 212|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 424|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7654,13 +7654,13 @@ MonoBehaviour:
       Data: 212
     - Name: $v
       Entry: 7
-      Data: 425|Csv.Resource[], Assembly-CSharp
+      Data: 213|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 426|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7690,13 +7690,13 @@ MonoBehaviour:
       Data: 213
     - Name: $v
       Entry: 7
-      Data: 427|Csv.Resource[], Assembly-CSharp
+      Data: 214|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 428|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7726,13 +7726,13 @@ MonoBehaviour:
       Data: 214
     - Name: $v
       Entry: 7
-      Data: 429|Csv.Resource[], Assembly-CSharp
+      Data: 215|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 430|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7762,13 +7762,13 @@ MonoBehaviour:
       Data: 215
     - Name: $v
       Entry: 7
-      Data: 431|Csv.Resource[], Assembly-CSharp
+      Data: 216|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 432|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7798,13 +7798,13 @@ MonoBehaviour:
       Data: 216
     - Name: $v
       Entry: 7
-      Data: 433|Csv.Resource[], Assembly-CSharp
+      Data: 217|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 434|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7834,13 +7834,13 @@ MonoBehaviour:
       Data: 217
     - Name: $v
       Entry: 7
-      Data: 435|Csv.Resource[], Assembly-CSharp
+      Data: 218|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 436|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7870,13 +7870,13 @@ MonoBehaviour:
       Data: 218
     - Name: $v
       Entry: 7
-      Data: 437|Csv.Resource[], Assembly-CSharp
+      Data: 219|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 438|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7906,13 +7906,13 @@ MonoBehaviour:
       Data: 219
     - Name: $v
       Entry: 7
-      Data: 439|Csv.Resource[], Assembly-CSharp
+      Data: 220|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 440|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7942,13 +7942,13 @@ MonoBehaviour:
       Data: 220
     - Name: $v
       Entry: 7
-      Data: 441|Csv.Resource[], Assembly-CSharp
+      Data: 221|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 442|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -7978,13 +7978,13 @@ MonoBehaviour:
       Data: 221
     - Name: $v
       Entry: 7
-      Data: 443|Csv.Resource[], Assembly-CSharp
+      Data: 222|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 444|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8014,13 +8014,13 @@ MonoBehaviour:
       Data: 222
     - Name: $v
       Entry: 7
-      Data: 445|Csv.Resource[], Assembly-CSharp
+      Data: 223|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 446|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8050,13 +8050,13 @@ MonoBehaviour:
       Data: 223
     - Name: $v
       Entry: 7
-      Data: 447|Csv.Resource[], Assembly-CSharp
+      Data: 224|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 448|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8086,13 +8086,13 @@ MonoBehaviour:
       Data: 224
     - Name: $v
       Entry: 7
-      Data: 449|Csv.Resource[], Assembly-CSharp
+      Data: 225|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 450|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8122,13 +8122,13 @@ MonoBehaviour:
       Data: 225
     - Name: $v
       Entry: 7
-      Data: 451|Csv.Resource[], Assembly-CSharp
+      Data: 226|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 452|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8158,13 +8158,13 @@ MonoBehaviour:
       Data: 226
     - Name: $v
       Entry: 7
-      Data: 453|Csv.Resource[], Assembly-CSharp
+      Data: 227|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 454|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8194,13 +8194,13 @@ MonoBehaviour:
       Data: 227
     - Name: $v
       Entry: 7
-      Data: 455|Csv.Resource[], Assembly-CSharp
+      Data: 228|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 456|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8230,13 +8230,13 @@ MonoBehaviour:
       Data: 228
     - Name: $v
       Entry: 7
-      Data: 457|Csv.Resource[], Assembly-CSharp
+      Data: 229|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 458|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8266,13 +8266,13 @@ MonoBehaviour:
       Data: 229
     - Name: $v
       Entry: 7
-      Data: 459|Csv.Resource[], Assembly-CSharp
+      Data: 230|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 460|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8302,13 +8302,13 @@ MonoBehaviour:
       Data: 230
     - Name: $v
       Entry: 7
-      Data: 461|Csv.Resource[], Assembly-CSharp
+      Data: 231|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 462|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8338,13 +8338,13 @@ MonoBehaviour:
       Data: 231
     - Name: $v
       Entry: 7
-      Data: 463|Csv.Resource[], Assembly-CSharp
+      Data: 232|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 464|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8374,13 +8374,13 @@ MonoBehaviour:
       Data: 232
     - Name: $v
       Entry: 7
-      Data: 465|Csv.Resource[], Assembly-CSharp
+      Data: 233|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 466|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8410,13 +8410,13 @@ MonoBehaviour:
       Data: 233
     - Name: $v
       Entry: 7
-      Data: 467|Csv.Resource[], Assembly-CSharp
+      Data: 234|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 468|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8446,13 +8446,13 @@ MonoBehaviour:
       Data: 234
     - Name: $v
       Entry: 7
-      Data: 469|Csv.Resource[], Assembly-CSharp
+      Data: 235|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 470|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8482,13 +8482,13 @@ MonoBehaviour:
       Data: 235
     - Name: $v
       Entry: 7
-      Data: 471|Csv.Resource[], Assembly-CSharp
+      Data: 236|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 472|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8518,13 +8518,13 @@ MonoBehaviour:
       Data: 236
     - Name: $v
       Entry: 7
-      Data: 473|Csv.Resource[], Assembly-CSharp
+      Data: 237|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 474|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8554,13 +8554,13 @@ MonoBehaviour:
       Data: 237
     - Name: $v
       Entry: 7
-      Data: 475|Csv.Resource[], Assembly-CSharp
+      Data: 238|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 476|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8590,13 +8590,13 @@ MonoBehaviour:
       Data: 238
     - Name: $v
       Entry: 7
-      Data: 477|Csv.Resource[], Assembly-CSharp
+      Data: 239|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 478|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8626,13 +8626,13 @@ MonoBehaviour:
       Data: 239
     - Name: $v
       Entry: 7
-      Data: 479|Csv.Resource[], Assembly-CSharp
+      Data: 240|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 480|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8662,13 +8662,13 @@ MonoBehaviour:
       Data: 240
     - Name: $v
       Entry: 7
-      Data: 481|Csv.Resource[], Assembly-CSharp
+      Data: 241|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 482|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8698,13 +8698,13 @@ MonoBehaviour:
       Data: 241
     - Name: $v
       Entry: 7
-      Data: 483|Csv.Resource[], Assembly-CSharp
+      Data: 242|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 484|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8734,13 +8734,13 @@ MonoBehaviour:
       Data: 242
     - Name: $v
       Entry: 7
-      Data: 485|Csv.Resource[], Assembly-CSharp
+      Data: 243|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 486|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8770,13 +8770,13 @@ MonoBehaviour:
       Data: 243
     - Name: $v
       Entry: 7
-      Data: 487|Csv.Resource[], Assembly-CSharp
+      Data: 244|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 488|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8806,13 +8806,13 @@ MonoBehaviour:
       Data: 244
     - Name: $v
       Entry: 7
-      Data: 489|Csv.Resource[], Assembly-CSharp
+      Data: 245|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 490|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8842,13 +8842,13 @@ MonoBehaviour:
       Data: 245
     - Name: $v
       Entry: 7
-      Data: 491|Csv.Resource[], Assembly-CSharp
+      Data: 246|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 492|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8878,13 +8878,13 @@ MonoBehaviour:
       Data: 246
     - Name: $v
       Entry: 7
-      Data: 493|Csv.Resource[], Assembly-CSharp
+      Data: 247|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 494|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8914,13 +8914,13 @@ MonoBehaviour:
       Data: 247
     - Name: $v
       Entry: 7
-      Data: 495|Csv.Resource[], Assembly-CSharp
+      Data: 248|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 496|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8950,13 +8950,13 @@ MonoBehaviour:
       Data: 248
     - Name: $v
       Entry: 7
-      Data: 497|Csv.Resource[], Assembly-CSharp
+      Data: 249|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 498|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -8986,13 +8986,13 @@ MonoBehaviour:
       Data: 249
     - Name: $v
       Entry: 7
-      Data: 499|Csv.Resource[], Assembly-CSharp
+      Data: 250|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 500|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9022,13 +9022,13 @@ MonoBehaviour:
       Data: 250
     - Name: $v
       Entry: 7
-      Data: 501|Csv.Resource[], Assembly-CSharp
+      Data: 251|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 502|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9058,13 +9058,13 @@ MonoBehaviour:
       Data: 251
     - Name: $v
       Entry: 7
-      Data: 503|Csv.Resource[], Assembly-CSharp
+      Data: 252|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 504|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9094,13 +9094,13 @@ MonoBehaviour:
       Data: 252
     - Name: $v
       Entry: 7
-      Data: 505|Csv.Resource[], Assembly-CSharp
+      Data: 253|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 506|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9130,13 +9130,13 @@ MonoBehaviour:
       Data: 253
     - Name: $v
       Entry: 7
-      Data: 507|Csv.Resource[], Assembly-CSharp
+      Data: 254|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 508|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9166,13 +9166,13 @@ MonoBehaviour:
       Data: 254
     - Name: $v
       Entry: 7
-      Data: 509|Csv.Resource[], Assembly-CSharp
+      Data: 255|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 510|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9202,13 +9202,13 @@ MonoBehaviour:
       Data: 255
     - Name: $v
       Entry: 7
-      Data: 511|Csv.Resource[], Assembly-CSharp
+      Data: 256|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 512|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9238,13 +9238,13 @@ MonoBehaviour:
       Data: 256
     - Name: $v
       Entry: 7
-      Data: 513|Csv.Resource[], Assembly-CSharp
+      Data: 257|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 514|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9274,13 +9274,13 @@ MonoBehaviour:
       Data: 257
     - Name: $v
       Entry: 7
-      Data: 515|Csv.Resource[], Assembly-CSharp
+      Data: 258|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 516|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9310,13 +9310,13 @@ MonoBehaviour:
       Data: 258
     - Name: $v
       Entry: 7
-      Data: 517|Csv.Resource[], Assembly-CSharp
+      Data: 259|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 518|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9346,13 +9346,13 @@ MonoBehaviour:
       Data: 259
     - Name: $v
       Entry: 7
-      Data: 519|Csv.Resource[], Assembly-CSharp
+      Data: 260|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 520|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9382,13 +9382,13 @@ MonoBehaviour:
       Data: 260
     - Name: $v
       Entry: 7
-      Data: 521|Csv.Resource[], Assembly-CSharp
+      Data: 261|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 522|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9418,13 +9418,13 @@ MonoBehaviour:
       Data: 261
     - Name: $v
       Entry: 7
-      Data: 523|Csv.Resource[], Assembly-CSharp
+      Data: 262|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 524|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9454,13 +9454,13 @@ MonoBehaviour:
       Data: 262
     - Name: $v
       Entry: 7
-      Data: 525|Csv.Resource[], Assembly-CSharp
+      Data: 263|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 526|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9490,13 +9490,13 @@ MonoBehaviour:
       Data: 263
     - Name: $v
       Entry: 7
-      Data: 527|Csv.Resource[], Assembly-CSharp
+      Data: 264|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 528|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9526,13 +9526,13 @@ MonoBehaviour:
       Data: 264
     - Name: $v
       Entry: 7
-      Data: 529|Csv.Resource[], Assembly-CSharp
+      Data: 265|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 530|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9562,13 +9562,13 @@ MonoBehaviour:
       Data: 265
     - Name: $v
       Entry: 7
-      Data: 531|Csv.Resource[], Assembly-CSharp
+      Data: 266|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 532|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9598,13 +9598,13 @@ MonoBehaviour:
       Data: 266
     - Name: $v
       Entry: 7
-      Data: 533|Csv.Resource[], Assembly-CSharp
+      Data: 267|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 534|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9634,13 +9634,13 @@ MonoBehaviour:
       Data: 267
     - Name: $v
       Entry: 7
-      Data: 535|Csv.Resource[], Assembly-CSharp
+      Data: 268|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 536|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9670,13 +9670,13 @@ MonoBehaviour:
       Data: 268
     - Name: $v
       Entry: 7
-      Data: 537|Csv.Resource[], Assembly-CSharp
+      Data: 269|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 538|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9706,13 +9706,13 @@ MonoBehaviour:
       Data: 269
     - Name: $v
       Entry: 7
-      Data: 539|Csv.Resource[], Assembly-CSharp
+      Data: 270|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 540|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9742,13 +9742,13 @@ MonoBehaviour:
       Data: 270
     - Name: $v
       Entry: 7
-      Data: 541|Csv.Resource[], Assembly-CSharp
+      Data: 271|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 542|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9778,13 +9778,13 @@ MonoBehaviour:
       Data: 271
     - Name: $v
       Entry: 7
-      Data: 543|Csv.Resource[], Assembly-CSharp
+      Data: 272|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 544|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9814,13 +9814,13 @@ MonoBehaviour:
       Data: 272
     - Name: $v
       Entry: 7
-      Data: 545|Csv.Resource[], Assembly-CSharp
+      Data: 273|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 546|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9850,13 +9850,13 @@ MonoBehaviour:
       Data: 273
     - Name: $v
       Entry: 7
-      Data: 547|Csv.Resource[], Assembly-CSharp
+      Data: 274|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 548|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9886,13 +9886,13 @@ MonoBehaviour:
       Data: 274
     - Name: $v
       Entry: 7
-      Data: 549|Csv.Resource[], Assembly-CSharp
+      Data: 275|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 550|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9922,13 +9922,13 @@ MonoBehaviour:
       Data: 275
     - Name: $v
       Entry: 7
-      Data: 551|Csv.Resource[], Assembly-CSharp
+      Data: 276|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 552|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9958,13 +9958,13 @@ MonoBehaviour:
       Data: 276
     - Name: $v
       Entry: 7
-      Data: 553|Csv.Resource[], Assembly-CSharp
+      Data: 277|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 554|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -9994,13 +9994,13 @@ MonoBehaviour:
       Data: 277
     - Name: $v
       Entry: 7
-      Data: 555|Csv.Resource[], Assembly-CSharp
+      Data: 278|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 556|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10030,13 +10030,13 @@ MonoBehaviour:
       Data: 278
     - Name: $v
       Entry: 7
-      Data: 557|Csv.Resource[], Assembly-CSharp
+      Data: 279|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 558|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10066,13 +10066,13 @@ MonoBehaviour:
       Data: 279
     - Name: $v
       Entry: 7
-      Data: 559|Csv.Resource[], Assembly-CSharp
+      Data: 280|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 560|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10102,13 +10102,13 @@ MonoBehaviour:
       Data: 280
     - Name: $v
       Entry: 7
-      Data: 561|Csv.Resource[], Assembly-CSharp
+      Data: 281|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 562|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10138,13 +10138,13 @@ MonoBehaviour:
       Data: 281
     - Name: $v
       Entry: 7
-      Data: 563|Csv.Resource[], Assembly-CSharp
+      Data: 282|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 564|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10174,13 +10174,13 @@ MonoBehaviour:
       Data: 282
     - Name: $v
       Entry: 7
-      Data: 565|Csv.Resource[], Assembly-CSharp
+      Data: 283|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 566|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10210,13 +10210,13 @@ MonoBehaviour:
       Data: 283
     - Name: $v
       Entry: 7
-      Data: 567|Csv.Resource[], Assembly-CSharp
+      Data: 284|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 568|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10246,13 +10246,13 @@ MonoBehaviour:
       Data: 284
     - Name: $v
       Entry: 7
-      Data: 569|Csv.Resource[], Assembly-CSharp
+      Data: 285|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 570|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10282,13 +10282,13 @@ MonoBehaviour:
       Data: 285
     - Name: $v
       Entry: 7
-      Data: 571|Csv.Resource[], Assembly-CSharp
+      Data: 286|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 572|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10318,13 +10318,13 @@ MonoBehaviour:
       Data: 286
     - Name: $v
       Entry: 7
-      Data: 573|Csv.Resource[], Assembly-CSharp
+      Data: 287|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 574|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10354,13 +10354,13 @@ MonoBehaviour:
       Data: 287
     - Name: $v
       Entry: 7
-      Data: 575|Csv.Resource[], Assembly-CSharp
+      Data: 288|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 576|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10390,13 +10390,13 @@ MonoBehaviour:
       Data: 288
     - Name: $v
       Entry: 7
-      Data: 577|Csv.Resource[], Assembly-CSharp
+      Data: 289|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 578|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10426,13 +10426,13 @@ MonoBehaviour:
       Data: 289
     - Name: $v
       Entry: 7
-      Data: 579|Csv.Resource[], Assembly-CSharp
+      Data: 290|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 580|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10462,13 +10462,13 @@ MonoBehaviour:
       Data: 290
     - Name: $v
       Entry: 7
-      Data: 581|Csv.Resource[], Assembly-CSharp
+      Data: 291|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 582|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10498,13 +10498,13 @@ MonoBehaviour:
       Data: 291
     - Name: $v
       Entry: 7
-      Data: 583|Csv.Resource[], Assembly-CSharp
+      Data: 292|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 584|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10534,13 +10534,13 @@ MonoBehaviour:
       Data: 292
     - Name: $v
       Entry: 7
-      Data: 585|Csv.Resource[], Assembly-CSharp
+      Data: 293|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 586|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10570,13 +10570,13 @@ MonoBehaviour:
       Data: 293
     - Name: $v
       Entry: 7
-      Data: 587|Csv.Resource[], Assembly-CSharp
+      Data: 294|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 588|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10606,13 +10606,13 @@ MonoBehaviour:
       Data: 294
     - Name: $v
       Entry: 7
-      Data: 589|Csv.Resource[], Assembly-CSharp
+      Data: 295|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 590|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10642,13 +10642,13 @@ MonoBehaviour:
       Data: 295
     - Name: $v
       Entry: 7
-      Data: 591|Csv.Resource[], Assembly-CSharp
+      Data: 296|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 592|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10678,13 +10678,13 @@ MonoBehaviour:
       Data: 296
     - Name: $v
       Entry: 7
-      Data: 593|Csv.Resource[], Assembly-CSharp
+      Data: 297|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 594|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10714,13 +10714,13 @@ MonoBehaviour:
       Data: 297
     - Name: $v
       Entry: 7
-      Data: 595|Csv.Resource[], Assembly-CSharp
+      Data: 298|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 596|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10750,13 +10750,13 @@ MonoBehaviour:
       Data: 298
     - Name: $v
       Entry: 7
-      Data: 597|Csv.Resource[], Assembly-CSharp
+      Data: 299|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 598|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10786,13 +10786,13 @@ MonoBehaviour:
       Data: 299
     - Name: $v
       Entry: 7
-      Data: 599|Csv.Resource[], Assembly-CSharp
+      Data: 300|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 600|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2
@@ -10822,13 +10822,13 @@ MonoBehaviour:
       Data: 300
     - Name: $v
       Entry: 7
-      Data: 601|Csv.Resource[], Assembly-CSharp
+      Data: 301|Csv.Resource[], CsvReaderSamples
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 602|Csv.Resource, Assembly-CSharp
+      Data: Csv.Resource, CsvReaderSamples
     - Name: resourceType
       Entry: 3
       Data: 2

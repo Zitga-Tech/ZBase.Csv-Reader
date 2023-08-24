@@ -14,12 +14,12 @@ namespace Csv
             [CsvColumnIgnore]
             public int stId;
             
-            [CsvColumn(ColumnName = "st_id")]
+            [CsvColumnAttribute(ColumnName = "st_id")]
             public int stageId;
 
             public Resource[] rewards;
             
-            [CsvColumnFormat(ColumnFormat = "fc_{0}")]
+            [CsvColumnFormatAttribute(ColumnFormat = "fc_{0}")]
             public Resource[] firstClearRewards;
         }
     }

@@ -15,6 +15,8 @@ MonoBehaviour:
   dashAbilityData:
   - dataId: 1
     id: 1
+  - dataId: 2
+    id: 3
   fireballAbilityData:
   - dataId: 1
     id: 0

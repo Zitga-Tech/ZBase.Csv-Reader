@@ -28,21 +28,21 @@ MonoBehaviour:
       resource:
         resourceType: 0
         resourceId: 1
-        resourceNumber: 21
+        resourceNumber: 2147483647
     - isFirst: 0
       resource:
         resourceType: 0
         resourceId: 2
-        resourceNumber: 10
+        resourceNumber: 2147483647
   - stage: 101002
     rewardInfo:
     - isFirst: 1
       resource:
         resourceType: 0
         resourceId: 1
-        resourceNumber: 20
+        resourceNumber: 2147483647
     - isFirst: 0
       resource:
         resourceType: 0
         resourceId: 2
-        resourceNumber: 11
+        resourceNumber: 2147483647

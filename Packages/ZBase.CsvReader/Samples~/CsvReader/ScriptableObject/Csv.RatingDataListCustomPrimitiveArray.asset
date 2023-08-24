@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fae6fdc6fd4e42a4092c2abcf999e0c6, type: 3}
-  m_Name: Csv.RatingDataList
+  m_Script: {fileID: 11500000, guid: d3989e2cff6140c7badc37456d9cb688, type: 3}
+  m_Name: Csv.RatingDataListCustomPrimitiveArray
   m_EditorClassIdentifier: 
   dataGroups:
   - mapId: 4

@@ -1,12 +1,14 @@
 using System;
+using System.ComponentModel;
 
 namespace Csv
 {
     [Serializable]
-    public class Resource
+    public struct Resource
     {
         public int resourceType;
         public int resourceId;
-        public int resourceNumber;
+        [DefaultValue(int.MaxValue)]
+        public long resourceNumber;
     }
 }

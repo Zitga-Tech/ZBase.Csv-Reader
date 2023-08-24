@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using UnityEngine;
 
 namespace Csv
@@ -15,6 +16,7 @@ namespace Csv
         public ReviveAbilityData[] reviveAbilityData;
     }
     
+    [DefaultValue(Revive)]
     public enum AbilityType
     {
         Fireball = 0,
