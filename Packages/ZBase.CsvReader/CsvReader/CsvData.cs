@@ -99,7 +99,7 @@ namespace CsvReader
 
         public ClassInfo? GetClassInfo(string csvPath)
         {
-            return this.classInfomations.FirstOrDefault(classInfo => classInfo.csvInformations.Any(csvInfo => csvPath.Contains(csvInfo.csvPath)));
+            return this.classInfomations.FirstOrDefault(classInfo => classInfo.csvInformations.Any(csvInfo => (!csvInfo.usingFolder && csvPath.Contains(csvInfo.csvPath)) || (csvInfo.usingFolder && csvPath.Contains(csvInfo.csvFolderPath))));
         }
 
         [Serializable]
@@ -108,9 +108,23 @@ namespace CsvReader
             [HideInInspector] public string className = string.Empty;
 
             [AssetsOnly, Required] [OnValueChanged("OnCsvFileChange")]
+            [HideIf(nameof(usingFolder))]
             public TextAsset? csvFile;
-
+            
+            [HideIf(nameof(usingFolder))]
             [ReadOnly] public string csvPath = string.Empty;
+
+            public bool usingFolder;
+            [ShowIf(nameof(usingFolder))]
+            [PropertySpace(20)]
+            [FolderPath(RequireExistingPath = true)]
+            public string csvFolderPath = string.Empty;
+
+            [ShowIf(nameof(usingFolder))]
+            public bool separateScriptableObject = false;
+            [ShowIf(nameof(usingFolder))]
+            [Tooltip("Let empty if not separate ScriptableObject, it's used to create distinct scriptableObject's names depends on remain part without 'start with' part")]
+            public string fileStartWith = "";
 
 #pragma warning disable CS8618
             [ValueDropdown("GetAllFields", AppendNextDrawer = true, IsUniqueList = true,

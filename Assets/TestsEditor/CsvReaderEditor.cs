@@ -32,7 +32,7 @@ public class CsvReaderEditorTest
     [Test]
     public void CsvReaderEditorTestRatingDataListCustomPrimitiveArray()
     {
-        Assert.IsTrue(CompareTwoClass<RatingDataListCustomPrimitiveArray, RatingDataList>());
+        Assert.IsTrue(CompareTwoClass<RatingDataListCustomPrimitiveArray, RatingDataList>(typeof(RatingDataListCustomPrimitiveArray).FullName, typeof(RatingDataList).FullName));
     }
 
     [Test]
@@ -53,20 +53,41 @@ public class CsvReaderEditorTest
         Assert.IsTrue(CompareTwoClass<StageReward>());
     }
 
-
-    private static bool CompareTwoClass<T>() where T : ScriptableObject
+    [Test]
+    public void CsvReaderEditorTestHeroConfig()
     {
-        var fullName = typeof(T).FullName;
+        Assert.IsTrue(CompareTwoClass<HeroConfig>());
+    }
+
+    [Test]
+    public void CsvReaderEditorTestZombieConfig()
+    {
+        var testZombieIds = new [] {2001, 2002};
+        var isTrue = true;
+        foreach (var testZombieId in testZombieIds)
+        {
+            var resultCompare = CompareTwoClass<ZombieConfig>($"{typeof(ZombieConfig).FullName}_{testZombieId}");
+            if (!resultCompare)
+            {
+                isTrue = false;
+                break;
+            }
+        }
+        Assert.IsTrue(isTrue);
+    }
+
+
+    private static bool CompareTwoClass<T>(string inputFullName = "") where T : ScriptableObject
+    {
+        var fullName = string.IsNullOrEmpty(inputFullName) ? typeof(T).FullName : inputFullName;
         var validateData = AssetDatabase.LoadAssetAtPath<T>(string.Format(ASSET_PATH, fullName));
         var newData = AssetDatabase.LoadAssetAtPath<T>(string.Format(ASSET_PATH_VALIDATE, fullName));
 
         return JsonCompare(fullName, validateData, newData);
     }
 
-    private static bool CompareTwoClass<TU, TV>() where TU : ScriptableObject where TV : ScriptableObject
+    private static bool CompareTwoClass<TU, TV>(string fullNameU, string fullNameV) where TU : ScriptableObject where TV : ScriptableObject
     {
-        var fullNameU = typeof(TU).FullName;
-        var fullNameV = typeof(TV).FullName;
         var newData = AssetDatabase.LoadAssetAtPath<TU>(string.Format(ASSET_PATH, fullNameU));
         var validateData = AssetDatabase.LoadAssetAtPath<TV>(string.Format(ASSET_PATH_VALIDATE, fullNameV));
 
