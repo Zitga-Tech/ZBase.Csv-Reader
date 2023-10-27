@@ -86,7 +86,7 @@ namespace CsvReader
                     }
                     else
                     {
-                        // Get all files in the same patterns.
+                        // Get all files in the same folders.
                         var directoryInfo = new DirectoryInfo(csvInfo.csvFolderPath);
                         FileInfo[] files = directoryInfo.GetFiles("*.csv");
 
@@ -94,14 +94,21 @@ namespace CsvReader
                         {
                             foreach (var file in files)
                             {
-                                var relativeFilePath = Path.Combine(csvInfo.csvFolderPath,file.Name);
                                 var distinctPart = file.Name.Replace(csvInfo.fileStartWith, "");
+                                if (!assetPath.EndsWith(distinctPart))
+                                {
+                                    continue;
+                                }
+
+                                var relativeFilePath = Path.Combine(csvInfo.csvFolderPath,file.Name);
+
                                 var convertedFilePath = relativeFilePath.Replace("\\", "/");
                                 var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(convertedFilePath);
 
                                 if (textAsset)
                                 {
-                                    string nameAsset = $"{csvInfo.className}_{distinctPart}.asset";
+                                    distinctPart = distinctPart.Replace(".csv", "");
+                                    string nameAsset = $"{csvInfo.className}{distinctPart}.asset";
                                     string assetFile = $"{CsvConfig.Instance.scriptableObjectPath}/{nameAsset}";
 
                                     var gm = AssetDatabase.LoadAssetAtPath(assetFile, collectionType);
