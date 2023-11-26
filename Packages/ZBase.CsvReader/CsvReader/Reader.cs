@@ -30,9 +30,9 @@ namespace CsvReader
             for (int i = 0; i < rows[0].Length; i++)
             {
                 string id = rows[0][i];
-                if (CsvUtils.IsValidKeyFormat(id))
+                if (CsvReaderUtils.IsValidKeyFormat(id))
                 {
-                    var camelId = CsvUtils.ConvertSnakeCaseToCamelCase(id);
+                    var camelId = CsvReaderUtils.ConvertSnakeCaseToCamelCase(id);
 
                     if (!table.ContainsKey(camelId))
                     {
@@ -70,7 +70,7 @@ namespace CsvReader
                 var ignoredAttributes = tmp.GetCustomAttributes(typeof(CsvColumnIgnore), true);
                 if (ignoredAttributes.Length > 0) continue;
 
-                bool isPrimitive = CsvUtils.IsPrimitive(tmp, s_isCustomPrimitiveArray);
+                bool isPrimitive = CsvReaderUtils.IsPrimitive(tmp, s_isCustomPrimitiveArray);
                 if (isPrimitive)
                 {
                     string csvColumnName = GetFieldCsvColumnName(tmp, format);
@@ -91,13 +91,13 @@ namespace CsvReader
 
                     if (tmp.FieldType.IsArray)
                     {
-                        var elementType = CsvUtils.GetElementTypeFromFieldInfo(tmp);
+                        var elementType = CsvReaderUtils.GetElementTypeFromFieldInfo(tmp);
 
                         string csvColumnName = GetFieldCsvColumnName(tmp, format);
 
                         int objectIndex;
 
-                        var isElementPrimitive = CsvUtils.IsPrimitive(elementType);
+                        var isElementPrimitive = CsvReaderUtils.IsPrimitive(elementType);
 
                         if (isElementPrimitive)
                         {
@@ -145,7 +145,7 @@ namespace CsvReader
                             throw new Exception("Full name is nil");
                         }
 
-                        Type elementType = CsvUtils.GetType(typeName);
+                        Type elementType = CsvReaderUtils.GetType(typeName);
 
                         var objectIndex = GetObjectIndex(elementType, table);
 
@@ -368,10 +368,10 @@ namespace CsvReader
             if (attributes.Length > 0)
             {
                 CsvColumnAttribute csvColumnAttribute = (CsvColumnAttribute)attributes[0];
-                return CsvUtils.ConvertSnakeCaseToCamelCase(string.Format(format, csvColumnAttribute.ColumnName));
+                return CsvReaderUtils.ConvertSnakeCaseToCamelCase(string.Format(format, csvColumnAttribute.ColumnName));
             }
 
-            return CsvUtils.ConvertSnakeCaseToCamelCase(string.Format(format, fieldInfo.Name));
+            return CsvReaderUtils.ConvertSnakeCaseToCamelCase(string.Format(format, fieldInfo.Name));
         }
 
         private static string GetCsvColumnFormat(FieldInfo fieldInfo)
@@ -442,7 +442,7 @@ namespace CsvReader
             }
             if (type.IsEnum)
             {
-                return CsvUtils.GetDefaultValue(type).ToString();
+                return CsvReaderUtils.GetDefaultValue(type).ToString();
             }
                 
             throw new Exception($"{typeof(Type).FullName} is not support default value. Current support (string, numeric, enum, true/false");

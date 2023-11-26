@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace CsvReader
 {
-    public static class CsvUtils
+    public static class CsvReaderUtils
     {
         private static readonly HashSet<Type> s_numericTypes = new() {
             typeof(int),  typeof(double),  typeof(decimal),

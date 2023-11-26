@@ -154,7 +154,7 @@ namespace CsvReader
 
             public IEnumerable GetAllFields()
             {
-                var fieldNames = CsvUtils.GetAllArrayField(this.className);
+                var fieldNames = CsvReaderUtils.GetAllArrayField(this.className);
 
                 foreach (var t in fieldNames)
                 {
@@ -164,7 +164,7 @@ namespace CsvReader
 
             public IEnumerable GetAllMethods()
             {
-                var methodNames = CsvUtils.GetAllMethod(this.className);
+                var methodNames = CsvReaderUtils.GetAllMethod(this.className);
                 foreach (var t in methodNames)
                 {
                     yield return t;

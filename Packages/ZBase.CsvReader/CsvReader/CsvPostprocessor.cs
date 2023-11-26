@@ -38,7 +38,7 @@ namespace CsvReader
 
                 foreach (var csvInfo in classInformation.csvInformations)
                 {
-                    var collectionType = CsvUtils.GetType(csvInfo.className) ??
+                    var collectionType = CsvReaderUtils.GetType(csvInfo.className) ??
                                          throw new ArgumentNullException(
                                              $"Class name is null: Class Name[{csvInfo.className}], Asset Path[{assetPath}]");
 
@@ -64,7 +64,7 @@ namespace CsvReader
                             var field = gm.GetType().GetField(csvInfo.fieldSetValue,
                             BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
 
-                            var dataType = CsvUtils.GetElementTypeFromFieldInfo(field);
+                            var dataType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
 
                             var result = Reader.Deserialize(dataType, csvInfo.csvFile.text);
 
@@ -121,7 +121,7 @@ namespace CsvReader
                                     var field = gm.GetType().GetField(csvInfo.fieldSetValue,
                                         BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
 
-                                    var dataType = CsvUtils.GetElementTypeFromFieldInfo(field);
+                                    var dataType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
 
                                     var result = Reader.Deserialize(dataType, textAsset.text);
 
@@ -155,7 +155,7 @@ namespace CsvReader
 
                             var field = gm.GetType().GetField(csvInfo.fieldSetValue,
                                         BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-                            var dataType = CsvUtils.GetElementTypeFromFieldInfo(field);
+                            var dataType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
                             // ===================
 
                             Type genericListType = typeof(List<>).MakeGenericType(dataType);

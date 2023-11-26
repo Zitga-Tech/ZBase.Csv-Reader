@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5cc97c7f0085624b6ef57853d70b404440060cef"
+    },
+    "com.github-glitchenzo.nugetforunity": {
+      "version": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "441f6df275ff7bb54169554231ff0f8211148b1e"
+    },
     "com.unity.collab-proxy": {
       "version": "2.0.7",
       "depth": 0,
@@ -15,7 +29,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.24",
+      "version": "3.0.26",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -24,7 +38,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.20",
+      "version": "2.0.22",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -40,7 +54,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.newtonsoft-json": {
-      "version": "3.0.2",
+      "version": "3.2.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -97,7 +111,7 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.zitga.zbase.csv-reader": {
+    "com.zbase.csv-reader": {
       "version": "file:ZBase.CsvReader",
       "depth": 0,
       "source": "embedded",
