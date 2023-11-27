@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using CsvDownloader;
 using UnityEditor;
 using UnityEngine;
 
@@ -15,42 +16,183 @@ namespace CsvReader
         static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets,
             string[] movedFromAssetPaths)
         {
+            bool isReaderConfigUpdated = false;
+            bool isDownloaderConfigUpdated = false;
+            
             foreach (string assetPath in importedAssets)
             {
-                if (Path.GetExtension(assetPath) != ".csv")
+                if (Path.GetExtension(assetPath).Equals(".csv"))
                 {
-                    continue;
+                    ProcessCsv(assetPath);
                 }
-
-                if (CsvConfig.Instance.csvPath.Equals(string.Empty))
+                else
                 {
-                    throw new ArgumentException("Csv path can't be null");
-                }
-
-                if (assetPath.IndexOf(CsvConfig.Instance.csvPath, StringComparison.Ordinal) == -1)
-                {
-                    continue;
-                }
-
-                var classInformation = CsvDataController.Instance.GetClassInfo(assetPath) ??
-                                       throw new ArgumentNullException(
-                                           $"Can't find csv config: Asset Path[{assetPath}]");
-
-                foreach (var csvInfo in classInformation.csvInformations)
-                {
-                    var collectionType = CsvReaderUtils.GetType(csvInfo.className) ??
-                                         throw new ArgumentNullException(
-                                             $"Class name is null: Class Name[{csvInfo.className}], Asset Path[{assetPath}]");
-
-                    if (CsvConfig.Instance.scriptableObjectPath.Equals(string.Empty))
+                    if (Path.GetExtension(assetPath) != ".asset")
                     {
-                        throw new ArgumentException("ScriptableObject path can't be null");
+                        continue;
+                    }
+                    
+                    if (isReaderConfigUpdated == false && assetPath.IndexOf(CsvConfig.Instance.readerConfigPath, StringComparison.Ordinal) != -1)
+                    {
+                        isReaderConfigUpdated = true;
+                        continue;
+                    }
+                    
+                    if (isDownloaderConfigUpdated == false && assetPath.IndexOf(CsvConfig.Instance.downloaderConfigPath, StringComparison.Ordinal) != -1)
+                    {
+                        isDownloaderConfigUpdated = true;
+                        continue;
                     }
 
-                    if (!csvInfo.usingFolder)
+                    if (isReaderConfigUpdated && isDownloaderConfigUpdated)
                     {
-                        string nameAsset = $"{csvInfo.className}.asset";
+                        break;
+                    }
+                }
+            }
 
+            if (isReaderConfigUpdated)
+            {
+                var guids = AssetDatabase.FindAssets("t:ScriptableObject", new[] { CsvConfig.Instance.readerConfigPath });
+
+                CsvDataController.Instance.data = guids.Select(AssetDatabase.GUIDToAssetPath)
+                    .Select(AssetDatabase.LoadAssetAtPath<CsvData>).Where(data => data).ToArray();
+            }
+
+            if (isDownloaderConfigUpdated)
+            {
+                var guids = AssetDatabase.FindAssets("t:ScriptableObject", new[] { CsvConfig.Instance.downloaderConfigPath });
+
+                CsvDownloaderController.Instance.data = guids.Select(AssetDatabase.GUIDToAssetPath)
+                    .Select(AssetDatabase.LoadAssetAtPath<CsvDownloaderGroupItemConfig>).Where(data => data).ToArray();
+            }
+        }
+
+        static void ProcessCsv(string assetPath)
+        {
+            if (CsvConfig.Instance.csvPath.Equals(string.Empty))
+            {
+                throw new ArgumentException("Csv path can't be null");
+            }
+
+            if (assetPath.IndexOf(CsvConfig.Instance.csvPath, StringComparison.Ordinal) == -1)
+            {
+                return;
+            }
+
+            var classInformation = CsvDataController.Instance.GetClassInfo(assetPath) ??
+                                   throw new ArgumentNullException(
+                                       $"Can't find csv config: Asset Path[{assetPath}]");
+
+            foreach (var csvInfo in classInformation.csvInformations)
+            {
+                var collectionType = CsvReaderUtils.GetType(csvInfo.className) ??
+                                     throw new ArgumentNullException(
+                                         $"Class name is null: Class Name[{csvInfo.className}], Asset Path[{assetPath}]");
+
+                if (CsvConfig.Instance.scriptableObjectPath.Equals(string.Empty))
+                {
+                    throw new ArgumentException("ScriptableObject path can't be null");
+                }
+
+                if (!csvInfo.usingFolder)
+                {
+                    string nameAsset = $"{csvInfo.className}.asset";
+
+                    string assetFile = $"{CsvConfig.Instance.scriptableObjectPath}/{nameAsset}";
+                    var gm = AssetDatabase.LoadAssetAtPath(assetFile, collectionType);
+                    if (gm == null)
+                    {
+                        gm = ScriptableObject.CreateInstance(collectionType);
+                        AssetDatabase.CreateAsset(gm, assetFile);
+                    }
+
+                    if (csvInfo.csvFile != null)
+                    {
+                        var field = gm.GetType().GetField(csvInfo.fieldSetValue,
+                            BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+
+                        var dataType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
+
+                        var result = Reader.Deserialize(dataType, csvInfo.csvFile.text);
+
+                        if (field != null)
+                        {
+                            field.SetValue(gm, result);
+
+                            if (csvInfo.isConvert)
+                            {
+                                var method = gm.GetType().GetMethod(csvInfo.convertMethod);
+                                method?.Invoke(gm, null);
+                                if (field.IsPrivate) field.SetValue(gm, null);
+                            }
+                        }
+
+                        EditorUtility.SetDirty(gm);
+                        AssetDatabase.SaveAssets();
+                    }
+                }
+                else
+                {
+                    // Get all files in the same folders.
+                    var directoryInfo = new DirectoryInfo(csvInfo.csvFolderPath);
+                    FileInfo[] files = directoryInfo.GetFiles("*.csv");
+
+                    if (csvInfo.separateScriptableObject)
+                    {
+                        foreach (var file in files)
+                        {
+                            var distinctPart = file.Name.Replace(csvInfo.fileStartWith, "");
+                            if (!assetPath.EndsWith(distinctPart))
+                            {
+                                continue;
+                            }
+
+                            var relativeFilePath = Path.Combine(csvInfo.csvFolderPath, file.Name);
+
+                            var convertedFilePath = relativeFilePath.Replace("\\", "/");
+                            var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(convertedFilePath);
+
+                            if (textAsset)
+                            {
+                                distinctPart = distinctPart.Replace(".csv", "");
+                                string nameAsset = $"{csvInfo.className}{distinctPart}.asset";
+                                string assetFile = $"{CsvConfig.Instance.scriptableObjectPath}/{nameAsset}";
+
+                                var gm = AssetDatabase.LoadAssetAtPath(assetFile, collectionType);
+                                if (gm == null)
+                                {
+                                    gm = ScriptableObject.CreateInstance(collectionType);
+                                    AssetDatabase.CreateAsset(gm, assetFile);
+                                }
+
+                                var field = gm.GetType().GetField(csvInfo.fieldSetValue,
+                                    BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+
+                                var dataType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
+
+                                var result = Reader.Deserialize(dataType, textAsset.text);
+
+                                if (field != null)
+                                {
+                                    field.SetValue(gm, result);
+                                    if (csvInfo.isConvert)
+                                    {
+                                        var method = gm.GetType().GetMethod(csvInfo.convertMethod);
+                                        method?.Invoke(gm, null);
+                                        if (field.IsPrivate) field.SetValue(gm, null);
+                                    }
+                                }
+
+                                EditorUtility.SetDirty(gm);
+                                AssetDatabase.SaveAssets();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // Get ScriptableObject Info
+                        string nameAsset = $"{csvInfo.className}.asset";
                         string assetFile = $"{CsvConfig.Instance.scriptableObjectPath}/{nameAsset}";
                         var gm = AssetDatabase.LoadAssetAtPath(assetFile, collectionType);
                         if (gm == null)
@@ -59,143 +201,48 @@ namespace CsvReader
                             AssetDatabase.CreateAsset(gm, assetFile);
                         }
 
-                        if (csvInfo.csvFile != null)
-                        {
-                            var field = gm.GetType().GetField(csvInfo.fieldSetValue,
+                        var field = gm.GetType().GetField(csvInfo.fieldSetValue,
                             BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                        var dataType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
+                        // ===================
 
-                            var dataType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
-
-                            var result = Reader.Deserialize(dataType, csvInfo.csvFile.text);
-
-                            if (field != null)
-                            {
-                                field.SetValue(gm, result);
-
-                                if (csvInfo.isConvert)
-                                {
-                                    var method = gm.GetType().GetMethod(csvInfo.convertMethod);
-                                    method?.Invoke(gm, null);
-                                    if (field.IsPrivate) field.SetValue(gm, null);
-                                }
-                            }
-
-                            EditorUtility.SetDirty(gm);
-                            AssetDatabase.SaveAssets();
-                        }
-                    }
-                    else
-                    {
-                        // Get all files in the same folders.
-                        var directoryInfo = new DirectoryInfo(csvInfo.csvFolderPath);
-                        FileInfo[] files = directoryInfo.GetFiles("*.csv");
-
-                        if (csvInfo.separateScriptableObject)
+                        Type genericListType = typeof(List<>).MakeGenericType(dataType);
+                        var resultList = (IList)Activator.CreateInstance(genericListType);
+                        if (field != null)
                         {
                             foreach (var file in files)
                             {
-                                var distinctPart = file.Name.Replace(csvInfo.fileStartWith, "");
-                                if (!assetPath.EndsWith(distinctPart))
-                                {
-                                    continue;
-                                }
-
-                                var relativeFilePath = Path.Combine(csvInfo.csvFolderPath,file.Name);
-
+                                var relativeFilePath = Path.Combine(csvInfo.csvFolderPath, file.Name);
                                 var convertedFilePath = relativeFilePath.Replace("\\", "/");
                                 var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(convertedFilePath);
 
                                 if (textAsset)
                                 {
-                                    distinctPart = distinctPart.Replace(".csv", "");
-                                    string nameAsset = $"{csvInfo.className}{distinctPart}.asset";
-                                    string assetFile = $"{CsvConfig.Instance.scriptableObjectPath}/{nameAsset}";
-
-                                    var gm = AssetDatabase.LoadAssetAtPath(assetFile, collectionType);
-                                    if (gm == null)
-                                    {
-                                        gm = ScriptableObject.CreateInstance(collectionType);
-                                        AssetDatabase.CreateAsset(gm, assetFile);
-                                    }
-
-                                    var field = gm.GetType().GetField(csvInfo.fieldSetValue,
-                                        BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-
-                                    var dataType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
-
-                                    var result = Reader.Deserialize(dataType, textAsset.text);
-
-                                    if (field != null)
-                                    {
-                                        field.SetValue(gm, result);
-                                        if (csvInfo.isConvert)
-                                        {
-                                            var method = gm.GetType().GetMethod(csvInfo.convertMethod);
-                                            method?.Invoke(gm, null);
-                                            if (field.IsPrivate) field.SetValue(gm, null);
-                                        }
-                                    }
-
-                                    EditorUtility.SetDirty(gm);
-                                    AssetDatabase.SaveAssets();
+                                    var result = Reader.Deserialize(dataType, textAsset.text) as Array;
+                                    foreach (var item in result)
+                                        resultList.Add(item);
                                 }
+                            }
+
+                            Array resultArray = Array.CreateInstance(dataType, resultList.Count);
+                            resultList.CopyTo(resultArray, 0);
+                            field.SetValue(gm, resultArray);
+
+                            if (csvInfo.isConvert)
+                            {
+                                var method = gm.GetType().GetMethod(csvInfo.convertMethod);
+                                method?.Invoke(gm, null);
+                                if (field.IsPrivate) field.SetValue(gm, null);
                             }
                         }
-                        else
-                        {
-                            // Get ScriptableObject Info
-                            string nameAsset = $"{csvInfo.className}.asset";
-                            string assetFile = $"{CsvConfig.Instance.scriptableObjectPath}/{nameAsset}";
-                            var gm = AssetDatabase.LoadAssetAtPath(assetFile, collectionType);
-                            if (gm == null)
-                            {
-                                gm = ScriptableObject.CreateInstance(collectionType);
-                                AssetDatabase.CreateAsset(gm, assetFile);
-                            }
 
-                            var field = gm.GetType().GetField(csvInfo.fieldSetValue,
-                                        BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-                            var dataType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
-                            // ===================
-
-                            Type genericListType = typeof(List<>).MakeGenericType(dataType);
-                            var resultList = (IList)Activator.CreateInstance(genericListType);
-                            if (field != null)
-                            {
-                                foreach (var file in files)
-                                {
-                                    var relativeFilePath = Path.Combine(csvInfo.csvFolderPath,file.Name);
-                                    var convertedFilePath = relativeFilePath.Replace("\\", "/");
-                                    var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(convertedFilePath);
-
-                                    if (textAsset)
-                                    {
-                                        var result = Reader.Deserialize(dataType, textAsset.text) as Array;
-                                        foreach (var item in result)
-                                            resultList.Add(item);
-                                    }
-                                }
-
-                                Array resultArray = Array.CreateInstance(dataType, resultList.Count);
-                                resultList.CopyTo(resultArray, 0);
-                                field.SetValue(gm, resultArray);
-
-                                if (csvInfo.isConvert)
-                                {
-                                    var method = gm.GetType().GetMethod(csvInfo.convertMethod);
-                                    method?.Invoke(gm, null);
-                                    if (field.IsPrivate) field.SetValue(gm, null);
-                                }
-                            }
-
-                            EditorUtility.SetDirty(gm);
-                            AssetDatabase.SaveAssets();
-                        }
+                        EditorUtility.SetDirty(gm);
+                        AssetDatabase.SaveAssets();
                     }
                 }
-
-                Debug.Log("Reimport Asset: " + assetPath);
             }
+
+            Debug.Log("Reimport Asset: " + assetPath);
         }
     }
 }

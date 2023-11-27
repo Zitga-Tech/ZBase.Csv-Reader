@@ -15,10 +15,12 @@ MonoBehaviour:
   assemblyNames:
   - \Library\ScriptAssemblies\CsvReaderSamples.dll
   toolConfigPath: Assets/Plugins/CsvReader
-  csvConfigPath: Assets/Plugins/CsvReader/Data
+  readerConfigPath: Assets/Plugins/CsvReader/ReaderConfig
+  downloaderConfigPath: Assets/Plugins/CsvReader/DownloaderConfig
   csvPath: Assets/Samples/Csv
   scriptableObjectPath: Assets/Samples/ScriptableObject
   enabledFilter:
     enabled: 1
     namespaceList:
     - Csv
+  credentialFile: {fileID: 4900000, guid: 8c8579d3d1f634040b9d5c7894937d3b, type: 3}

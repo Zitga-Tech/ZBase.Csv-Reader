@@ -9,6 +9,7 @@ using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CsvReader
 {
@@ -50,7 +51,9 @@ namespace CsvReader
         public string toolConfigPath = "Assets/Plugins/CsvReader";
 
         [ReadOnly] [FolderPath(RequireExistingPath = true)]
-        public string csvConfigPath = "Assets/Plugins/CsvReader/Data";
+        public string readerConfigPath = "Assets/Plugins/CsvReader/ReaderConfig";
+        [ReadOnly] [FolderPath(RequireExistingPath = true)]
+        public string downloaderConfigPath = "Assets/Plugins/CsvReader/DownloaderConfig";
 
         [PropertySpace(20)]
         [FolderPath(RequireExistingPath = true)]
@@ -106,7 +109,9 @@ namespace CsvReader
             
             SetScriptAssembly();
             
-            CreateDirectory(this.csvConfigPath);
+            CreateDirectory(this.readerConfigPath);
+            
+            CreateDirectory(this.downloaderConfigPath);
         }
 
         private void SetScriptAssembly()
@@ -163,6 +168,9 @@ namespace CsvReader
             Directory.CreateDirectory(new DirectoryInfo(path).FullName);
             AssetDatabase.Refresh();
         }
+        
+        [Required,Title("Csv Downloader")]
+        public TextAsset credentialFile;
     }
 }
 #endif

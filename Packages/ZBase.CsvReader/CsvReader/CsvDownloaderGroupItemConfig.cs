@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using CsvReader;
 using UnityEditor;
 using UnityEngine;
 
@@ -85,7 +86,7 @@ namespace CsvDownloader
         private async UniTaskVoid LoadAsync(bool selectedAll)
         {
             var credential = GoogleCredential.
-                FromJson(CsvDownloadTool.Instance.credentialFile.text).
+                FromJson(CsvConfig.Instance.credentialFile.text).
                 CreateScoped(new[] { DriveService.Scope.DriveReadonly });
 
             using (var service = new SheetsService(new BaseClientService.Initializer()
@@ -204,7 +205,7 @@ namespace CsvDownloader
                     }
 
                     var finalCsv = csvText;
-                    var folderPath = CsvDownloadTool.Instance.csvFolderPath + "/" + subFolder;
+                    var folderPath = CsvConfig.Instance.csvPath + "/" + subFolder;
 
                     if (!Directory.Exists(folderPath))
                     {

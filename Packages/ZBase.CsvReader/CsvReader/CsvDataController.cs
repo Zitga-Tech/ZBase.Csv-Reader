@@ -43,7 +43,7 @@ namespace CsvReader
                 throw new ArgumentException("Config Name is null");
             }
             
-            var filePath = $"{CsvConfig.Instance.csvConfigPath}/{csvDataName}.asset";
+            var filePath = $"{CsvConfig.Instance.readerConfigPath}/{csvDataName}.asset";
             var type = typeof(CsvData);
             var gm = AssetDatabase.LoadAssetAtPath(filePath, type);
             if (gm == null)
@@ -55,38 +55,6 @@ namespace CsvReader
             {
                 throw new ArgumentException("Config Name is existed: " + csvDataName);
             }
-        }
-    }
-
-    public class CsvDataPostprocessor : AssetPostprocessor
-    {
-        static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets,
-            string[] movedFromAssetPaths)
-        {
-            bool isUpdated = false;
-
-            foreach (string assetPath in importedAssets)
-            {
-                if (Path.GetExtension(assetPath) != ".asset")
-                {
-                    continue;
-                }
-
-                Debug.Log(assetPath);
-
-                isUpdated = true;
-                break;
-            }
-
-            if (!isUpdated)
-            {
-                return;
-            }
-
-            var guids = AssetDatabase.FindAssets("t:ScriptableObject", new[] { "Assets/Plugins/CsvReader/Data" });
-
-            CsvDataController.Instance.data = guids.Select(AssetDatabase.GUIDToAssetPath)
-                .Select(AssetDatabase.LoadAssetAtPath<CsvData>).Where(data => data).ToArray();
         }
     }
 }

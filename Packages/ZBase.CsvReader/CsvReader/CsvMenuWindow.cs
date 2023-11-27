@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using CsvDownloader;
 using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities;
 using Sirenix.Utilities.Editor;
@@ -20,13 +21,18 @@ namespace CsvReader
         {
             OdinMenuTree tree = new OdinMenuTree(supportsMultiSelect: true) {
                 { "Home", CsvConfig.Instance, EditorIcons.House },
-                { "Csv Info", CsvDataController.Instance, EditorIcons.Info },
-                { "Csv Config", null, EditorIcons.SettingsCog },
+                { "Reader Info", CsvDataController.Instance, EditorIcons.Info },
+                { "Downloader Info", CsvDownloaderController.Instance, EditorIcons.Download },
+                { "Reader Config", null, EditorIcons.SettingsCog },
+                { "Downloader Config", null, EditorIcons.SettingsCog },
             };
 
-            tree.AddAllAssetsAtPath("Csv Config", CsvConfig.Instance.csvConfigPath, typeof(ScriptableObject), true,
+            tree.AddAllAssetsAtPath("Reader Config", CsvConfig.Instance.readerConfigPath, typeof(ScriptableObject), true,
                 true).SortMenuItemsByName();
-
+            
+            tree.AddAllAssetsAtPath("Downloader Config", CsvConfig.Instance.downloaderConfigPath, typeof(ScriptableObject), true,
+                true).SortMenuItemsByName();
+            
             var customMenuStyle = new OdinMenuStyle {
                 BorderPadding = 0f,
                 AlignTriangleLeft = true,
