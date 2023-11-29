@@ -21,6 +21,7 @@ namespace CsvReader
         [InlineButton("CreateNewCsvData", "Create New")]
         [SuffixLabel("Data Name", true)]
         [HideLabel]
+        [Required]
         public string csvDataName;
 #pragma warning restore CS8618
 

@@ -123,14 +123,13 @@ namespace CsvReader
             [ShowIf(nameof(csvType), CsvType.File)] [ReadOnly]
             public string csvPath = string.Empty;
 
-            [ShowIf(nameof(csvType), CsvType.Folder)]
-            [FolderPath(RequireExistingPath = true)]
+            [ShowIf(nameof(csvType), CsvType.Folder)] [FolderPath(RequireExistingPath = true)]
             public string csvFolderPath = string.Empty;
 
             [ShowIf(nameof(csvType), CsvType.Folder)]
             public bool separateScriptableObject = false;
 
-            [ShowIf(nameof(csvType), CsvType.Folder)]
+            [ShowIf(nameof(separateScriptableObject))]
             [Tooltip(
                 "Let empty if not separate ScriptableObject, it's used to create distinct scriptableObject's names depends on remain part without 'start with' part")]
             public string fileStartWith = "";

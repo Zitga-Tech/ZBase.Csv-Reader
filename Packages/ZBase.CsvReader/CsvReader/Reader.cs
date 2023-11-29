@@ -74,10 +74,8 @@ namespace CsvReader
                 if (isPrimitive)
                 {
                     string csvColumnName = GetFieldCsvColumnName(tmp, format);
-                    if (table.ContainsKey(csvColumnName))
+                    if (table.TryGetValue(csvColumnName, out var idx))
                     {
-                        int idx = table[csvColumnName];
-                        
                         SetValuePrimitive(variable, tmp, idx < cols.Length ? cols[idx] : string.Empty);
                     }
                     else
@@ -101,9 +99,9 @@ namespace CsvReader
 
                         if (isElementPrimitive)
                         {
-                            if (table.ContainsKey(csvColumnName))
+                            if (table.TryGetValue(csvColumnName, out var value))
                             {
-                                objectIndex = table[csvColumnName];
+                                objectIndex = value;
                                 Assert.IsTrue(objectIndex < cols.Length);
                             }
                             else
@@ -307,9 +305,8 @@ namespace CsvReader
             foreach (FieldInfo tmp in fieldInfo)
             {
                 var fieldName = GetFieldCsvColumnName(tmp, format);
-                if (table.ContainsKey(fieldName))
+                if (table.TryGetValue(fieldName, out var idx))
                 {
-                    int idx = table[fieldName];
                     if (idx < minIndex)
                         minIndex = idx;
                 }
