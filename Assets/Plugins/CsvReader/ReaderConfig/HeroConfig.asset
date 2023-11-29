@@ -15,13 +15,12 @@ MonoBehaviour:
   classInfomations:
   - className: Csv.HeroConfig
     csvInformations:
-    - className: Csv.HeroConfig
-      csvFile: {fileID: 0}
-      csvPath: 
-      usingFolder: 1
+    - csvType: 1
+      className: Csv.HeroConfig
+      csvFile: {fileID: 4900000, guid: 6d50e686fe1d99749b7eb8f8293215a3, type: 3}
+      csvPath: Assets/Samples/Csv/stage/hero_config/hero_config_2001.csv
       csvFolderPath: Assets/Samples/Csv/stage/hero_config
-      separateScriptableObject: 0
-      fileStartWith: 
+      separateScriptableObject: 1
+      fileStartWith: hero_config_
       fieldSetValue: items
-      isConvert: 0
       convertMethod: 

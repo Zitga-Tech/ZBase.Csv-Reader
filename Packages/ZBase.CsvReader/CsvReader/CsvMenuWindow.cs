@@ -1,5 +1,4 @@
 #if UNITY_EDITOR
-using CsvDownloader;
 using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities;
 using Sirenix.Utilities.Editor;
@@ -10,7 +9,7 @@ namespace CsvReader
 {
     public class CsvMenuWindow : OdinMenuEditorWindow
     {
-        [MenuItem("Tools/Csv/Editor Window Demos")]
+        [MenuItem("Tools/Csv-Reader")]
         private static void OpenWindow()
         {
             var window = GetWindow<CsvMenuWindow>();
@@ -21,17 +20,19 @@ namespace CsvReader
         {
             OdinMenuTree tree = new OdinMenuTree(supportsMultiSelect: true) {
                 { "Home", CsvConfig.Instance, EditorIcons.House },
-                { "Reader Info", CsvDataController.Instance, EditorIcons.Info },
-                { "Downloader Info", CsvDownloaderController.Instance, EditorIcons.Download },
-                { "Reader Config", null, EditorIcons.SettingsCog },
+                { "Controller", CsvDataController.Instance, EditorIcons.Info },
+                { "Reader Config", null, EditorIcons.SettingsCog }, 
+#if GOOGLE_SHEET_DOWNLOADER
                 { "Downloader Config", null, EditorIcons.SettingsCog },
+#endif
             };
 
             tree.AddAllAssetsAtPath("Reader Config", CsvConfig.Instance.readerConfigPath, typeof(ScriptableObject), true,
                 true).SortMenuItemsByName();
-            
+#if GOOGLE_SHEET_DOWNLOADER
             tree.AddAllAssetsAtPath("Downloader Config", CsvConfig.Instance.downloaderConfigPath, typeof(ScriptableObject), true,
                 true).SortMenuItemsByName();
+#endif
             
             var customMenuStyle = new OdinMenuStyle {
                 BorderPadding = 0f,

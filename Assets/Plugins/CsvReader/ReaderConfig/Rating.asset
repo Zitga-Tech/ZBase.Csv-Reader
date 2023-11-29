@@ -15,17 +15,23 @@ MonoBehaviour:
   classInfomations:
   - className: Csv.RatingDataList
     csvInformations:
-    - className: Csv.RatingDataList
-      csvFile: {fileID: 4900000, guid: e6c33e6ae1c01c14e9d06ab4d9e7a209, type: 3}
-      csvPath: Assets/Samples/Csv/rating_trigger.csv
+    - csvType: 0
+      className: Csv.RatingDataList
+      csvFile: {fileID: 4900000, guid: 150b37ce1877ab647ad4a21bc64385d3, type: 3}
+      csvPath: Assets/Samples/Csv/rating/rating_trigger.csv
+      csvFolderPath: 
+      separateScriptableObject: 0
+      fileStartWith: 
       fieldSetValue: dataGroups
-      isConvert: 0
       convertMethod: 
   - className: Csv.RatingDataListCustomPrimitiveArray
     csvInformations:
-    - className: Csv.RatingDataListCustomPrimitiveArray
-      csvFile: {fileID: 4900000, guid: d31094c1593261a438fdee75a7be5d99, type: 3}
-      csvPath: Assets/Samples/Csv/rating_trigger_custom_primitive_array.csv
+    - csvType: 0
+      className: Csv.RatingDataListCustomPrimitiveArray
+      csvFile: {fileID: 4900000, guid: fdeb6b9291552af40a9783725146d194, type: 3}
+      csvPath: Assets/Samples/Csv/rating/rating_trigger_custom_primitive_array.csv
+      csvFolderPath: 
+      separateScriptableObject: 0
+      fileStartWith: 
       fieldSetValue: dataGroups
-      isConvert: 0
       convertMethod: 

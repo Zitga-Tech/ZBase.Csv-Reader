@@ -15,33 +15,48 @@ MonoBehaviour:
   classInfomations:
   - className: Csv.StageInfoConfig
     csvInformations:
-    - className: Csv.StageInfoConfig
+    - csvType: 0
+      className: Csv.StageInfoConfig
       csvFile: {fileID: 4900000, guid: a63968056b2fe804d8452a7bf8e0a2c2, type: 3}
       csvPath: Assets/Samples/Csv/stage/stage_cost.csv
+      csvFolderPath: 
+      separateScriptableObject: 0
+      fileStartWith: 
       fieldSetValue: _costItems
-      isConvert: 1
       convertMethod: ConvertCost
-    - className: Csv.StageInfoConfig
+    - csvType: 0
+      className: Csv.StageInfoConfig
       csvFile: {fileID: 4900000, guid: b91868636f5acc647a04a9bcfda2a6b1, type: 3}
       csvPath: Assets/Samples/Csv/stage/stage_reward.csv
+      csvFolderPath: 
+      separateScriptableObject: 0
+      fileStartWith: 
       fieldSetValue: _rewardConfigItems
-      isConvert: 1
       convertMethod: ConvertRewards
-    - className: Csv.StageInfoConfig
+    - csvType: 0
+      className: Csv.StageInfoConfig
       csvFile: {fileID: 4900000, guid: 11fcfa5c362dbf644b0f7a7e44288f40, type: 3}
       csvPath: Assets/Samples/Csv/stage/revive_cost.csv
+      csvFolderPath: 
+      separateScriptableObject: 0
+      fileStartWith: 
       fieldSetValue: _reviveCostItems
-      isConvert: 1
       convertMethod: ConvertReviveCost
-    - className: Csv.StageInfoConfig
+    - csvType: 0
+      className: Csv.StageInfoConfig
       csvFile: {fileID: 4900000, guid: 8fd9a711c43e72841b905a54f8f19855, type: 3}
       csvPath: Assets/Samples/Csv/stage/stage_droppable_reward.csv
+      csvFolderPath: 
+      separateScriptableObject: 0
+      fileStartWith: 
       fieldSetValue: _droppableRewardItems
-      isConvert: 1
       convertMethod: ConvertDroppableRewards
-    - className: Csv.StageInfoConfig
+    - csvType: 0
+      className: Csv.StageInfoConfig
       csvFile: {fileID: 4900000, guid: deb7eb59cb7dcc1439ad2b1df1db6fc2, type: 3}
       csvPath: Assets/Samples/Csv/stage/stage_quest.csv
+      csvFolderPath: 
+      separateScriptableObject: 0
+      fileStartWith: 
       fieldSetValue: _questConfigItems
-      isConvert: 1
       convertMethod: ConvertQuests

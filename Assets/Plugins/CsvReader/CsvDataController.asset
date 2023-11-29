@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f90c27c51c90fd408fe1d9d539c91be, type: 3}
   m_Name: CsvDataController
   m_EditorClassIdentifier: 
-  data:
+  csvDataName: HeroConfig
+  readerData:
   - {fileID: 11400000, guid: 1a4c46e3db8c5a3459a788a461cf7e70, type: 2}
   - {fileID: 11400000, guid: 8b151ef46b23d174ea66a1fec4e00c49, type: 2}
   - {fileID: 11400000, guid: a40cc33930804264e8b38c67d20cf82a, type: 2}
   - {fileID: 11400000, guid: 5d89898b23c3d6344a32ee4bba12ec79, type: 2}
   - {fileID: 11400000, guid: 3be3d71a36a41e545b1b500787fde569, type: 2}
   - {fileID: 11400000, guid: 9601340e92793b4468c7edad727b4cbf, type: 2}
-  csvDataName: HeroConfig
+  csvDownloadGroupName: Hero
+  downloaderData:
+  - {fileID: 11400000, guid: 97401be2200739d4eaf2afc580a34053, type: 2}

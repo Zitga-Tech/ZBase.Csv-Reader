@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEditor;
@@ -52,8 +53,6 @@ namespace CsvReader
 
         [ReadOnly] [FolderPath(RequireExistingPath = true)]
         public string readerConfigPath = "Assets/Plugins/CsvReader/ReaderConfig";
-        [ReadOnly] [FolderPath(RequireExistingPath = true)]
-        public string downloaderConfigPath = "Assets/Plugins/CsvReader/DownloaderConfig";
 
         [PropertySpace(20)]
         [FolderPath(RequireExistingPath = true)]
@@ -99,7 +98,7 @@ namespace CsvReader
                 }
             }
         }
-
+        
         [PropertySpace(20)] [Title("Filter Namespace")]
         public FilterNameSpace enabledFilter = new();
 
@@ -111,7 +110,9 @@ namespace CsvReader
             
             CreateDirectory(this.readerConfigPath);
             
+#if GOOGLE_SHEET_DOWNLOADER
             CreateDirectory(this.downloaderConfigPath);
+#endif
         }
 
         private void SetScriptAssembly()
@@ -169,8 +170,36 @@ namespace CsvReader
             AssetDatabase.Refresh();
         }
         
+#if GOOGLE_SHEET_DOWNLOADER
         [Required,Title("Csv Downloader")]
+
+        [ReadOnly] [FolderPath(RequireExistingPath = true)]
+        public string downloaderConfigPath = "Assets/Plugins/CsvReader/DownloaderConfig";
+        
         public TextAsset credentialFile;
+
+        [InfoBox("Wait until activity complete before do anything else!")]
+        [PropertyOrder(4)]
+        [Button("Download All Google Sheet Files")]
+        public void LoadAll()
+        {
+            LoadAsync().Forget();
+        }
+
+        private async UniTaskVoid LoadAsync()
+        {
+            var count = 0;
+            foreach (GoogleSheetGroupConfig data in CsvDataController.Instance.downloaderData)
+            {
+                await data.LoadAll();
+                count++;
+                Debug.Log($"Finished download: {count}/{CsvDataController.Instance.downloaderData.Length}");
+            }
+            
+            
+            Debug.Log("Finished download all sheets");
+        }
+#endif
     }
 }
 #endif

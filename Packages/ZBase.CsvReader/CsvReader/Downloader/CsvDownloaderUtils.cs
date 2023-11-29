@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace CsvDownloader
+namespace CsvReader
 {
     public static class CsvDownloaderUtils
     {

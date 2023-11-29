@@ -15,17 +15,23 @@ MonoBehaviour:
   classInfomations:
   - className: Csv.RewardInfoList
     csvInformations:
-    - className: Csv.RewardInfoList
+    - csvType: 0
+      className: Csv.RewardInfoList
       csvFile: {fileID: 4900000, guid: cf11b5f66f8fb044bb3c0d88d4f6a3c0, type: 3}
       csvPath: Assets/Samples/Csv/reward/reward_info.csv
+      csvFolderPath: 
+      separateScriptableObject: 0
+      fileStartWith: 
       fieldSetValue: dataGroups
-      isConvert: 0
       convertMethod: 
   - className: Csv.StageReward
     csvInformations:
-    - className: Csv.StageReward
+    - csvType: 0
+      className: Csv.StageReward
       csvFile: {fileID: 4900000, guid: 156e296b9424b0840a6e64e742374285, type: 3}
       csvPath: Assets/Samples/Csv/reward/stage_reward.csv
+      csvFolderPath: 
+      separateScriptableObject: 0
+      fileStartWith: 
       fieldSetValue: rewards
-      isConvert: 0
       convertMethod: 

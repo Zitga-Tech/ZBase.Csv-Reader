@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using CsvDownloader;
 using UnityEditor;
 using UnityEngine;
 
@@ -17,7 +16,9 @@ namespace CsvReader
             string[] movedFromAssetPaths)
         {
             bool isReaderConfigUpdated = false;
+#if GOOGLE_SHEET_DOWNLOADER
             bool isDownloaderConfigUpdated = false;
+#endif
             
             foreach (string assetPath in importedAssets)
             {
@@ -38,13 +39,19 @@ namespace CsvReader
                         continue;
                     }
                     
+#if GOOGLE_SHEET_DOWNLOADER
                     if (isDownloaderConfigUpdated == false && assetPath.IndexOf(CsvConfig.Instance.downloaderConfigPath, StringComparison.Ordinal) != -1)
                     {
                         isDownloaderConfigUpdated = true;
                         continue;
                     }
+#endif 
 
-                    if (isReaderConfigUpdated && isDownloaderConfigUpdated)
+                    if (isReaderConfigUpdated 
+#if GOOGLE_SHEET_DOWNLOADER
+                        && isDownloaderConfigUpdated
+#endif
+                        )
                     {
                         break;
                     }
@@ -55,17 +62,19 @@ namespace CsvReader
             {
                 var guids = AssetDatabase.FindAssets("t:ScriptableObject", new[] { CsvConfig.Instance.readerConfigPath });
 
-                CsvDataController.Instance.data = guids.Select(AssetDatabase.GUIDToAssetPath)
+                CsvDataController.Instance.readerData = guids.Select(AssetDatabase.GUIDToAssetPath)
                     .Select(AssetDatabase.LoadAssetAtPath<CsvData>).Where(data => data).ToArray();
             }
-
+            
+#if GOOGLE_SHEET_DOWNLOADER
             if (isDownloaderConfigUpdated)
             {
                 var guids = AssetDatabase.FindAssets("t:ScriptableObject", new[] { CsvConfig.Instance.downloaderConfigPath });
 
-                CsvDownloaderController.Instance.data = guids.Select(AssetDatabase.GUIDToAssetPath)
-                    .Select(AssetDatabase.LoadAssetAtPath<CsvDownloaderGroupItemConfig>).Where(data => data).ToArray();
+                CsvDataController.Instance.downloaderData = guids.Select(AssetDatabase.GUIDToAssetPath)
+                    .Select(AssetDatabase.LoadAssetAtPath<GoogleSheetGroupConfig>).Where(data => data).ToArray();
             }
+#endif
         }
 
         static void ProcessCsv(string assetPath)
@@ -95,7 +104,7 @@ namespace CsvReader
                     throw new ArgumentException("ScriptableObject path can't be null");
                 }
 
-                if (!csvInfo.usingFolder)
+                if (csvInfo.csvType == CsvData.CsvInfo.CsvType.File)
                 {
                     string nameAsset = $"{csvInfo.className}.asset";
 
@@ -120,7 +129,7 @@ namespace CsvReader
                         {
                             field.SetValue(gm, result);
 
-                            if (csvInfo.isConvert)
+                            if (csvInfo.IsUsingConvertMethod())
                             {
                                 var method = gm.GetType().GetMethod(csvInfo.convertMethod);
                                 method?.Invoke(gm, null);
@@ -176,7 +185,7 @@ namespace CsvReader
                                 if (field != null)
                                 {
                                     field.SetValue(gm, result);
-                                    if (csvInfo.isConvert)
+                                    if (csvInfo.IsUsingConvertMethod())
                                     {
                                         var method = gm.GetType().GetMethod(csvInfo.convertMethod);
                                         method?.Invoke(gm, null);
@@ -228,7 +237,7 @@ namespace CsvReader
                             resultList.CopyTo(resultArray, 0);
                             field.SetValue(gm, resultArray);
 
-                            if (csvInfo.isConvert)
+                            if (csvInfo.IsUsingConvertMethod())
                             {
                                 var method = gm.GetType().GetMethod(csvInfo.convertMethod);
                                 method?.Invoke(gm, null);

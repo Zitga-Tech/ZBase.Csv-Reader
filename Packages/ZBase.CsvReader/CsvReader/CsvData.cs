@@ -99,31 +99,40 @@ namespace CsvReader
 
         public ClassInfo? GetClassInfo(string csvPath)
         {
-            return this.classInfomations.FirstOrDefault(classInfo => classInfo.csvInformations.Any(csvInfo => (!csvInfo.usingFolder && csvPath.Contains(csvInfo.csvPath)) || (csvInfo.usingFolder && csvPath.Contains(csvInfo.csvFolderPath))));
+            return this.classInfomations.FirstOrDefault(classInfo => classInfo.csvInformations.Any(csvInfo =>
+                (csvInfo.csvType == CsvInfo.CsvType.File && csvPath.Contains(csvInfo.csvPath)) ||
+                (csvInfo.csvType == CsvInfo.CsvType.Folder && csvPath.Contains(csvInfo.csvFolderPath))));
         }
 
         [Serializable]
         public class CsvInfo
         {
+            public enum CsvType
+            {
+                File,
+                Folder
+            }
+
+            public CsvType csvType = CsvType.File;
+
             [HideInInspector] public string className = string.Empty;
 
-            [AssetsOnly, Required] [OnValueChanged("OnCsvFileChange")]
-            [HideIf(nameof(usingFolder))]
+            [AssetsOnly, Required] [OnValueChanged("OnCsvFileChange")] [ShowIf(nameof(csvType), CsvType.File)]
             public TextAsset? csvFile;
-            
-            [HideIf(nameof(usingFolder))]
-            [ReadOnly] public string csvPath = string.Empty;
 
-            public bool usingFolder;
-            [ShowIf(nameof(usingFolder))]
-            [PropertySpace(20)]
+            [ShowIf(nameof(csvType), CsvType.File)] [ReadOnly]
+            public string csvPath = string.Empty;
+
+            [ShowIf(nameof(csvType), CsvType.Folder)]
             [FolderPath(RequireExistingPath = true)]
             public string csvFolderPath = string.Empty;
 
-            [ShowIf(nameof(usingFolder))]
+            [ShowIf(nameof(csvType), CsvType.Folder)]
             public bool separateScriptableObject = false;
-            [ShowIf(nameof(usingFolder))]
-            [Tooltip("Let empty if not separate ScriptableObject, it's used to create distinct scriptableObject's names depends on remain part without 'start with' part")]
+
+            [ShowIf(nameof(csvType), CsvType.Folder)]
+            [Tooltip(
+                "Let empty if not separate ScriptableObject, it's used to create distinct scriptableObject's names depends on remain part without 'start with' part")]
             public string fileStartWith = "";
 
 #pragma warning disable CS8618
@@ -134,14 +143,8 @@ namespace CsvReader
             public string fieldSetValue;
 #pragma warning restore CS8618
 
-            [HorizontalGroup("Convert")] public bool isConvert;
-
 #pragma warning disable CS8618
-            [HorizontalGroup("Convert")]
-            [EnableIf("isConvert")]
-            [HideLabel]
-            [SuffixLabel("method", Overlay = true)]
-            [ValidateInput("ConvertCantEmpty", "Can't be empty")]
+            [SuffixLabel("default is empty", Overlay = true)]
             [ValueDropdown("GetAllMethods", AppendNextDrawer = true, IsUniqueList = true,
                 DropdownTitle = "Select Method")]
             public string convertMethod = string.Empty;
@@ -162,6 +165,11 @@ namespace CsvReader
                 }
             }
 
+            public bool IsUsingConvertMethod()
+            {
+                return this.convertMethod.Equals(string.Empty) == false;
+            }
+
             public IEnumerable GetAllMethods()
             {
                 var methodNames = CsvReaderUtils.GetAllMethod(this.className);
@@ -169,11 +177,6 @@ namespace CsvReader
                 {
                     yield return t;
                 }
-            }
-
-            private bool ConvertCantEmpty(string? text)
-            {
-                return !this.isConvert || (text != null && !text.Equals(string.Empty));
             }
 
             private bool FieldCantEmpty(string? text)

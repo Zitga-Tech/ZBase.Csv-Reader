@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#if GOOGLE_SHEET_DOWNLOADER
+using Cysharp.Threading.Tasks;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v3;
 using Google.Apis.Services;
@@ -9,39 +10,34 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using CsvReader;
 using UnityEditor;
 using UnityEngine;
 
-namespace CsvDownloader
+namespace CsvReader
 {
     [Serializable]
-    public class CsvDownloaderItemConfig
+    public class SheetConfig
     {
-        [ReadOnly]
-        public string csvName;
+        [ReadOnly] public string csvName;
         public bool selected;
     }
 
-    public class CsvDownloaderGroupItemConfig : SerializedScriptableObject
+    public class GoogleSheetGroupConfig : SerializedScriptableObject
     {
         public bool isDownloading;
 
-        [PropertyOrder(0)]
-        public string googleSpreadSheetId;
+        [PropertyOrder(0)] public string googleSheetId;
 
-        [PropertyOrder(2)]
-        public string subFolder;
+        [PropertyOrder(2)] public string subFolder;
 
-        [PropertyOrder(100)]
-        public List<CsvDownloaderItemConfig> items;
+        [PropertyOrder(100)] public List<SheetConfig> sheetsConfig;
 
         [HorizontalGroup("buttons")]
         [PropertyOrder(3)]
         [Button("Select All")]
         public void SelectAll()
         {
-            foreach (var item in items)
+            foreach (var item in this.sheetsConfig)
             {
                 item.selected = true;
             }
@@ -52,7 +48,7 @@ namespace CsvDownloader
         [Button("UnSelect All")]
         public void UnSelectAll()
         {
-            foreach (var item in items)
+            foreach (var item in this.sheetsConfig)
             {
                 item.selected = false;
             }
@@ -69,37 +65,32 @@ namespace CsvDownloader
             isDownloading = true;
             LoadAsync(false).Forget();
         }
-
+        
         [InfoBox("If is downloading is on, it will not run the method load")]
         [PropertyOrder(4)]
         [Button("Load All")]
-        public void LoadAll()
+        public async UniTask LoadAll()
         {
             if (isDownloading)
                 return;
 
             isDownloading = true;
-            LoadAsync(true).Forget();
+            await LoadAsync(true);
         }
 
-
-        private async UniTaskVoid LoadAsync(bool selectedAll)
+        private async UniTask LoadAsync(bool selectedAll)
         {
-            var credential = GoogleCredential.
-                FromJson(CsvConfig.Instance.credentialFile.text).
-                CreateScoped(new[] { DriveService.Scope.DriveReadonly });
+            var credential = GoogleCredential.FromJson(CsvConfig.Instance.credentialFile.text)
+                .CreateScoped(DriveService.Scope.DriveReadonly);
 
-            using (var service = new SheetsService(new BaseClientService.Initializer()
+            using (var service =
+                   new SheetsService(new BaseClientService.Initializer() { HttpClientInitializer = credential }))
             {
-                HttpClientInitializer = credential
-            }))
-            {
-
-                var sheetReq = service.Spreadsheets.Get(googleSpreadSheetId);
+                var sheetReq = service.Spreadsheets.Get(this.googleSheetId);
                 sheetReq.Fields = "properties,sheets(properties,data.rowData.values.formattedValue)";
                 var spreadSheet = await sheetReq.ExecuteAsync();
 
-                Debug.LogWarning("Finished download spreadsheet");
+                Debug.Log("Finished download spreadsheet");
                 Dictionary<string, List<CsvPage>> _pages = new();
 
                 foreach (var gSheet in spreadSheet.Sheets)
@@ -118,14 +109,20 @@ namespace CsvDownloader
                     sheetList.Add(new CsvPage(gSheet, subName));
                 }
 
-                if (selectedAll)
+                var copySheetsConfig = new List<SheetConfig>(this.sheetsConfig);
+                
+                // update Sheets Config - Clear and check new sheet
+                this.sheetsConfig.Clear();
+
+                foreach (KeyValuePair<string,List<CsvPage>> page in _pages)
                 {
-                    items.Clear();
+                    var cacheConfig = copySheetsConfig.Find(x => x.csvName == page.Key);
+                    this.sheetsConfig.Add(cacheConfig ?? new SheetConfig { csvName = page.Key, selected = true});
                 }
 
                 foreach (var item in _pages)
                 {
-                    if(!selectedAll && !items.Any(x => x.selected && x.csvName == item.Key))
+                    if (!selectedAll && !this.sheetsConfig.Any(x => x.selected && x.csvName == item.Key))
                     {
                         continue;
                     }
@@ -138,7 +135,7 @@ namespace CsvDownloader
 
                     foreach (var page in pages)
                     {
-                        var grid = page.grid;
+                        var grid = page.Grid;
 
                         if (grid.RowData == null)
                             continue;
@@ -152,18 +149,19 @@ namespace CsvDownloader
                             if (row.Values == null)
                                 continue;
 
-                            if(row.Values.Count == 0)
+                            if (row.Values.Count == 0)
                                 continue;
 
-                            if (!string.IsNullOrEmpty(row.Values[0].FormattedValue) && row.Values[0].FormattedValue.Contains(CsvDownloaderUtils.Comment))
+                            if (!string.IsNullOrEmpty(row.Values[0].FormattedValue) &&
+                                row.Values[0].FormattedValue.Contains(CsvDownloaderUtils.Comment))
                                 continue;
 
-                            if(!row.Values.Any(x => !string.IsNullOrEmpty(x.FormattedValue)))
+                            if (row.Values.All(x => string.IsNullOrEmpty(x.FormattedValue)))
                                 continue;
 
                             if (isAddedFirstRow)
                             {
-                                if(indexCount == 0)
+                                if (indexCount == 0)
                                 {
                                     indexCount++;
                                     continue;
@@ -171,9 +169,8 @@ namespace CsvDownloader
                             }
                             else
                             {
-                                if(indexCount == 0)
+                                if (indexCount == 0)
                                 {
-
                                 }
                             }
 
@@ -183,9 +180,11 @@ namespace CsvDownloader
                             {
                                 var cell = row.Values[i];
 
-                                var plusText = string.IsNullOrEmpty(cell.FormattedValue) ? string.Empty : cell.FormattedValue;
+                                var plusText = string.IsNullOrEmpty(cell.FormattedValue)
+                                    ? string.Empty
+                                    : cell.FormattedValue;
 
-                                if(i == 0)
+                                if (i == 0)
                                 {
                                     csvText += plusText;
                                 }
@@ -194,7 +193,7 @@ namespace CsvDownloader
                                     csvText += ("," + plusText);
                                 }
 
-                                if(i == row.Values.Count - 1)
+                                if (i == row.Values.Count - 1)
                                 {
                                     csvText += "\r\n";
                                 }
@@ -216,23 +215,33 @@ namespace CsvDownloader
 
                     try
                     {
-                        File.WriteAllText(path, finalCsv);
-                        var text = AssetDatabase.LoadAssetAtPath(path, typeof(TextAsset));
-
-                        AssetDatabase.ImportAsset(path, ImportAssetOptions.ImportRecursive);
-                        EditorUtility.SetDirty(text);
-
-                        if (selectedAll)
+                        if (File.Exists(path))
                         {
-                            Debug.LogWarning("Add file :" + path);
-                            items.Add(new CsvDownloaderItemConfig { csvName = item.Key, selected = true });
+                            // If the file exists, read its content for comparison
+                            string existingData = await File.ReadAllTextAsync(path);
+
+                            if (existingData != null && existingData.Equals(finalCsv))
+                            {
+                                // Google Sheet is up to date
+                                continue;
+                            }
+
+                            Debug.Log($"Changed File: + <color=green>{path}</color>");
+                        }
+                        else
+                        {
+                            Debug.Log($"New File: + <color=green>{path}</color>");
                         }
 
-                        Debug.LogWarning("Finished write file :" + finalCsv);
+                        await File.WriteAllTextAsync(path, finalCsv);
+
+                        AssetDatabase.ImportAsset(path, ImportAssetOptions.ImportRecursive);
+                        var text = AssetDatabase.LoadAssetAtPath(path, typeof(TextAsset));
+                        EditorUtility.SetDirty(text);
                     }
-                    catch 
+                    catch (Exception e)
                     {
-                        Debug.LogWarning("Error " + path);    
+                        Debug.LogWarning("Error " + e);
                     }
                 }
             }
@@ -242,15 +251,16 @@ namespace CsvDownloader
 
         private class CsvPage
         {
-            public readonly GridData grid;
+            public readonly GridData Grid;
 
             public string SubName { get; }
 
             public CsvPage(Sheet gSheet, string subName)
             {
-                grid = gSheet.Data.First();
+                this.Grid = gSheet.Data.First();
                 SubName = subName;
             }
         }
     }
 }
+#endif

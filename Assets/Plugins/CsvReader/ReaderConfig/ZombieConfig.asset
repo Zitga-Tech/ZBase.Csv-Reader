@@ -15,13 +15,12 @@ MonoBehaviour:
   classInfomations:
   - className: Csv.ZombieConfig
     csvInformations:
-    - className: Csv.ZombieConfig
+    - csvType: 1
+      className: Csv.ZombieConfig
       csvFile: {fileID: 0}
       csvPath: 
-      usingFolder: 1
       csvFolderPath: Assets/Samples/Csv/stage/zombie_config
       separateScriptableObject: 1
       fileStartWith: zombie_config_
       fieldSetValue: items
-      isConvert: 0
       convertMethod: 
