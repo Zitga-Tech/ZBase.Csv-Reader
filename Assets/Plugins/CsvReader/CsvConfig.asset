@@ -18,9 +18,9 @@ MonoBehaviour:
   readerConfigPath: Assets/Plugins/CsvReader/ReaderConfig
   csvPath: Assets/Samples/Csv
   scriptableObjectPath: Assets/Samples/ScriptableObject
-  isUsingConvert: 0
-  isUsingFolder: 0
   enabledFilter:
     enabled: 1
     namespaceList:
     - Csv
+  downloaderConfigPath: Assets/Plugins/CsvReader/DownloaderConfig
+  credentialFile: {fileID: 4900000, guid: 8c8579d3d1f634040b9d5c7894937d3b, type: 3}

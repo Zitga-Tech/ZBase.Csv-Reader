@@ -18,7 +18,7 @@ namespace CsvReader
     [Title("Setting")]
     public class CsvConfig : GlobalConfig<CsvConfig>
     {
-        [ReadOnly, ShowInInspector, PropertyOrder(-1)]
+        [ReadOnly, ShowInInspector, PropertyOrder(1)]
         private string RootProject
         {
             get;
@@ -29,7 +29,7 @@ namespace CsvReader
         [ValidateInput("ArrayCantEmpty", "Can't be empty")]
         [ValueDropdown("GetFilteredAssemblyList", AppendNextDrawer = true, IsUniqueList = true,
             DropdownTitle = "Select Assembly")]
-        [OnValueChanged("SetScriptAssembly")]
+        [OnValueChanged("SetScriptAssembly"), PropertyOrder(2)]
         public string[] assemblyNames;
         
         public IEnumerable GetFilteredAssemblyList()
@@ -47,23 +47,40 @@ namespace CsvReader
             private set;
         }
 
-        [PropertySpace(10)]
+        [PropertySpace(10), PropertyOrder(3)]
         [ReadOnly] [Title("Path to config tool")] [FolderPath(RequireExistingPath = true)]
         public string toolConfigPath = "Assets/Plugins/CsvReader";
 
+        [PropertyOrder(4)]
         [ReadOnly] [FolderPath(RequireExistingPath = true)]
         public string readerConfigPath = "Assets/Plugins/CsvReader/ReaderConfig";
 
-        [PropertySpace(20)]
+        [PropertySpace(20), PropertyOrder(5)]
         [FolderPath(RequireExistingPath = true)]
         [ValidateInput("StringCantEmpty", "Can't be empty")]
         [InlineButton("CreateDirectory", "Create")]
         public string csvPath = "Assets/Samples/Csv";
 
         [FolderPath(RequireExistingPath = true)] [ValidateInput("StringCantEmpty", "Can't be empty")]
-        [InlineButton("CreateDirectory", "Create")]
+        [InlineButton("CreateDirectory", "Create"), PropertyOrder(6)]
         public string scriptableObjectPath = "Assets/Samples/ScriptableObject";
 
+        [PropertySpace(10)]
+        [Button("Refresh All Csv Config"), PropertyOrder(7)]
+        private void RefreshAllCsvConfig()
+        {
+            foreach (CsvData data in CsvDataController.Instance.readerData)
+            {
+                foreach (CsvData.ClassInfo classInfo in data.classInfomations)
+                {
+                    foreach (CsvData.CsvInfo csvInfo in classInfo.csvInformations)
+                    {
+                        csvInfo.OnCsvFileChange();
+                    }
+                }
+            }
+        }
+        
         private bool StringCantEmpty(string path)
         {
             return path != null && !path.Equals(string.Empty);
@@ -74,7 +91,7 @@ namespace CsvReader
             return stringArray is { Length: > 0 };
         }
 
-        [Serializable, Toggle("enabled")]
+        [Serializable, Toggle("enabled"), PropertyOrder(8)]
         public class FilterNameSpace
         {
             public bool enabled;
@@ -99,9 +116,10 @@ namespace CsvReader
             }
         }
         
-        [PropertySpace(20)] [Title("Filter Namespace")]
+        [PropertySpace(20), PropertyOrder(90)]
+        [Title("Filter Namespace")]
         public FilterNameSpace enabledFilter = new();
-
+        
         protected override void OnConfigInstanceFirstAccessed()
         {
             SetRootPath();
@@ -113,6 +131,7 @@ namespace CsvReader
 #if GOOGLE_SHEET_DOWNLOADER
             CreateDirectory(this.downloaderConfigPath);
 #endif
+            RefreshAllCsvConfig();
         }
 
         private void SetScriptAssembly()
@@ -171,15 +190,15 @@ namespace CsvReader
         }
         
 #if GOOGLE_SHEET_DOWNLOADER
-        [Required,Title("Csv Downloader")]
-
+        [Required,Title("Csv Downloader"), PropertyOrder(100)]
         [ReadOnly] [FolderPath(RequireExistingPath = true)]
         public string downloaderConfigPath = "Assets/Plugins/CsvReader/DownloaderConfig";
         
+        [Required,Title("Credential File"), PropertyOrder(110)]
         public TextAsset credentialFile;
 
         [InfoBox("Wait until activity complete before do anything else!")]
-        [PropertyOrder(4)]
+        [PropertyOrder(110)]
         [Button("Download All Google Sheet Files")]
         public void LoadAll()
         {

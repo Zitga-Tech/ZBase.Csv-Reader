@@ -129,7 +129,7 @@ namespace CsvReader
             [ShowIf(nameof(csvType), CsvType.Folder)]
             public bool separateScriptableObject = false;
 
-            [ShowIf(nameof(separateScriptableObject))]
+            [ShowIf("@this.separateScriptableObject && this.csvType == CsvType.Folder")]
             [Tooltip(
                 "Let empty if not separate ScriptableObject, it's used to create distinct scriptableObject's names depends on remain part without 'start with' part")]
             public string fileStartWith = "";
@@ -151,7 +151,12 @@ namespace CsvReader
 
             public void OnCsvFileChange()
             {
-                this.csvPath = AssetDatabase.GetAssetPath(this.csvFile);
+                var newPath = AssetDatabase.GetAssetPath(this.csvFile);
+                if(string.IsNullOrEmpty(this.csvPath) == false && newPath.Equals(this.csvPath) == false)
+                {
+                    Debug.Log($"File is changed: <color=green>{newPath}</color>");
+                }
+                this.csvPath = newPath;
             }
 
             public IEnumerable GetAllFields()

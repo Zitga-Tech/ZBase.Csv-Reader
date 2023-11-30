@@ -23,17 +23,10 @@ MonoBehaviour:
     SerializationNodes: []
   items:
   - id: 2001
+    type: 1
     health: 100
     armor: 49
   - id: 2004
+    type: 3
     health: 101
     armor: 52
-  - id: 2002
-    health: 100
-    armor: 61
-  - id: 2003
-    health: 101
-    armor: 63
-  - id: 2004
-    health: 101
-    armor: 63

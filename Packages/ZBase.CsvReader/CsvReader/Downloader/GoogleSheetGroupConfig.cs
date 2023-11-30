@@ -19,20 +19,25 @@ namespace CsvReader
     public class SheetConfig
     {
         [ReadOnly] public string csvName;
-        public bool selected;
+        public bool selected = true;
     }
 
     public class GoogleSheetGroupConfig : SerializedScriptableObject
     {
+        private const int SHEET_ID_LENGTH = 44;
+
         public bool isDownloading;
 
-        [PropertyOrder(0)] public string googleSheetId;
-
+        [PropertyOrder(0)] 
+        [OnValueChanged("OnSheetIdChange")]
+        [ValidateInput("MustLength", "Invalid GoogleSheet Id: Length must be 44")]
+        public string googleSheetId;
+        
         [PropertyOrder(2)] public string subFolder;
 
         [PropertyOrder(100)] public List<SheetConfig> sheetsConfig;
 
-        [HorizontalGroup("buttons")]
+        [HorizontalGroup("button select")]
         [PropertyOrder(3)]
         [Button("Select All")]
         public void SelectAll()
@@ -43,7 +48,7 @@ namespace CsvReader
             }
         }
 
-        [HorizontalGroup("buttons")]
+        [HorizontalGroup("button select")]
         [PropertyOrder(3)]
         [Button("UnSelect All")]
         public void UnSelectAll()
@@ -54,7 +59,7 @@ namespace CsvReader
             }
         }
 
-        [HorizontalGroup("buttons")]
+        [HorizontalGroup("button select")]
         [PropertyOrder(3)]
         [Button("Load Selected")]
         public void Load()
@@ -65,10 +70,15 @@ namespace CsvReader
             isDownloading = true;
             LoadAsync(false).Forget();
         }
-        
+
         [InfoBox("If is downloading is on, it will not run the method load")]
         [PropertyOrder(4)]
-        [Button("Load All")]
+        [Button("Load All Sheets", ButtonSizes.Large)]
+        public void LoadAllSheets()
+        {
+            LoadAll().Forget();    
+        }
+        
         public async UniTask LoadAll()
         {
             if (isDownloading)
@@ -76,6 +86,40 @@ namespace CsvReader
 
             isDownloading = true;
             await LoadAsync(true);
+        }
+
+        private Dictionary<string, List<CsvPage>> GetCsvPages(Spreadsheet spreadSheet)
+        {
+            Dictionary<string, List<CsvPage>> pages = new();
+
+            foreach (var gSheet in spreadSheet.Sheets)
+            {
+                if (!char.IsLetterOrDigit(gSheet.Properties.Title.FirstOrDefault()))
+                    continue;
+
+                var (sheetName, subName) = CsvDownloaderUtils.ParseSheetName(gSheet.Properties.Title);
+
+                if (!pages.TryGetValue(sheetName, out var sheetList))
+                {
+                    sheetList = new List<CsvPage>();
+                    pages.Add(sheetName, sheetList);
+                }
+
+                sheetList.Add(new CsvPage(gSheet, subName));
+            }
+
+            var copySheetsConfig = new List<SheetConfig>(this.sheetsConfig);
+                
+            // update Sheets Config - Clear and check new sheet
+            this.sheetsConfig.Clear();
+
+            foreach (KeyValuePair<string,List<CsvPage>> page in pages)
+            {
+                var cacheConfig = copySheetsConfig.Find(x => x.csvName == page.Key);
+                this.sheetsConfig.Add(cacheConfig ?? new SheetConfig { csvName = page.Key, selected = true});
+            }
+
+            return pages;
         }
 
         private async UniTask LoadAsync(bool selectedAll)
@@ -91,38 +135,14 @@ namespace CsvReader
                 var spreadSheet = await sheetReq.ExecuteAsync();
 
                 Debug.Log("Finished download spreadsheet");
-                Dictionary<string, List<CsvPage>> _pages = new();
 
-                foreach (var gSheet in spreadSheet.Sheets)
+                var csvPages = GetCsvPages(spreadSheet);
+
+                foreach (var item in csvPages)
                 {
-                    if (!char.IsLetterOrDigit(gSheet.Properties.Title.FirstOrDefault()))
-                        continue;
-
-                    var (sheetName, subName) = CsvDownloaderUtils.ParseSheetName(gSheet.Properties.Title);
-
-                    if (!_pages.TryGetValue(sheetName, out var sheetList))
-                    {
-                        sheetList = new List<CsvPage>();
-                        _pages.Add(sheetName, sheetList);
-                    }
-
-                    sheetList.Add(new CsvPage(gSheet, subName));
-                }
-
-                var copySheetsConfig = new List<SheetConfig>(this.sheetsConfig);
-                
-                // update Sheets Config - Clear and check new sheet
-                this.sheetsConfig.Clear();
-
-                foreach (KeyValuePair<string,List<CsvPage>> page in _pages)
-                {
-                    var cacheConfig = copySheetsConfig.Find(x => x.csvName == page.Key);
-                    this.sheetsConfig.Add(cacheConfig ?? new SheetConfig { csvName = page.Key, selected = true});
-                }
-
-                foreach (var item in _pages)
-                {
-                    if (!selectedAll && !this.sheetsConfig.Any(x => x.selected && x.csvName == item.Key))
+                    var sheetConfig = this.sheetsConfig.Find(x => x.csvName == item.Key);
+                    
+                    if (!selectedAll && !sheetConfig.selected)
                     {
                         continue;
                     }
@@ -247,6 +267,30 @@ namespace CsvReader
             }
 
             isDownloading = false;
+        }
+        
+        private bool MustLength()
+        {
+            return this.googleSheetId.Length == SHEET_ID_LENGTH;
+        }
+        
+        public async UniTaskVoid OnSheetIdChange()
+        {
+            if (this.googleSheetId.Length != SHEET_ID_LENGTH)
+            {
+                return;
+            }
+            
+            var credential = GoogleCredential.FromJson(CsvConfig.Instance.credentialFile.text)
+                .CreateScoped(DriveService.Scope.DriveReadonly);
+
+            using var service =
+                new SheetsService(new BaseClientService.Initializer() { HttpClientInitializer = credential });
+            var sheetReq = service.Spreadsheets.Get(this.googleSheetId);
+            sheetReq.Fields = "properties,sheets(properties,data.rowData.values.formattedValue)";
+            var spreadSheet = await sheetReq.ExecuteAsync();
+
+            GetCsvPages(spreadSheet);
         }
 
         private class CsvPage

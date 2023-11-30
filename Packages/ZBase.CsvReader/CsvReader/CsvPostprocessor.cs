@@ -19,7 +19,7 @@ namespace CsvReader
 #if GOOGLE_SHEET_DOWNLOADER
             bool isDownloaderConfigUpdated = false;
 #endif
-            
+
             foreach (string assetPath in importedAssets)
             {
                 if (Path.GetExtension(assetPath).Equals(".csv"))
@@ -32,26 +32,28 @@ namespace CsvReader
                     {
                         continue;
                     }
-                    
-                    if (isReaderConfigUpdated == false && assetPath.IndexOf(CsvConfig.Instance.readerConfigPath, StringComparison.Ordinal) != -1)
+
+                    if (isReaderConfigUpdated == false &&
+                        assetPath.IndexOf(CsvConfig.Instance.readerConfigPath, StringComparison.Ordinal) != -1)
                     {
                         isReaderConfigUpdated = true;
                         continue;
                     }
-                    
+
 #if GOOGLE_SHEET_DOWNLOADER
-                    if (isDownloaderConfigUpdated == false && assetPath.IndexOf(CsvConfig.Instance.downloaderConfigPath, StringComparison.Ordinal) != -1)
+                    if (isDownloaderConfigUpdated == false && assetPath.IndexOf(CsvConfig.Instance.downloaderConfigPath,
+                            StringComparison.Ordinal) != -1)
                     {
                         isDownloaderConfigUpdated = true;
                         continue;
                     }
-#endif 
+#endif
 
-                    if (isReaderConfigUpdated 
+                    if (isReaderConfigUpdated
 #if GOOGLE_SHEET_DOWNLOADER
                         && isDownloaderConfigUpdated
 #endif
-                        )
+                       )
                     {
                         break;
                     }
@@ -60,16 +62,18 @@ namespace CsvReader
 
             if (isReaderConfigUpdated)
             {
-                var guids = AssetDatabase.FindAssets("t:ScriptableObject", new[] { CsvConfig.Instance.readerConfigPath });
+                var guids = AssetDatabase.FindAssets("t:ScriptableObject",
+                    new[] { CsvConfig.Instance.readerConfigPath });
 
                 CsvDataController.Instance.readerData = guids.Select(AssetDatabase.GUIDToAssetPath)
                     .Select(AssetDatabase.LoadAssetAtPath<CsvData>).Where(data => data).ToArray();
             }
-            
+
 #if GOOGLE_SHEET_DOWNLOADER
             if (isDownloaderConfigUpdated)
             {
-                var guids = AssetDatabase.FindAssets("t:ScriptableObject", new[] { CsvConfig.Instance.downloaderConfigPath });
+                var guids = AssetDatabase.FindAssets("t:ScriptableObject",
+                    new[] { CsvConfig.Instance.downloaderConfigPath });
 
                 CsvDataController.Instance.downloaderData = guids.Select(AssetDatabase.GUIDToAssetPath)
                     .Select(AssetDatabase.LoadAssetAtPath<GoogleSheetGroupConfig>).Where(data => data).ToArray();
