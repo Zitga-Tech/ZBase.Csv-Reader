@@ -1,3 +1,3 @@
-id,health,armor
-2001,100,49
-2004,101,52
+id,health,armor,type,
+2001,100,49,1,
+2004,101,52,Healer,
