@@ -113,6 +113,13 @@ namespace CsvReader
                 ?.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
                 .Where(info => info.FieldType.IsArray).Select(info => info.Name);
         }
+        
+        public static IEnumerable<string> GetAllFields(string className)
+        {
+            return GetType(className)
+                ?.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
+                .Select(info => info.Name);
+        }
 
         public static IEnumerable<string> GetAllMethod(string className)
         {

@@ -58,6 +58,12 @@ public class CsvReaderEditorTest
     {
         Assert.IsTrue(CompareTwoClass<HeroConfig>());
     }
+    
+    [Test]
+    public void CsvReaderEditorTestApiConfig()
+    {
+        Assert.IsTrue(CompareTwoClass<ApiConfig>());
+    }
 
     [Test]
     public void CsvReaderEditorTestZombieConfig()

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f90c27c51c90fd408fe1d9d539c91be, type: 3}
   m_Name: CsvDataController
   m_EditorClassIdentifier: 
-  csvDataName: HeroConfig
+  csvDataName: ApiConfig
   readerData:
+  - {fileID: 11400000, guid: 17a00f55b0120a4468f08e4618f13b64, type: 2}
   - {fileID: 11400000, guid: 1a4c46e3db8c5a3459a788a461cf7e70, type: 2}
   - {fileID: 11400000, guid: 8b151ef46b23d174ea66a1fec4e00c49, type: 2}
   - {fileID: 11400000, guid: a40cc33930804264e8b38c67d20cf82a, type: 2}

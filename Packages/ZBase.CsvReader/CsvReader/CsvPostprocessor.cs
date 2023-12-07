@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace CsvReader
 {
@@ -113,36 +114,12 @@ namespace CsvReader
                     string nameAsset = $"{csvInfo.className}.asset";
 
                     string assetFile = $"{CsvConfig.Instance.scriptableObjectPath}/{nameAsset}";
-                    var gm = AssetDatabase.LoadAssetAtPath(assetFile, collectionType);
-                    if (gm == null)
-                    {
-                        gm = ScriptableObject.CreateInstance(collectionType);
-                        AssetDatabase.CreateAsset(gm, assetFile);
-                    }
+
+                    var gm = GetScriptableObject(assetFile, collectionType);
 
                     if (csvInfo.csvFile != null)
                     {
-                        var field = gm.GetType().GetField(csvInfo.fieldSetValue,
-                            BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-
-                        var dataType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
-
-                        var result = Reader.Deserialize(dataType, csvInfo.csvFile.text);
-
-                        if (field != null)
-                        {
-                            field.SetValue(gm, result);
-
-                            if (csvInfo.IsUsingConvertMethod())
-                            {
-                                var method = gm.GetType().GetMethod(csvInfo.convertMethod);
-                                method?.Invoke(gm, null);
-                                if (field.IsPrivate) field.SetValue(gm, null);
-                            }
-                        }
-
-                        EditorUtility.SetDirty(gm);
-                        AssetDatabase.SaveAssets();
+                        SetFileToScriptableObject(gm, csvInfo, csvInfo.csvFile.text);
                     }
                 }
                 else
@@ -172,33 +149,9 @@ namespace CsvReader
                                 string nameAsset = $"{csvInfo.className}{distinctPart}.asset";
                                 string assetFile = $"{CsvConfig.Instance.scriptableObjectPath}/{nameAsset}";
 
-                                var gm = AssetDatabase.LoadAssetAtPath(assetFile, collectionType);
-                                if (gm == null)
-                                {
-                                    gm = ScriptableObject.CreateInstance(collectionType);
-                                    AssetDatabase.CreateAsset(gm, assetFile);
-                                }
+                                var gm = GetScriptableObject(assetFile, collectionType);
 
-                                var field = gm.GetType().GetField(csvInfo.fieldSetValue,
-                                    BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-
-                                var dataType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
-
-                                var result = Reader.Deserialize(dataType, textAsset.text);
-
-                                if (field != null)
-                                {
-                                    field.SetValue(gm, result);
-                                    if (csvInfo.IsUsingConvertMethod())
-                                    {
-                                        var method = gm.GetType().GetMethod(csvInfo.convertMethod);
-                                        method?.Invoke(gm, null);
-                                        if (field.IsPrivate) field.SetValue(gm, null);
-                                    }
-                                }
-
-                                EditorUtility.SetDirty(gm);
-                                AssetDatabase.SaveAssets();
+                                SetFileToScriptableObject(gm, csvInfo, textAsset.text);
                             }
                         }
                     }
@@ -207,12 +160,8 @@ namespace CsvReader
                         // Get ScriptableObject Info
                         string nameAsset = $"{csvInfo.className}.asset";
                         string assetFile = $"{CsvConfig.Instance.scriptableObjectPath}/{nameAsset}";
-                        var gm = AssetDatabase.LoadAssetAtPath(assetFile, collectionType);
-                        if (gm == null)
-                        {
-                            gm = ScriptableObject.CreateInstance(collectionType);
-                            AssetDatabase.CreateAsset(gm, assetFile);
-                        }
+
+                        var gm = GetScriptableObject(assetFile, collectionType);
 
                         var field = gm.GetType().GetField(csvInfo.fieldSetValue,
                             BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
@@ -256,6 +205,45 @@ namespace CsvReader
             }
 
             Debug.Log("Reimport Asset: " + assetPath);
+        }
+
+        static Object GetScriptableObject(string assetFile, Type collectionType)
+        {
+            var gm = AssetDatabase.LoadAssetAtPath(assetFile, collectionType);
+            if (gm == null)
+            {
+                gm = ScriptableObject.CreateInstance(collectionType);
+                AssetDatabase.CreateAsset(gm, assetFile);
+            }
+
+            return gm;
+        }
+
+        static void SetFileToScriptableObject(Object gm, CsvData.CsvInfo csvInfo, string text)
+        {
+            var field = gm.GetType().GetField(csvInfo.fieldSetValue,
+                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+
+            var dataType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
+
+            var isArray = field.FieldType.IsArray;
+
+            var result = Reader.Deserialize(dataType, text, isArray);
+
+            if (field != null)
+            {
+                field.SetValue(gm, result);
+
+                if (csvInfo.IsUsingConvertMethod())
+                {
+                    var method = gm.GetType().GetMethod(csvInfo.convertMethod);
+                    method?.Invoke(gm, null);
+                    if (field.IsPrivate) field.SetValue(gm, null);
+                }
+            }
+
+            EditorUtility.SetDirty(gm);
+            AssetDatabase.SaveAssets();
         }
     }
 }

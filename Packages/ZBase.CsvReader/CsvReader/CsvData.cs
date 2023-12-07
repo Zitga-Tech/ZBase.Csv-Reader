@@ -161,7 +161,7 @@ namespace CsvReader
 
             public IEnumerable GetAllFields()
             {
-                var fieldNames = CsvReaderUtils.GetAllArrayField(this.className);
+                var fieldNames = CsvReaderUtils.GetAllFields(this.className);
 
                 foreach (var t in fieldNames)
                 {

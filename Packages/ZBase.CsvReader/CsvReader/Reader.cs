@@ -14,17 +14,23 @@ namespace CsvReader
         private static char s_csvSeparator;
         private static char s_primitiveArraySeparator;
         private static bool s_isCustomPrimitiveArray;
-        public static object Deserialize(Type type, string text)
+        public static object Deserialize(Type type, string text, bool isArray = true)
         {
             s_csvSeparator = GetCsvSeparator(type);
             (s_isCustomPrimitiveArray, s_primitiveArraySeparator) = GetCsvPrimitiveArraySeparator(type);
-            return CreateArray(type, ParseCsv(text, s_csvSeparator));
+
+            if (isArray)
+            {
+                return CreateArray(type, ParseCsv(text, s_csvSeparator));
+            }
+            else
+            {
+                return CreateSingle(type, ParseCsv(text, s_csvSeparator));
+            }
         }
 
-        private static object CreateArray(Type type, List<string[]> rows)
+        private static Dictionary<string, int> CreateTable(List<string[]> rows)
         {
-            var (countElement, startRows) = CountNumberElement(1, 0, 0, rows);
-            Array arrayValue = Array.CreateInstance(type, countElement);
             Dictionary<string, int> table = new Dictionary<string, int>();
 
             for (int i = 0; i < rows[0].Length; i++)
@@ -48,6 +54,23 @@ namespace CsvReader
                     throw new Exception("Key is not valid: " + id);
                 }
             }
+
+            return table;
+        }
+
+        private static object CreateSingle(Type type, List<string[]> rows)
+        {
+            var table = CreateTable(rows);
+            
+            return Create(1, 0, rows, table, type);
+        }
+
+        private static object CreateArray(Type type, List<string[]> rows)
+        {
+            var (countElement, startRows) = CountNumberElement(1, 0, 0, rows);
+            Array arrayValue = Array.CreateInstance(type, countElement);
+
+            var table = CreateTable(rows);
 
             for (int i = 0; i < arrayValue.Length; i++)
             {
