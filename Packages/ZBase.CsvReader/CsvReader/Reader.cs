@@ -14,18 +14,18 @@ namespace CsvReader
         private static char s_csvSeparator;
         private static char s_primitiveArraySeparator;
         private static bool s_isCustomPrimitiveArray;
-        public static object Deserialize(Type type, string text, bool isArray = true)
+        public static object Deserialize(Type type, string text, string fieldSetValue, bool isArray = true)
         {
             s_csvSeparator = GetCsvSeparator(type);
             (s_isCustomPrimitiveArray, s_primitiveArraySeparator) = GetCsvPrimitiveArraySeparator(type);
 
             if (isArray)
             {
-                return CreateArray(type, ParseCsv(text, s_csvSeparator));
+                return CreateArray(type, ParseCsv(text, s_csvSeparator), fieldSetValue);
             }
             else
             {
-                return CreateSingle(type, ParseCsv(text, s_csvSeparator));
+                return CreateSingle(type, ParseCsv(text, s_csvSeparator), fieldSetValue);
             }
         }
 
@@ -58,14 +58,14 @@ namespace CsvReader
             return table;
         }
 
-        private static object CreateSingle(Type type, List<string[]> rows)
+        private static object CreateSingle(Type type, List<string[]> rows, string fieldSetValue)
         {
             var table = CreateTable(rows);
             
             return Create(1, 0, rows, table, type);
         }
 
-        private static object CreateArray(Type type, List<string[]> rows)
+        private static object CreateArray(Type type, List<string[]> rows, string fieldSetValue)
         {
             var (countElement, startRows) = CountNumberElement(1, 0, 0, rows);
             Array arrayValue = Array.CreateInstance(type, countElement);
@@ -73,13 +73,29 @@ namespace CsvReader
             var table = CreateTable(rows);
 
             var isPrimitive = CsvReaderUtils.IsPrimitive(type);
-            
-            for (int i = 0; i < arrayValue.Length; i++)
+            if (isPrimitive)
             {
-                object rowData = isPrimitive ? GetPrimitiveValue(type, rows[startRows[i]][0]) : Create(startRows[i], 0, rows, table, type);
-                arrayValue.SetValue(rowData, i);
+                if(table.TryGetValue(fieldSetValue, out var idx))
+                {
+                    for (int i = 0; i < arrayValue.Length; i++)
+                    {
+                        object rowData = GetPrimitiveValue(type, rows[startRows[i]][idx]);
+                        arrayValue.SetValue(rowData, i);
+                    }
+                }else
+                {
+                    throw new Exception($"Not found field to set value: {fieldSetValue}");
+                }
             }
-
+            else
+            {
+                for (int i = 0; i < arrayValue.Length; i++)
+                {
+                    object rowData = isPrimitive ? GetPrimitiveValue(type, rows[startRows[i]][0]) : Create(startRows[i], 0, rows, table, type);
+                    arrayValue.SetValue(rowData, i);
+                }
+            }
+            
             return arrayValue;
         }
 

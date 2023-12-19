@@ -64,6 +64,13 @@ public class CsvReaderEditorTest
     {
         Assert.IsTrue(CompareTwoClass<ApiConfig>());
     }
+    
+     
+    [Test]
+    public void CsvReaderEditorTestBigNumber()
+    {
+        Assert.IsTrue(CompareTwoClass<FormatBigNumber>());
+    }
 
     [Test]
     public void CsvReaderEditorTestZombieConfig()

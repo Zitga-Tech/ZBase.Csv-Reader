@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844d59f2c083035488b151af355f8728, type: 3}
+  m_Name: Csv.FormatBigNumber
+  m_EditorClassIdentifier: 
+  suffix:
+  - 
+  - 
+  - million
+  - billion
+  - trillion
+  - quadrillion
+  - quintillion
+  - sextillion
+  - septillion
+  - octillion
+  - nonillion
+  - decillion
+  - undecillion
+  - duodecillion
+  - tredecillion
+  - quattuordecillion
+  - quindecillion
+  - sexdecillion
+  - septemdecillion
+  - octodecillion
+  - novemdecillion
+  - vigintillion
+  - unvigintillion
+  - duovigintillion
+  - trevigintillion
+  - quattuorvigintillion
+  - quinvigintillion
+  - sexvigintillion
+  - septvigintillion
+  - octovigintillion
+  - nonvigintillion
+  - trigintillion
+  - untrigintillion
+  - duotrigintillion
+  - trestrigintillion
+  - "quattuor\xADtrigint\xADillion"
+  - quintrigintillion
+  - sestrigintillion
+  - septentrigintillion
+  - octotrigintillion
+  - noventrigintillion
+  - quadragintillion
+  - Unquadragintillion
+  - Duoquadragintillion
+  - Trequadragintillion
+  - Quattuorquadragintillion
+  - Quinquadragintillion
+  - Sexquadragintillion
+  - Septenquadragintillion
+  - Octoquadragintillion
+  - Novemquadragintillion
+  - Quinquagintillion
+  - Unquinquagintillion
+  - Duoquinquagintillion
+  - Trequinquagintillion
+  - Quattuorquinquagintillion
+  - Quinquinquagintillion
+  - Sexquinquagintillion
+  - Septenquinquagintillion
+  - Octoquinquagintillion
+  - Novemquinquagintillion
+  - Sexagintillion
+  - Unsexagintillion
+  - Duosexagintillion
+  - Tresexagintillion
+  - Quattuorsexagintillion
+  - Quinsexagintillion
+  - Sexsexagintillion
+  - Septsexagintillion
+  - Octosexagintillion
+  - Novemsexagintillion
+  - Septuagintillion
+  - Unseptuagintillion
+  - Duoseptuagintillion
+  - Treseptuagintillion
+  - Quattuorseptuagintillion
+  - Quinseptuagintillion
+  - Sexseptuagintillion
+  - Septseptuagintillion
+  - Octoseptuagintillion
+  - Novemseptuagintillion
+  - Octogintillion
+  - Unoctogintillion
+  - Duooctogintillion
+  - Treoctogintillion
+  - Quattuoroctogintillion
+  - Quinoctogintillion
+  - Sexoctogintillion
+  - Septoctogintillion
+  - Octooctogintillion
+  - Novemoctogintillion
+  - Nonagintillion
+  - Unnonagintillion
+  - Duononagintillion
+  - Trenonagintillion
+  - Duattuornonagintillion
+  - Quinnonagintillion
+  - Sexnonagintillion
+  - Septnonagintillion
+  - Octononagintillion
+  - Novemnonagintillion
+  - Centillion
+  - Cenuntillion
+  - Duocentillion
+  - Centretillion

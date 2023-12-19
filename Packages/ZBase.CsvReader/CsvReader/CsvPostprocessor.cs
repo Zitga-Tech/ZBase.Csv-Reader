@@ -180,7 +180,7 @@ namespace CsvReader
 
                                 if (textAsset)
                                 {
-                                    var result = Reader.Deserialize(dataType, textAsset.text) as Array;
+                                    var result = Reader.Deserialize(dataType, textAsset.text, csvInfo.fieldSetValue) as Array;
                                     foreach (var item in result)
                                         resultList.Add(item);
                                 }
@@ -228,7 +228,7 @@ namespace CsvReader
 
             var isArray = field.FieldType.IsArray;
 
-            var result = Reader.Deserialize(dataType, text, isArray);
+            var result = Reader.Deserialize(dataType, text, csvInfo.fieldSetValue, isArray);
 
             if (field != null)
             {
