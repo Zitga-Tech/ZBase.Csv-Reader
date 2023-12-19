@@ -85,7 +85,7 @@ namespace CsvReader
 
         public static bool IsPrimitive(Type type)
         {
-            return type == typeof(string) || type.IsEnum || type.IsPrimitive;
+            return type == typeof(string) || type == typeof(System.String) || type.IsEnum || type.IsPrimitive;
         }
     
         public static bool IsNumeric(this Type myType)

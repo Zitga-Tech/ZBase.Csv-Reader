@@ -72,9 +72,11 @@ namespace CsvReader
 
             var table = CreateTable(rows);
 
+            var isPrimitive = CsvReaderUtils.IsPrimitive(type);
+            
             for (int i = 0; i < arrayValue.Length; i++)
             {
-                object rowData = Create(startRows[i], 0, rows, table, type);
+                object rowData = isPrimitive ? GetPrimitiveValue(type, rows[startRows[i]][0]) : Create(startRows[i], 0, rows, table, type);
                 arrayValue.SetValue(rowData, i);
             }
 
