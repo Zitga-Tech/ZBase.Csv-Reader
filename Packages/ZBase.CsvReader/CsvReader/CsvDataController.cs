@@ -48,6 +48,15 @@ namespace CsvReader
         [ReadOnly] public CsvData[] readerData;
 #pragma warning restore CS8618
 
+        public void SetReaderData()
+        {
+            var guids = AssetDatabase.FindAssets("t:ScriptableObject",
+                new[] { CsvConfig.Instance.readerConfigPath });
+
+            readerData = guids.Select(AssetDatabase.GUIDToAssetPath)
+                .Select(AssetDatabase.LoadAssetAtPath<CsvData>).Where(data => data).ToArray();
+        }
+        
         public CsvData.CsvInfo? GetInfo(string csvPath)
         {
             return this.readerData.Select(csvData => csvData.GetInfo(csvPath))

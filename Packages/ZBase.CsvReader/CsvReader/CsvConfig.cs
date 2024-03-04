@@ -69,8 +69,14 @@ namespace CsvReader
         [Button("Refresh All Csv Config"), PropertyOrder(7)]
         private void RefreshAllCsvConfig()
         {
+            CsvDataController.Instance.SetReaderData();
             foreach (CsvData data in CsvDataController.Instance.readerData)
             {
+                if (data == null)
+                {
+                    continue;
+                }
+                
                 foreach (CsvData.ClassInfo classInfo in data.classInfomations)
                 {
                     foreach (CsvData.CsvInfo csvInfo in classInfo.csvInformations)
@@ -79,6 +85,8 @@ namespace CsvReader
                     }
                 }
             }
+            
+            Debug.Log("RefreshAllCsvConfig is Complete");
         }
         
         private bool StringCantEmpty(string path)

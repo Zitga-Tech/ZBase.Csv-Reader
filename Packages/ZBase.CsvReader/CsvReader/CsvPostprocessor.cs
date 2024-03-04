@@ -63,11 +63,7 @@ namespace CsvReader
 
             if (isReaderConfigUpdated)
             {
-                var guids = AssetDatabase.FindAssets("t:ScriptableObject",
-                    new[] { CsvConfig.Instance.readerConfigPath });
-
-                CsvDataController.Instance.readerData = guids.Select(AssetDatabase.GUIDToAssetPath)
-                    .Select(AssetDatabase.LoadAssetAtPath<CsvData>).Where(data => data).ToArray();
+                CsvDataController.Instance.SetReaderData();
             }
 
 #if GOOGLE_SHEET_DOWNLOADER
