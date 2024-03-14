@@ -2,7 +2,8 @@
     "name": "CsvReader",
     "rootNamespace": "",
     "references": [
-        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:db2875c6bc6e11c4fb8730f4afcd8265"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

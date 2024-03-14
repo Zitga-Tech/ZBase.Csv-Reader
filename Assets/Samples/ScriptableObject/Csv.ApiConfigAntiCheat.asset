@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f95c5ff10a24143a24c7dcb506893f, type: 3}
+  m_Name: Csv.ApiConfigAntiCheat
+  m_EditorClassIdentifier: 
+  data:
+    apiHost:
+      currentCryptoKey: 
+      hiddenValue: 
+      cryptoKey: e30056006d00a900f800ae001300
+      hiddenChars: d20064005a008700c80080002300cd006700
+      inited: 1
+      fakeValue: 127.0.0.1
+      fakeValueActive: 1
+    apiPort:
+      currentCryptoKey: 1088348275
+      hiddenValue: 1088356146
+      inited: 1
+      fakeValue: 8001
+      fakeValueActive: 1
+    apiVersion:
+      currentCryptoKey: 1289082693
+      hiddenValue: 1289082692
+      inited: 1
+      fakeValue: 1
+      fakeValueActive: 1
+    apiSecretKey:
+      currentCryptoKey: 
+      hiddenValue: 
+      cryptoKey: 35006e00a9003c004a00c8004200
+      hiddenChars: 54000c00ca00
+      inited: 1
+      fakeValue: abc
+      fakeValueActive: 1

@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: d123a0bf35a94004aa342821cfcc3ea8
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - thinWallPrefab: {fileID: 100000, guid: 3679c69bab7abbf408e8fcd6d63fd849, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

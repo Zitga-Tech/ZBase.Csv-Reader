@@ -1,0 +1,5 @@
+Asset uses these third-party software:
+- xxHashSharp under BSD 2-Clause License
+  - used both in Runtime and Editor
+- SharpZipLib under MIT License
+  - used only in Editor

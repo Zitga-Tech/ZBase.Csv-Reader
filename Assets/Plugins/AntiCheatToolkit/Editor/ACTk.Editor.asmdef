@@ -1,0 +1,10 @@
+{
+    "name": "ACTk.Editor",
+    "references": [
+        "ACTk.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}
