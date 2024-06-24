@@ -12,17 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e4bd92c2548de48974e824e341dced, type: 3}
   m_Name: Csv.RewardInfoList
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
   dataGroups:
-  - stage: 101001
+  - stage:
+      value: 101001
     rewardInfo:
     - isFirst: 1
       resource:
@@ -34,7 +26,8 @@ MonoBehaviour:
         resourceType: 0
         resourceId: 2
         resourceNumber: 2147483647
-  - stage: 101002
+  - stage:
+      value: 101002
     rewardInfo:
     - isFirst: 1
       resource:

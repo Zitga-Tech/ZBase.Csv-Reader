@@ -1,4 +1,4 @@
-#if UNITY_EDITOR
+#if UNITY_EDITOR && ODIN_INSPECTOR
 #nullable enable
 using System;
 using System.Collections;

@@ -1,9 +1,12 @@
-#if UNITY_EDITOR
+#if UNITY_EDITOR && ODIN_INSPECTOR
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
+using Sirenix.Utilities;
 
 namespace CsvReader
 {
@@ -27,6 +30,23 @@ namespace CsvReader
             else
             {
                 fullName = tmp.FieldType.FullName;
+            }
+
+            return GetType(fullName);
+        }
+        
+        public static Type GetElementTypeFromFieldInfo(Type type)
+        {
+            string fullName = string.Empty;
+
+            if (type.IsArray)
+            {
+                if (type.FullName != null)
+                    fullName = type.FullName.Substring(0, type.FullName.Length - 2);
+            }
+            else
+            {
+                fullName = type.FullName;
             }
 
             return GetType(fullName);
@@ -73,19 +93,17 @@ namespace CsvReader
         /// Can't use IsClass or IsPrimitive because Array is always a class.
         /// Want to check the real type of element in array
         /// </summary>
-        /// <param name="tmp"></param>
+        /// <param name="type"></param>
         /// <param name="isCustomPrimitiveArray"></param>
         /// <returns></returns>
-        public static bool IsPrimitive(FieldInfo tmp, bool isCustomPrimitiveArray)
+        public static bool IsPrimitive(Type type, bool isCustomPrimitiveArray)
         {
-            Type type = tmp.FieldType.IsArray && isCustomPrimitiveArray ? GetElementTypeFromFieldInfo(tmp) : tmp.FieldType;
-
-            return IsPrimitive(type);
+            return IsPrimitive(type.IsArray && isCustomPrimitiveArray ? GetElementTypeFromFieldInfo(type) : type);
         }
 
         public static bool IsPrimitive(Type type)
         {
-            return type == typeof(string) || type == typeof(System.String) || type.IsEnum || type.IsPrimitive;
+            return type == typeof(string) || type.IsEnum || type.IsPrimitive;
         }
     
         public static bool IsNumeric(this Type myType)
@@ -141,6 +159,132 @@ namespace CsvReader
 
             var values = enumType.GetEnumValues();
             return values.GetValue(0);
+        }
+
+        public static ConverterInfo TryGetConverter(FieldInfo field)
+        {
+            var attrib = field.GetCustomAttribute<ConverterAttribute>(true);
+
+            if (attrib == null)
+            {
+                return default;
+            }
+
+            var converterType = attrib.Type;
+            var fromType = attrib.FromType;
+            var toType = field.FieldType;
+            var lineNumber = attrib.CallerLineNumber;
+            var filePath = attrib.CallerFilePath;
+            var iconverterType = typeof(IConvert<,>);
+
+            if (converterType == null)
+            {
+                throw new ArgumentNullException($"Converter type cannot be null. File: {filePath}:{lineNumber}");
+            }
+
+            if (converterType.IsInterface || (converterType.IsAbstract && converterType.IsSealed == false))
+            {
+                throw new NotSupportedException(
+                    $"{converterType.FullName} cannot be neither an interface nor an abstract class. " +
+                    $"File: {filePath}:{lineNumber}"
+                );
+            }
+
+            if (converterType.IsValueType == false && converterType.GetConstructor(Type.EmptyTypes) == null)
+            {
+                throw new InvalidOperationException(
+                    $"{converterType.FullName} must have a parameterless constructor. " +
+                    $"File: {filePath}:{lineNumber}"
+                );
+            }
+
+            var interfaces = converterType.GetInterfaces()
+                .Where(x => x.ImplementsOpenGenericInterface(iconverterType))
+                .Where(x => {
+                    var typeArgs = x.GetArgumentsOfInheritedOpenGenericInterface(iconverterType);
+                    return typeArgs.Length == 2
+                        && typeArgs[1] == toType
+                        && (fromType == null || typeArgs[0] == fromType);
+                })
+                .ToArray();
+
+            if (interfaces.Length < 1)
+            {
+                throw new NotImplementedException(
+                    $"{converterType.FullName} must implement CsvReader.IConvert<{fromType?.ToString() ?? "TFrom"}, {toType}> interface. " +
+                    $"File: {filePath}:{lineNumber}"
+                );
+            }
+
+            if (fromType == null)
+            {
+                var typeArgs = interfaces[0].GetArgumentsOfInheritedOpenGenericInterface(iconverterType);
+                fromType = typeArgs[0];
+            }
+
+            var isStatic = converterType.IsAbstract && converterType.IsSealed;
+            var methods = converterType.GetMethods(BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance);
+
+            foreach (var method in methods)
+            {
+                if (method.ReturnType != toType)
+                {
+                    continue;
+                }
+
+                var parameters = method.GetParameters();
+
+                if (parameters.Length != 1)
+                {
+                    continue;
+                }
+
+                if (parameters[0].ParameterType != typeof(object))
+                {
+                    continue;
+                }
+
+                return new ConverterInfo(converterType, fromType, method, isStatic);
+            }
+
+            throw new NotImplementedException(
+                $"Cannot find applicable Convert method on type {converterType.FullName}." +
+                $"File: {filePath}:{lineNumber}"
+            );
+        }
+    }
+
+    public readonly struct ConverterInfo
+    {
+        public readonly bool IsStatic;
+        public readonly Type Type;
+        public readonly Type FromType;
+        public readonly MethodInfo Method;
+
+        public bool IsValid
+            => Type != null && FromType != null && Method != null;
+
+        public ConverterInfo([NotNull] Type type, Type fromType, [NotNull] MethodInfo method, bool isStatic)
+        {
+            IsStatic = isStatic;
+            Type = type;
+            FromType = fromType;
+            Method = method;
+        }
+
+        public Type GetFieldType(FieldInfo field)
+            => IsValid ? FromType : field.FieldType;
+
+        public object Convert(object value)
+        {
+            if (IsValid == false)
+                return value;
+
+            if (IsStatic)
+                return Method.Invoke(null, new[] { value });
+
+            var instance = Activator.CreateInstance(Type);
+            return Method.Invoke(instance, new[] { value });
         }
     }
 }

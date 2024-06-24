@@ -1,6 +1,9 @@
+using System;
 using Csv;
+using CsvReader;
 using Newtonsoft.Json;
 using NUnit.Framework;
+using Sirenix.Utilities;
 using UnityEditor;
 using UnityEngine;
 
@@ -70,6 +73,16 @@ public class CsvReaderEditorTest
     public void CsvReaderEditorTestBigNumber()
     {
         Assert.IsTrue(CompareTwoClass<FormatBigNumber>());
+    }
+
+    [Test]
+    public void CsvReaderEditorTestConverterTypeArguments()
+    {
+        var type = typeof(CustomIntConverter);
+        var typeArgs = type.GetArgumentsOfInheritedOpenGenericInterface(typeof(IConvert<,>));
+        Assert.AreEqual(typeArgs.Length, 2);
+        Assert.AreEqual(typeArgs[0], typeof(int));
+        Assert.AreEqual(typeArgs[1], typeof(CustomInt));
     }
 
     [Test]
@@ -150,5 +163,29 @@ public class CsvReaderEditorTest
         }
 
         return result;
+    }
+
+    [Serializable]
+    public struct CustomInt
+    {
+        public int value;
+
+        public static implicit operator CustomInt(int value)
+        {
+            return new CustomInt { value = value };
+        }
+
+        public static implicit operator int(CustomInt value)
+        {
+            return value.value;
+        }
+    }
+
+    public readonly struct CustomIntConverter : IConvert<int, CustomInt>
+    {
+        public CustomInt Convert(object value)
+        {
+            return (int)value;
+        }
     }
 }

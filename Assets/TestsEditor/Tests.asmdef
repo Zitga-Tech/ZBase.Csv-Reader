@@ -16,7 +16,11 @@
     "precompiledReferences": [
         "nunit.framework.dll",
         "Newtonsoft.Json.dll",
-        "Sirenix.Serialization.dll"
+        "Sirenix.OdinInspector.Attributes.dll",
+        "Sirenix.Reflection.Editor.dll",
+        "Sirenix.Serialization.dll",
+        "Sirenix.Utilities.dll",
+        "Sirenix.Utilities.Editor.dll"
     ],
     "autoReferenced": false,
     "defineConstraints": [

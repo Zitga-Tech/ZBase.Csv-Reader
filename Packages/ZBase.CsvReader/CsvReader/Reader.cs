@@ -103,36 +103,42 @@ namespace CsvReader
         {
             object variable = Activator.CreateInstance(type);
 
-            FieldInfo[] fieldInfo = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 
             var cols = rows[index];
-            foreach (FieldInfo tmp in fieldInfo)
+
+            foreach (FieldInfo field in fields)
             {
-                var ignoredAttributes = tmp.GetCustomAttributes(typeof(CsvColumnIgnore), true);
+                var ignoredAttributes = field.GetCustomAttributes(typeof(CsvColumnIgnore), true);
+
                 if (ignoredAttributes.Length > 0) continue;
 
-                bool isPrimitive = CsvReaderUtils.IsPrimitive(tmp, s_isCustomPrimitiveArray);
+                var converter = CsvReaderUtils.TryGetConverter(field);
+                var fieldType = converter.GetFieldType(field);
+                var isPrimitive = CsvReaderUtils.IsPrimitive(fieldType, s_isCustomPrimitiveArray);
+
                 if (isPrimitive)
                 {
-                    string csvColumnName = GetFieldCsvColumnName(tmp, format);
+                    var csvColumnName = GetFieldCsvColumnName(field, format);
+
                     if (table.TryGetValue(csvColumnName, out var idx))
                     {
-                        SetValuePrimitive(variable, tmp, idx < cols.Length ? cols[idx] : string.Empty);
+                        SetValuePrimitive(variable, field, idx < cols.Length ? cols[idx] : string.Empty, converter);
                     }
                     else
                     {
-                        Debug.LogError("Key is not exist: " + csvColumnName);
+                        Debug.LogError($"Key `{csvColumnName}` does not exist at index={index}, parentIndex={parentIndex}.");
                     }
                 }
                 else
                 {
-                    var fieldFormat = GetCsvColumnFormat(tmp);
+                    var fieldFormat = GetCsvColumnFormat(field);
 
-                    if (tmp.FieldType.IsArray)
+                    if (fieldType.IsArray)
                     {
-                        var elementType = CsvReaderUtils.GetElementTypeFromFieldInfo(tmp);
+                        var elementType = CsvReaderUtils.GetElementTypeFromFieldInfo(field);
 
-                        string csvColumnName = GetFieldCsvColumnName(tmp, format);
+                        string csvColumnName = GetFieldCsvColumnName(field, format);
 
                         int objectIndex;
 
@@ -147,7 +153,9 @@ namespace CsvReader
                             }
                             else
                             {
-                                throw new Exception($"Key is not exist: {csvColumnName}");
+                                throw new KeyNotFoundException(
+                                    $"Key `{csvColumnName}` does not exist at index={index}, parentIndex={parentIndex}."
+                                );
                             }
                         }
                         else
@@ -174,11 +182,11 @@ namespace CsvReader
                             }
                         }
 
-                        tmp.SetValue(variable, arrayValue);
+                        field.SetValue(variable, converter.Convert(arrayValue));
                     }
                     else
                     {
-                        var typeName = tmp.FieldType.FullName;
+                        var typeName = fieldType.FullName;
                         if (typeName == null)
                         {
                             throw new Exception("Full name is nil");
@@ -190,7 +198,7 @@ namespace CsvReader
 
                         var value = Create(index, objectIndex, rows, table, elementType, fieldFormat);
 
-                        tmp.SetValue(variable, value);
+                        field.SetValue(variable, converter.Convert(value));
                     }
                 }
             }
@@ -198,13 +206,13 @@ namespace CsvReader
             return variable;
         }
 
-        static void SetValuePrimitive(object variable, FieldInfo fieldInfo, string value)
+        static void SetValuePrimitive(object variable, FieldInfo field, string value, in ConverterInfo converter)
         {
-            var type = fieldInfo.FieldType;
+            var type = converter.GetFieldType(field);
 
             if (string.IsNullOrEmpty(value))
             {
-                value = GetDefaultValue(fieldInfo);
+                value = GetDefaultValue(field);
             }
 
             if (type.IsArray)
@@ -212,6 +220,7 @@ namespace CsvReader
                 Type elementType = type.GetElementType();
                 string[] element = value.Split(s_primitiveArraySeparator);
                 Array arrayValue = Array.CreateInstance(elementType ?? throw new InvalidOperationException(), element.Length);
+
                 for (int i = 0; i < element.Length; i++)
                 {
                     if (elementType == typeof(string))
@@ -226,12 +235,12 @@ namespace CsvReader
                     }
                 }
 
-                fieldInfo.SetValue(variable, arrayValue);
+                field.SetValue(variable, converter.Convert(arrayValue));
             }
             else
             {
                 var primitiveValue = GetPrimitiveValue(type, value);
-                fieldInfo.SetValue(variable, primitiveValue);
+                field.SetValue(variable, converter.Convert(primitiveValue));
             }
         }
 

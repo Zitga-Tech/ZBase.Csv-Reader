@@ -1,4 +1,5 @@
-﻿#if GOOGLE_SHEET_DOWNLOADER
+﻿#if UNITY_EDITOR && ODIN_INSPECTOR && GOOGLE_SHEET_DOWNLOADER
+
 using Cysharp.Threading.Tasks;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v3;
@@ -22,7 +23,7 @@ namespace CsvReader
         public bool selected = true;
     }
 
-    public class GoogleSheetGroupConfig : SerializedScriptableObject
+    public class GoogleSheetGroupConfig : ScriptableObject
     {
         private const int SHEET_ID_LENGTH = 44;
 
