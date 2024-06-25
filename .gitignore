@@ -75,3 +75,8 @@ crashlytics-build.properties
 # Paid Packages
 Assets/Plugins/Sirenix
 Assets/Plugins/Sirenix.meta
+/[Aa]ssets/[Pp]lugins/[Ss]irenix/
+/[Aa]ssets/[Pp]lugins/[Ss]irenix.meta
+/[Aa]ssets/[Pp]ackages/com.sirenix.odin-inspector/
+/[Aa]ssets/[Pp]ackages/com.sirenix.odin-inspector.meta
+/[Pp]ackages/com.sirenix.odin-inspector*
