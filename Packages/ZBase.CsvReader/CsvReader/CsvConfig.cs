@@ -1,4 +1,4 @@
-#if UNITY_EDITOR
+#if UNITY_EDITOR && ODIN_INSPECTOR
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,6 @@ using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CsvReader
 {

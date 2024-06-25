@@ -7,6 +7,10 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Assertions;
 
+#if ANTI_CHEAT
+using CodeStage.AntiCheat.ObscuredTypes;
+#endif
+
 namespace CsvReader
 {
     public static class Reader
@@ -14,6 +18,7 @@ namespace CsvReader
         private static char s_csvSeparator;
         private static char s_primitiveArraySeparator;
         private static bool s_isCustomPrimitiveArray;
+
         public static object Deserialize(Type type, string text, string fieldSetValue, bool isArray = true)
         {
             s_csvSeparator = GetCsvSeparator(type);
@@ -61,7 +66,7 @@ namespace CsvReader
         private static object CreateSingle(Type type, List<string[]> rows, string fieldSetValue)
         {
             var table = CreateTable(rows);
-            
+
             return Create(1, 0, rows, table, type);
         }
 
@@ -75,14 +80,15 @@ namespace CsvReader
             var isPrimitive = CsvReaderUtils.IsPrimitive(type);
             if (isPrimitive)
             {
-                if(table.TryGetValue(fieldSetValue, out var idx))
+                if (table.TryGetValue(fieldSetValue, out var idx))
                 {
                     for (int i = 0; i < arrayValue.Length; i++)
                     {
                         object rowData = GetPrimitiveValue(type, rows[startRows[i]][idx]);
                         arrayValue.SetValue(rowData, i);
                     }
-                }else
+                }
+                else
                 {
                     throw new Exception($"Not found field to set value: {fieldSetValue}");
                 }
@@ -91,19 +97,23 @@ namespace CsvReader
             {
                 for (int i = 0; i < arrayValue.Length; i++)
                 {
-                    object rowData = isPrimitive ? GetPrimitiveValue(type, rows[startRows[i]][0]) : Create(startRows[i], 0, rows, table, type);
+                    object rowData = isPrimitive
+                        ? GetPrimitiveValue(type, rows[startRows[i]][0])
+                        : Create(startRows[i], 0, rows, table, type);
                     arrayValue.SetValue(rowData, i);
                 }
             }
-            
+
             return arrayValue;
         }
 
-        static object Create(int index, int parentIndex, List<string[]> rows, Dictionary<string, int> table, Type type, string format = "{0}")
+        static object Create(int index, int parentIndex, List<string[]> rows, Dictionary<string, int> table, Type type,
+            string format = "{0}")
         {
             object variable = Activator.CreateInstance(type);
 
-            FieldInfo[] fieldInfo = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo[] fieldInfo =
+                type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 
             var cols = rows[index];
             foreach (FieldInfo tmp in fieldInfo)
@@ -211,7 +221,8 @@ namespace CsvReader
             {
                 Type elementType = type.GetElementType();
                 string[] element = value.Split(s_primitiveArraySeparator);
-                Array arrayValue = Array.CreateInstance(elementType ?? throw new InvalidOperationException(), element.Length);
+                Array arrayValue =
+                    Array.CreateInstance(elementType ?? throw new InvalidOperationException(), element.Length);
                 for (int i = 0; i < element.Length; i++)
                 {
                     if (elementType == typeof(string))
@@ -239,18 +250,64 @@ namespace CsvReader
         {
             if (type.IsEnum)
                 return Enum.Parse(type, value);
-            
-            if (value.IndexOf('.') != -1 &&
-                     (type == typeof(int) || type == typeof(long) ||
-                      type == typeof(short)))
+
+            if (value.Contains(".") && (type == typeof(float) || type == typeof(double)))
+                return Convert.ChangeType(value, type);
+
+#if ANTI_CHEAT
+            if (CsvReaderUtils.IsObscuredTypes(type))
             {
-                float f = (float) Convert.ChangeType(value, typeof(float));
-                return Convert.ChangeType(f, type);
+                object convertedValue = null;
+
+                switch (Type.GetTypeCode(type))
+                {
+                    case TypeCode.String:
+                        convertedValue = value;
+                        break;
+                    case TypeCode.Boolean:
+                        convertedValue = bool.Parse(value);
+                        break;
+                    case TypeCode.Int32:
+                        convertedValue = int.Parse(value);
+                        break;
+                    case TypeCode.UInt32:
+                        convertedValue = uint.Parse(value);
+                        break;
+                    case TypeCode.Int16:
+                        convertedValue = short.Parse(value);
+                        break;
+                    case TypeCode.UInt16:
+                        convertedValue = ushort.Parse(value);
+                        break;
+                    case TypeCode.Int64:
+                        convertedValue = long.Parse(value);
+                        break;
+                    case TypeCode.UInt64:
+                        convertedValue = ulong.Parse(value);
+                        break;
+                    case TypeCode.Byte:
+                        convertedValue = byte.Parse(value);
+                        break;
+                    case TypeCode.SByte:
+                        convertedValue = sbyte.Parse(value);
+                        break;
+                    case TypeCode.Single:
+                        convertedValue = float.Parse(value);
+                        break;
+                    case TypeCode.Double:
+                        convertedValue = double.Parse(value);
+                        break;
+                    case TypeCode.Decimal:
+                        convertedValue = decimal.Parse(value);
+                        break;
+                    default:
+                        throw new NotSupportedException($"Unsupported type: {type}");
+                }
+
+                return convertedValue;
             }
-            
-            if (type == typeof(string))
-                return value;
-            
+#endif
+
             return Convert.ChangeType(value, type);
         }
 
@@ -271,25 +328,26 @@ namespace CsvReader
                         token.Append('\"');
                         i++;
                     }
-                    else switch (text[i])
-                    {
-                        case '\\' when i + 1 < text.Length && text[i + 1] == 'n':
-                            token.Append('\n');
-                            i++;
-                            break;
-                        case '\"':
+                    else
+                        switch (text[i])
                         {
-                            line.Add(token.ToString());
-                            token = new StringBuilder();
-                            quotes = false;
-                            if (i + 1 < text.Length && text[i + 1] == separator)
+                            case '\\' when i + 1 < text.Length && text[i + 1] == 'n':
+                                token.Append('\n');
                                 i++;
-                            break;
+                                break;
+                            case '\"':
+                            {
+                                line.Add(token.ToString());
+                                token = new StringBuilder();
+                                quotes = false;
+                                if (i + 1 < text.Length && text[i + 1] == separator)
+                                    i++;
+                                break;
+                            }
+                            default:
+                                token.Append(text[i]);
+                                break;
                         }
-                        default:
-                            token.Append(text[i]);
-                            break;
-                    }
                 }
                 else if (text[i] == '\r' || text[i] == '\n')
                 {
@@ -342,7 +400,8 @@ namespace CsvReader
         private static int GetObjectIndex(Type type, Dictionary<string, int> table, string format = "{0}")
         {
             int minIndex = int.MaxValue;
-            FieldInfo[] fieldInfo = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo[] fieldInfo =
+                type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
             foreach (FieldInfo tmp in fieldInfo)
             {
                 var fieldName = GetFieldCsvColumnName(tmp, format);
@@ -384,7 +443,7 @@ namespace CsvReader
                         count++;
                         startRows.Add(i);
                     }
-                    else if ( row.Length > parentIndex && row[parentIndex].Equals(string.Empty) || i == rowIndex)
+                    else if (row.Length > parentIndex && row[parentIndex].Equals(string.Empty) || i == rowIndex)
                     {
                         count++;
                         startRows.Add(i);
@@ -437,7 +496,7 @@ namespace CsvReader
             return separator;
         }
 
-        private static (bool ,char) GetCsvPrimitiveArraySeparator(Type type)
+        private static (bool, char) GetCsvPrimitiveArraySeparator(Type type)
         {
             object[] attributes = type.GetCustomAttributes(typeof(CsvClassCustomPrimitiveArray), true);
             if (attributes.Length > 0)
@@ -465,25 +524,33 @@ namespace CsvReader
             }
 
             var type = fieldInfo.FieldType;
-            
+
             if (type == typeof(string))
             {
                 return string.Empty;
             }
+
             if (type.IsNumeric())
             {
                 return "0";
             }
-            if (type == typeof(bool))
+
+            if (type == typeof(bool)
+#if ANTI_CHEAT
+                || type == typeof(ObscuredBool)
+#endif
+               )
             {
                 return "FALSE";
             }
+
             if (type.IsEnum)
             {
                 return CsvReaderUtils.GetDefaultValue(type).ToString();
             }
-                
-            throw new Exception($"{typeof(Type).FullName} is not support default value. Current support (string, numeric, enum, true/false");
+
+            throw new Exception(
+                $"{typeof(Type).FullName} is not support default value. Current support (string, numeric, enum, true/false");
         }
     }
 }

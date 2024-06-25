@@ -71,7 +71,13 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+[Pp]roject[Ss]ettings/[Aa][Cc][Tt]k[Ss]ettings.asset
 
 # Paid Packages
-Assets/Plugins/Sirenix
-Assets/Plugins/Sirenix.meta
+/[Aa]ssets/[Pp]lugins/[Ss]irenix/
+/[Aa]ssets/[Pp]lugins/[Ss]irenix.meta
+/[Aa]ssets/[Pp]ackages/com.sirenix.odin-inspector/
+/[Aa]ssets/[Pp]ackages/com.sirenix.odin-inspector.meta
+/[Aa]ssets/[Pp]lugins/[Aa]nti[Cc]heat[Tt]oolkit/
+/[Aa]ssets/[Pp]lugins/[Aa]nti[Cc]heat[Tt]oolkit.meta
+/[Pp]ackages/com.sirenix.odin-inspector*

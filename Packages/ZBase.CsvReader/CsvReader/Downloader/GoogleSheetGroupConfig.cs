@@ -1,4 +1,4 @@
-﻿#if GOOGLE_SHEET_DOWNLOADER
+﻿#if UNITY_EDITOR && GOOGLE_SHEET_DOWNLOADER && ODIN_INSPECTOR
 using Cysharp.Threading.Tasks;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v3;

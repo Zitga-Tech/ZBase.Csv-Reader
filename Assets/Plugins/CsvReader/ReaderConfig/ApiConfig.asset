@@ -24,3 +24,14 @@ MonoBehaviour:
       fileStartWith: 
       fieldSetValue: data
       convertMethod: 
+  - className: Csv.ApiConfigAntiCheat
+    csvInformations:
+    - csvType: 0
+      className: Csv.ApiConfigAntiCheat
+      csvFile: {fileID: 4900000, guid: 13e014c9fca4d2d4c87082693593d561, type: 3}
+      csvPath: Assets/Samples/Csv/game_config/api_config_anti_cheat.csv
+      csvFolderPath: 
+      separateScriptableObject: 0
+      fileStartWith: 
+      fieldSetValue: data
+      convertMethod: 

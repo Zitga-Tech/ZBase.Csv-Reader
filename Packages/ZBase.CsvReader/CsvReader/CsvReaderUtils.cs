@@ -1,21 +1,45 @@
-#if UNITY_EDITOR
+#if UNITY_EDITOR && ODIN_INSPECTOR
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 
+#if ANTI_CHEAT
+using CodeStage.AntiCheat.ObscuredTypes;
+#endif
+
 namespace CsvReader
 {
     public static class CsvReaderUtils
     {
         private static readonly HashSet<Type> s_numericTypes = new() {
-            typeof(int),  typeof(double),  typeof(decimal),
-            typeof(long), typeof(short),   typeof(sbyte),
-            typeof(byte), typeof(ulong),   typeof(ushort),  
-            typeof(uint), typeof(float)
+            typeof(int),
+            typeof(double),
+            typeof(decimal),
+            typeof(long),
+            typeof(short),
+            typeof(sbyte),
+            typeof(byte),
+            typeof(ulong),
+            typeof(ushort),
+            typeof(uint),
+            typeof(float),
+#if ANTI_CHEAT
+            typeof(ObscuredInt),
+            typeof(ObscuredDouble),
+            typeof(ObscuredDecimal),
+            typeof(ObscuredLong),
+            typeof(ObscuredShort),
+            typeof(ObscuredSByte),
+            typeof(ObscuredByte),
+            typeof(ObscuredULong),
+            typeof(ObscuredUShort),
+            typeof(ObscuredUInt),
+            typeof(ObscuredFloat)
+#endif
         };
-        
+
         public static Type GetElementTypeFromFieldInfo(FieldInfo tmp)
         {
             string fullName = string.Empty;
@@ -78,16 +102,29 @@ namespace CsvReader
         /// <returns></returns>
         public static bool IsPrimitive(FieldInfo tmp, bool isCustomPrimitiveArray)
         {
-            Type type = tmp.FieldType.IsArray && isCustomPrimitiveArray ? GetElementTypeFromFieldInfo(tmp) : tmp.FieldType;
+            Type type = tmp.FieldType.IsArray && isCustomPrimitiveArray
+                ? GetElementTypeFromFieldInfo(tmp)
+                : tmp.FieldType;
 
             return IsPrimitive(type);
         }
 
         public static bool IsPrimitive(Type type)
         {
-            return type == typeof(string) || type == typeof(System.String) || type.IsEnum || type.IsPrimitive;
+            return type == typeof(string) || type == typeof(System.String) || type.IsEnum || type.IsPrimitive
+#if ANTI_CHEAT
+                   || IsObscuredTypes(type)
+#endif
+                ;
         }
-    
+
+#if ANTI_CHEAT
+        public static bool IsObscuredTypes(Type type)
+        {
+            return type.Namespace.Equals("CodeStage.AntiCheat.ObscuredTypes");
+        }
+#endif
+
         public static bool IsNumeric(this Type myType)
         {
             return s_numericTypes.Contains(Nullable.GetUnderlyingType(myType) ?? myType);
@@ -113,7 +150,7 @@ namespace CsvReader
                 ?.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
                 .Where(info => info.FieldType.IsArray).Select(info => info.Name);
         }
-        
+
         public static IEnumerable<string> GetAllFields(string className)
         {
             return GetType(className)
@@ -127,7 +164,7 @@ namespace CsvReader
                 ?.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance |
                              BindingFlags.DeclaredOnly).Select(method => method.Name);
         }
-        
+
         public static object GetDefaultValue(Type enumType)
         {
             var attribute = enumType.GetCustomAttribute<DefaultValueAttribute>(inherit: false);
