@@ -2,7 +2,7 @@
     "name": "CsvReaderSamples",
     "rootNamespace": "",
     "references": [
-        "GUID:a07922285f7207542969b6d63f52e2d9"
+        "CsvReader"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
